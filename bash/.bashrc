@@ -1,5 +1,4 @@
 # .bashrc
-
 # add to home dir '~'
 
 # Source global definitions
@@ -10,8 +9,10 @@ fi
 # Uncomment the following line if you don't like systemctl's auto-paging feature:
 # export SYSTEMD_PAGER=
 
-
-
+# load .bash_aliases if it exists
+if [ -e ~/.bash_aliases ]; then
+    . ~/.bash_aliases
+fi
 
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
@@ -57,17 +58,10 @@ alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"  
 
+# dircolors
+if [ -e ~/.dircolors ] ; then
+    eval $(dircolors ~/.dircolors)
+else
+    echo "No ~/.dircolors file found"
+fi
 
-
-# Alias to copy GitHub SSH key
-#   probably unsafe, but oh well
-alias gitkey="cbf ~/Documents/Programming/GitHubkeys"
-
-# Alias to rename files with
-alias prename="/home/jabocg/bin/prename.pl"
-
-# Alias to make vim use vimx
-#alias vim="vimx"
-
-# dircolors for termite?
-eval $(dircolors ~/.dircolors)

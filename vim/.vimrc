@@ -46,6 +46,7 @@ set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
 set guioptions=1        " remove/hide topbar items in gVim
 
+" -----------------------------------------------------------------------------
 " User defined mappings
 
 " Create a new line and move to it
@@ -92,10 +93,13 @@ nnoremap <LEADER><CR> `A
 nnoremap <TAB> <C-W>w
 
 " shift tab goes to the previous window
-nnoremap <S><TAB> <C-W>W
+nnoremap <S-TAB> <C-W>W
 
 " space tab goes to the next buffer
 nnoremap <LEADER><TAB> :bn<CR>
+
+" space shift tab goes to previous buffer
+nnoremap <LEADER><S-TAB> :bp<CR>
 
 " space y yanks from cursor line to end of file
 nnoremap <LEADER>y :.,$y<CR>
@@ -134,9 +138,11 @@ nnoremap A a_<ESC>r
 nnoremap <C-e> 3<C-e>
 nnoremap <C-y> 3<C-y>
 
-let g:vim_markdown_frontmatter=1
-let g:vim_markdown_folding_disabled=1
+" C-j and C-k move lines up or down
+nnoremap <C-j> "ldd"lp
+nnoremap <C-k> "lddkk"lp
 
+" -----------------------------------------------------------------------------
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
@@ -199,7 +205,4 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
-
-" set highlight color and background color for GVim
-highlight Normal guifg=white guibg=black
 
