@@ -78,7 +78,7 @@ function Wraptog()
     echom "nowrap"
   endif
 endfunction
-nnoremap <Leader><BS> :call Wraptog()<CR>
+nnoremap <LEADER><BS> :call Wraptog()<CR>
 
 " ctrl backpsace deletes previous word in insert mode
 inoremap <C-BS> <C-W>
@@ -108,16 +108,16 @@ nnoremap <LEADER>y :.,$y<CR>
 nnoremap <LEADER>Y :%y<CR>
 
 " ctrl-j in insert mode goes down one line
-inoremap <C-j> <C-o>j
+inoremap <C-J> <C-O>j
 
 " ctrl-k in insert mode goes up one line
-inoremap <C-k> <C-o>k
+inoremap <C-K> <C-O>k
 
 " ctrl-h in insert mode goes to beginning of line
-inoremap <C-h> <C-o>0
+inoremap <C-H> <C-O>^
 
 " ctrl-l in insert mode goes to end of line 
-inoremap <C-l> <C-o>$
+inoremap <C-L> <C-O>$
 
 " mapping Y to yank till end of line
 map Y y$
@@ -135,12 +135,12 @@ nnoremap I i_<ESC>r
 nnoremap A a_<ESC>r
 
 " map C-e and C-y to scroll by 3 lies
-nnoremap <C-e> 3<C-e>
-nnoremap <C-y> 3<C-y>
+nnoremap <C-E> 3<C-E>
+nnoremap <C-Y> 3<C-Y>
 
 " C-j and C-k move lines up or down
-nnoremap <C-j> "ldd"lp
-nnoremap <C-k> "lddkk"lp
+nnoremap <C-J> "ldd"lp
+nnoremap <C-K> "lddkk"lp
 
 " -----------------------------------------------------------------------------
 
