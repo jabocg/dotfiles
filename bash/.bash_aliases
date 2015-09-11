@@ -3,7 +3,7 @@
 alias targz="tar -vxzf"
 
 # ls aliases
-alias ls="ls -l --color=auto --time-format=long-iso"
+alias ls="ls -l --color=auto --time-style=long-iso"
 
 # Alias to copy GitHub SSH key
 #   probably unsafe, but oh well
