@@ -142,6 +142,12 @@ nnoremap <C-Y> 3<C-Y>
 nnoremap <C-J> "ldd"lp
 nnoremap <C-K> "lddkk"lp
 
+" shamelessly stolen(permission) from Vim video, IBV2013 something
+
+" OR ELSE just the 81st column of wide lines...
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
 " -----------------------------------------------------------------------------
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
