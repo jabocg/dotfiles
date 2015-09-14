@@ -12,3 +12,11 @@ alias gitkey="cbf ~/Documents/Programming/GitHubkeys"
 # Alias to rename files with
 alias prename="/home/jabocg/bin/prename.pl"
 
+# Lenovo battery stuff
+BATTERY="/sys/class/power_supply/BAT1"
+BATFULL="$(cat $BATTERY/energy_full)"
+function batt() {
+    BATCUR="$(cat $BATTERY/energy_now)"
+    let " BATPERC = BATCUR * 100 / BATFULL "
+    echo $BATPERC
+}
