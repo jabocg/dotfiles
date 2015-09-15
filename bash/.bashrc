@@ -65,3 +65,7 @@ else
     echo "No ~/.dircolors file found"
 fi
 
+# raspi eth0 ip
+# 169.254.21.59
+alias raspip="echo 169.254.21.59"
+alias sspi="ssh jgerszty@$(raspip)"
