@@ -7,7 +7,7 @@ if [ -e ~/.bashrc ] ; then
     echo "Removing .bashrc"
     rm ~/.bashrc
 fi
-echo "Symlinking .bashrc"
+echo "Creating a symlink to .bashrc"
 ln -s ~/git/dotfiles/bash/.bashrc ~/.bashrc
 
 # if .bash_aliases exists, make a backup and then create the symlink
@@ -17,7 +17,7 @@ if [ -e ~/.bash_aliases ] ; then
     echo "Removing .bash_alises"
     rm ~/.bash_aliases
 fi
-echo "Symlinking .bash_aliases"
+echo "Creating a symlink to .bash_aliases"
 ln -s ~/git/dotfiles/bash/.bash_aliases ~/.bash_aliases
 
 # if .dircolors exists, make a backup and then create the symlink
@@ -27,5 +27,5 @@ if [ -e ~/.dircolors ] ; then
     echo "Removing .dircolors"
     rm ~/.dircolors
 fi
-echo "Symlinking .dircolors"
+echo "Creating a symlink to .dircolors"
 ln -s ~/git/dotfiles/bash/.dircolors ~/.dircolors
