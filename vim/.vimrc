@@ -145,7 +145,7 @@ nnoremap <C-K> "lddkk"lp
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
-highlight ColorColumn ctermbg=grey
+highlight ColorColumn ctermbg=DarkRed
 call matchadd('ColorColumn', '\%81v', 100)
 
 " -----------------------------------------------------------------------------
