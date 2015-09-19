@@ -58,12 +58,12 @@ alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"  
 
-dircolors
-if [ -e ~/.dircolors ] ; then
-    eval $(dircolors ~/.dircolors)
-else
-    echo "No ~/.dircolors file found"
-fi
+# dircolors
+# if [ -e ~/.dircolors ] ; then
+#     eval $(dircolors ~/.dircolors)
+# else
+#     echo "No ~/.dircolors file found"
+# fi
 
 # force color terminal
 force_color_prompt=yes
