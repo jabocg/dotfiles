@@ -142,6 +142,9 @@ nnoremap <C-Y> 3<C-Y>
 nnoremap <C-J> "ldd"lp
 nnoremap <C-K> "lddkk"lp
 
+" rebinding : to ;
+nnoremap ; :
+
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
