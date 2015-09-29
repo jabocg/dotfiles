@@ -160,6 +160,14 @@ nnoremap ; :
 highlight ColorColumn ctermbg=DarkRed
 call matchadd('ColorColumn', '\%81v', 100)
 
+" set spell checking items
+
+setlocal spell spelllang=en_us
+highlight hl-SpellBad ctermbg=4
+highlight hl-SpellCap ctermbg=1
+highlight hl-SpellRare ctermbg=14
+highlight hl-SpellLocal ctermbg=8
+
 " -----------------------------------------------------------------------------
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
