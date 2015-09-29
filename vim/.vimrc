@@ -1,21 +1,31 @@
-execute pathogen#infect()
-
 " put into home dir '~'
+
+" begin Vundle stuff
+set nocompatible
+
+filetype off
+set runtimepath+=~/.vim/bundle/Vundle.vim
+call vundle#rc()
+
+Bundle 'gmarik/vundle'
+Bundle 'tpope/vim-abolish'
+Bundle 'qpkorr/vim-bufkill'
+Bundle 'tpope/vim-commentary'
+Bundle 'tpope/vim-fugitive'
+Bundle 'tpope/vim-repeat'
+Bundle 'tpope/vim-surround'
+Bundle 'Valloric/YouCompleteMe'
+
 
 " put leader at top of file, can be used by all now
 " make space do nothing to use as LEADER
 nnoremap <SPACE> <NOP>
 let mapleader="\<SPACE>"
-" vimrc file
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
   finish
 endif
-
-" Use Vim settings, rather than Vi settings (much better!).
-" This must be first, because it changes other options as a side effect.
-set nocompatible
 
 " allow backspacing over everything in insert mode
 set backspace=indent,eol,start
@@ -44,7 +54,6 @@ set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
 set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
-set guioptions=1        " remove/hide topbar items in gVim
 
 " -----------------------------------------------------------------------------
 " User defined mappings
