@@ -58,12 +58,6 @@ alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"  
 
-# dircolors
-# if [ -e ~/.dircolors ] ; then
-#     eval $(dircolors ~/.dircolors)
-# else
-#     echo "No ~/.dircolors file found"
-# fi
 
 # force color terminal
 force_color_prompt=yes
@@ -89,7 +83,3 @@ else
 fi
 unset color_prompt force_color_prompt
 
-# raspi eth0 ip
-# 169.254.21.59
-alias raspip="echo 169.254.21.59"
-alias sspi="ssh jgerszty@$(raspip)"

@@ -1,13 +1,8 @@
 #!/bin/bash
 # User specific aliases and functions
-alias targz="tar -vxzf"
 
 # ls aliases
 alias ls="ls -hl --color=auto --time-style=long-iso"
-
-# Alias to copy GitHub SSH key
-#   probably unsafe, but oh well
-alias gitkey="cbf ~/Documents/Programming/GitHubkeys"
 
 # Alias to rename files with
 alias prename="/home/jabocg/bin/prename.pl"
@@ -22,3 +17,10 @@ if [ -e /sys/class/power_supply/BAT1 ] ; then
         echo $BATPERC
     }
 fi
+
+# assuming raspberry pi is at 192.168.1.42
+alias sspi="ssh jgerszty@192.168.1.42"
+
+alias isodate="date +%F"
+
+alias vimnote="vim $(isodate)"
