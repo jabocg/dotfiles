@@ -163,10 +163,10 @@ call matchadd('ColorColumn', '\%81v', 100)
 " set spell checking items
 
 setlocal spell spelllang=en_us
-highlight hl-SpellBad ctermbg=4
-highlight hl-SpellCap ctermbg=1
-highlight hl-SpellRare ctermbg=14
-highlight hl-SpellLocal ctermbg=8
+highlight SpellBad ctermbg=4 ctermfg=0
+highlight SpellCap ctermbg=1 ctermfg=0
+highlight SpellRare ctermbg=14 ctermfg=0
+highlight SpellLocal ctermbg=8 ctermfg=0
 
 " -----------------------------------------------------------------------------
 
