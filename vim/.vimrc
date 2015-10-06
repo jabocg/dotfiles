@@ -54,6 +54,7 @@ set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
 set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
+set foldmethod=syntax   " use syntactic folding
 
 " -----------------------------------------------------------------------------
 " User defined mappings
