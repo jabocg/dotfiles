@@ -55,6 +55,7 @@ set nohlsearch          " don't highlight search(I think)
 set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
+set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 
 " -----------------------------------------------------------------------------
 " User defined mappings
