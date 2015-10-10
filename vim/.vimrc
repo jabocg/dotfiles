@@ -43,12 +43,12 @@ set incsearch		" do incremental searching
 set nu			" enable line numbering
 set relativenumber	" enable relative line numbers
 set clipboard=unnamedplus	" sets clipboard to global
-set expandtab		" uses softspacetab instead of tap charcter(?)
+set expandtab		" uses softspacetab instead of tab character(?)
 set shiftwidth=4	" shift by 4 characters
 set softtabstop=4	" set tab size to 4
 set autoindent      	" Keep indentation from previous line
 set smartindent     	" Automatically inserts indentation in some cases
-set cindent         	" Like smartindent, but stricter and more customisable
+set cindent         	" Like smartindent, but stricter and more customizable
 set background=dark	" tells vim to use colors better suited for a dark background
 set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
@@ -91,7 +91,7 @@ function Wraptog()
 endfunction
 nnoremap <LEADER><BS> :call Wraptog()<CR>
 
-" ctrl backpsace deletes previous word in insert mode
+" ctrl backspace deletes previous word in insert mode
 inoremap <C-BS> <C-W>
 
 " enter in normal mode marks with `
@@ -159,16 +159,16 @@ nnoremap ; :
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
-highlight ColorColumn ctermbg=DarkRed
+highlight ColorColumn ctermbg=5
 call matchadd('ColorColumn', '\%81v', 100)
 
 " set spell checking items
 
 setlocal spell spelllang=en_us
-highlight SpellBad ctermbg=4 ctermfg=0
-highlight SpellCap ctermbg=1 ctermfg=0
-highlight SpellRare ctermbg=14 ctermfg=0
-highlight SpellLocal ctermbg=8 ctermfg=0
+highlight SpellBad ctermbg=1 ctermfg=NONE 
+highlight SpellCap ctermbg=4 ctermfg=NONE
+highlight SpellRare ctermbg=7 ctermfg=3*
+highlight SpellLocal ctermbg=6 ctermfg=0
 
 " -----------------------------------------------------------------------------
 
