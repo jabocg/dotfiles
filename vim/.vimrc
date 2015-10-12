@@ -43,9 +43,9 @@ set incsearch		" do incremental searching
 set nu			" enable line numbering
 set relativenumber	" enable relative line numbers
 set clipboard=unnamedplus	" sets clipboard to global
-set expandtab		" uses softspacetab instead of tab character(?)
+set expandtab		" uses space characters instead of tab character
 set shiftwidth=4	" shift by 4 characters
-set softtabstop=4	" set tab size to 4
+set tabstop=4           " set tab size to 4
 set autoindent      	" Keep indentation from previous line
 set smartindent     	" Automatically inserts indentation in some cases
 set cindent         	" Like smartindent, but stricter and more customizable
