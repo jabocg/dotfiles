@@ -156,6 +156,10 @@ nnoremap <C-K> "lddkk"lp
 " rebinding : to ;
 nnoremap ; :
 
+" adding :Q and command to force quit
+command Q execute ":q!"
+cmap qq q!
+
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
