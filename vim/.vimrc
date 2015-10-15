@@ -15,6 +15,7 @@ Bundle 'tpope/vim-fugitive'
 Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
+Bundle 'godlygeek/tabular'
 
 
 " put leader at top of file, can be used by all now
