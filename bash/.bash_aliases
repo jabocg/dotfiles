@@ -24,3 +24,4 @@ alias sspi="ssh jgerszty@192.168.1.42"
 alias isodate="date +%F"
 
 alias vimnote="vim notes_$(isodate)"
+alias vimnoted="vim notes_$(isodate).md"

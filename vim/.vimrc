@@ -16,7 +16,9 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'godlygeek/tabular'
+Bundle 'tpope/vim-markdown'
 
+filetype plugin indent on
 
 " put leader at top of file, can be used by all now
 " make space do nothing to use as LEADER
@@ -57,6 +59,9 @@ set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
+
+" set text wrapping for markdown files
+au BufRead,BufNewFile, *.md setlocal textwidth=80
 
 " -----------------------------------------------------------------------------
 " User defined mappings
