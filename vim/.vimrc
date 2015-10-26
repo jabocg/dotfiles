@@ -145,12 +145,6 @@ cmap w!! w !sudo tee > /dev/null %
 " tell x to use blackhole register
 nnoremap x "_x
 
-" map I to insert one character
-nnoremap I i_<ESC>r
-
-" map A to insert one character
-nnoremap A a_<ESC>r
-
 " map C-e and C-y to scroll by 3 lies
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
