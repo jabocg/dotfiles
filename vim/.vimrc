@@ -59,9 +59,12 @@ set nobackup            " do not keep backup file
 set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
+set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 
 " set text wrapping for markdown files
+" disable fold column for markdown files
 au BufRead,BufNewFile, *.md setlocal textwidth=80
+au BufRead,BufNewFile, *.md setlocal foldcolumn=0
 
 " -----------------------------------------------------------------------------
 " User defined mappings
