@@ -16,7 +16,7 @@ Bundle 'tpope/vim-repeat'
 Bundle 'tpope/vim-surround'
 Bundle 'Valloric/YouCompleteMe'
 Bundle 'godlygeek/tabular'
-Bundle 'tpope/vim-markdown'
+Bundle 'plasticboy/vim-markdown'
 
 filetype plugin indent on
 
@@ -61,6 +61,11 @@ set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 
+" force .md files to be treated as a markdown
+autocmd BufNewFile,BufRead *.md set filetype=markdown
+
+" set some settings for markdown files
+"
 " set text wrapping for markdown files
 " disable fold column for markdown files
 au BufRead,BufNewFile, *.md setlocal textwidth=80
