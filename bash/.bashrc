@@ -1,6 +1,9 @@
 # .bashrc
 # add to home dir '~'
 
+# add ~/bin to path
+export PATH=$PATH:~/bin/
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc
