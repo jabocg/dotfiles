@@ -8,15 +8,15 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-abolish'
-Bundle 'qpkorr/vim-bufkill'
-Bundle 'tpope/vim-commentary'
-Bundle 'tpope/vim-fugitive'
-Bundle 'tpope/vim-repeat'
-Bundle 'tpope/vim-surround'
-Bundle 'Valloric/YouCompleteMe'
-Bundle 'godlygeek/tabular'
-Bundle 'plasticboy/vim-markdown'
+Bundle 'tpope/vim-abolish'  " smarter substitute
+Bundle 'qpkorr/vim-bufkill' " smarter split closing
+Bundle 'tpope/vim-commentary'   " quick key commenting
+Bundle 'tpope/vim-fugitive' " git stuff
+Bundle 'tpope/vim-repeat'   " smart . commands
+Bundle 'tpope/vim-surround' " surround add/rem/edit
+Bundle 'Valloric/YouCompleteMe' " auto completion for programming
+Bundle 'godlygeek/tabular'  " better tabs?
+Bundle 'plasticboy/vim-markdown'    " better markdown support
 
 filetype plugin indent on
 
@@ -45,6 +45,8 @@ set ruler		" show the cursor position all the time
 set incsearch		" do incremental searching
 set nu			" enable line numbering
 set relativenumber	" enable relative line numbers
+" this command needs to be 'unnamed' to work on mac, probably works on other
+" platforms as well
 set clipboard=unnamed	" sets clipboard to global
 set expandtab		" uses space characters instead of tab character
 set shiftwidth=4	" shift by 4 characters
