@@ -1,0 +1,18 @@
+#!/bin/bash
+
+# create a new tmux session
+# running 'top' command
+tmux new-session -s topclock -d 'top'
+
+# split window
+tmux split-window -p 85
+
+# create time split
+tmux split-window -t 0 -p 15 -h 
+tmux clock-mode
+
+# select command line pane
+tmux select-pane -t 1
+
+# attach session
+tmux -2 attach-session -d

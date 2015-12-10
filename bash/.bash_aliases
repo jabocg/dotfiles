@@ -29,3 +29,4 @@ alias isodate="date +%F"
 
 alias vimnote="vim notes_$(isodate)"
 alias vimnoted="vim notes_$(isodate).md"
+alias dev="dev && exit"

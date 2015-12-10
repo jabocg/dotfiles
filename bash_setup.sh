@@ -29,3 +29,14 @@ if [ -e ~/.dircolors ] ; then
 fi
 echo "Creating a symlink to .dircolors"
 ln -s ~/git/dotfiles/bash/.dircolors ~/.dircolors
+
+# move dev into ~/bin
+if [ -e ~/bin/dev ] ; then
+    echo "Backing up dev"
+    cp ~/bin/dev ~/bin/dev.bak
+    echo "Removing dev"
+    rm ~/bin/dev
+fi
+echo "Creating a symlink to dev"
+ln -s ~/git/dotfiles/bash/dev ~/bin/dev
+
