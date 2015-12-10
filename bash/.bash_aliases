@@ -2,7 +2,11 @@
 # User specific aliases and functions
 
 # ls aliases
-alias ls="ls -hl --color=auto --time-style=long-iso"
+if [ "$(uname)" == "Darwin" ]; then
+    alias ls="ls -axhlG"
+else
+    alias ls="ls -hl --color=auto --time-style=long-iso"
+fi
 
 # Alias to rename files with
 alias prename="/home/jabocg/bin/prename.pl"

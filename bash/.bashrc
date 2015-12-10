@@ -76,6 +76,9 @@ fi
 # set the special Raspberry Pi colors ONLY IF it is a pi via hostname
 if [ "$color_prompt" = yes -a $HOSTNAME == "raspberrypi" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+elif [ "$(uname)" == "Darwin" ]; then
+    # stuff to do with Mac
+    PS1='\e[0;33m[\!]\e[m \u@\H \e[0;36m\W\e[m $ '
 else
     # else set to custom coloring
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
