@@ -45,7 +45,7 @@ set ruler		" show the cursor position all the time
 set incsearch		" do incremental searching
 set nu			" enable line numbering
 set relativenumber	" enable relative line numbers
-set clipboard=unnamedplus	" sets clipboard to global
+set clipboard=unnamed	" sets clipboard to global
 set expandtab		" uses space characters instead of tab character
 set shiftwidth=4	" shift by 4 characters
 set tabstop=4           " set tab size to 4
