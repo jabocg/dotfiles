@@ -4,6 +4,9 @@
 # add ~/bin to path
 export PATH=$PATH:~/bin/
 
+# stuff for mac
+export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin
+
 # Source global definitions
 if [ -f /etc/bashrc ]; then
 	. /etc/bashrc

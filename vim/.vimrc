@@ -8,15 +8,24 @@ set runtimepath+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 Bundle 'gmarik/vundle'
-Bundle 'tpope/vim-abolish'  " smarter substitute
-Bundle 'qpkorr/vim-bufkill' " smarter split closing
-Bundle 'tpope/vim-commentary'   " quick key commenting
-Bundle 'tpope/vim-fugitive' " git stuff
-Bundle 'tpope/vim-repeat'   " smart . commands
-Bundle 'tpope/vim-surround' " surround add/rem/edit
-Bundle 'Valloric/YouCompleteMe' " auto completion for programming
-Bundle 'godlygeek/tabular'  " better tabs?
-Bundle 'plasticboy/vim-markdown'    " better markdown support
+" smarter substitute
+Bundle 'tpope/vim-abolish'  
+" smarter split closing
+Bundle 'qpkorr/vim-bufkill' 
+" quick key commenting
+Bundle 'tpope/vim-commentary'   
+" git stuff
+Bundle 'tpope/vim-fugitive' 
+" smart . commands
+Bundle 'tpope/vim-repeat'   
+" surround add/rem/edit
+Bundle 'tpope/vim-surround' 
+" auto completion for programming
+Bundle 'Valloric/YouCompleteMe' 
+" better tabs?
+Bundle 'godlygeek/tabular'  
+" better markdown support
+Bundle 'plasticboy/vim-markdown'    
 
 filetype plugin indent on
 
