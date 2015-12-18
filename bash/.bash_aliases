@@ -6,7 +6,6 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias ls="ls -axhlG"
     alias grep="grep --color=always"
     alias tree="tree -C"
-    # alias ctags="/usr/local/Cellar/ctags/5.8_1/bin/ctags"
 else # others(Fedora? nothing else I really run is used)
     alias ls="ls -hl --color=auto --time-style=long-iso"
     # alias to ssh into pi, should change IP as needed
