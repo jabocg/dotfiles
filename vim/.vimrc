@@ -25,7 +25,9 @@ Bundle 'Valloric/YouCompleteMe'
 " better tabs?
 Bundle 'godlygeek/tabular'  
 " better markdown support
-Bundle 'plasticboy/vim-markdown'    
+" Bundle 'plasticboy/vim-markdown'    
+" paramater and other things movement
+Bundle 'AndrewRadev/sideways.vim'
 
 filetype plugin indent on
 
@@ -72,6 +74,10 @@ set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 
+" things for eclim and ycm
+let g:EclimCompletionMethod = 'omnifunc'
+let g:ycm_autoclose_preview_window_after_insertion = 1
+
 " force .md files to be treated as a markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
 
@@ -90,9 +96,6 @@ nnoremap <LEADER>o o<ESC>
 
 " Create a new line below cursor
 nnoremap <LEADER>O O<ESC>
-
-" Save and delete buffer
-command WD write | bdelete
 
 " backspace toggle highlighting search
 function Toghls()
@@ -178,6 +181,10 @@ nnoremap ; :
 " adding :Q and command to force quit
 command Q execute ":q!"
 cmap qq q!
+
+" ctrl-h and ctrl-l call sideways commands
+nnoremap <C-H> :SidewaysLeft<CR>
+nnoremap <C-L> :SidewaysRight<CR>
 
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 

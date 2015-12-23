@@ -6,6 +6,8 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias ls="ls -axhlG"
     alias grep="grep --color=always"
     alias tree="tree -C"
+    alias pve2="source ~/.venv/py2/bin/activate"
+    alias pve3="source ~/.venv/py3/bin/activate"
 else # others(Fedora? nothing else I really run is used)
     alias ls="ls -hl --color=auto --time-style=long-iso"
     # alias to ssh into pi, should change IP as needed

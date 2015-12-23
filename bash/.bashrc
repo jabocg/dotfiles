@@ -5,7 +5,13 @@
 export PATH=$PATH:~/bin/
 
 # stuff for mac
-export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin
+if [ $(uname) == 'Darwin' ] ; then
+    export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin
+    export ECLIPSE_HOME=~/Applications/Eclipse.app/Contents/Eclipse/
+else
+    export PATH=$PATH:
+    export ECLIPSE_HOME=~/eclipse
+fi
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
