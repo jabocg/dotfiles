@@ -25,7 +25,7 @@ Bundle 'Valloric/YouCompleteMe'
 " better tabs?
 Bundle 'godlygeek/tabular'  
 " better markdown support
-" Bundle 'plasticboy/vim-markdown'    
+Bundle 'plasticboy/vim-markdown'    
 " paramater and other things movement
 Bundle 'AndrewRadev/sideways.vim'
 
@@ -75,7 +75,9 @@ set foldlevel=99        " unfold everything at default, use 'zM' to fold everyth
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 
 " things for eclim and ycm
+" allow YouCompleteMe to auto complete for eclim
 let g:EclimCompletionMethod = 'omnifunc'
+" close the autocomplete preview window after leaving insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
 
 " force .md files to be treated as a markdown
@@ -185,6 +187,13 @@ cmap qq q!
 " ctrl-h and ctrl-l call sideways commands
 nnoremap <C-H> :SidewaysLeft<CR>
 nnoremap <C-L> :SidewaysRight<CR>
+
+" binds for quick lsing
+cmap ;ls ls<CR>:b 
+
+" bind to go to end of previous word, slightly faster than be
+" needs to be more, maybe some VimScript, look into maybe over break?
+" nnoremap <LEADER>e be
 
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
