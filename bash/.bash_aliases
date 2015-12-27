@@ -10,6 +10,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias pve3="source ~/.venv/py3/bin/activate"
 else # others(Fedora? nothing else I really run is used)
     alias ls="ls -hal --color=auto --time-style=long-iso"
+    alias lsd="ls -hald */ .*/"
 
     # alias to ssh into pi, should change IP as needed
     alias sspi="ssh jgerszty@192.168.1.42"
