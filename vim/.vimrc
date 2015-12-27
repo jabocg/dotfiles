@@ -26,7 +26,7 @@ Bundle 'Valloric/YouCompleteMe'
 Bundle 'godlygeek/tabular'  
 " better markdown support
 Bundle 'plasticboy/vim-markdown'    
-" paramater and other things movement
+" parameter and other things movement
 Bundle 'AndrewRadev/sideways.vim'
 
 filetype plugin indent on
