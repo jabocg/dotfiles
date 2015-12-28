@@ -57,9 +57,6 @@ set ruler		" show the cursor position all the time
 set incsearch		" do incremental searching
 set nu			" enable line numbering
 set relativenumber	" enable relative line numbers
-" this command needs to be 'unnamed' to work on mac, probably works on other
-" platforms as well
-set clipboard=unnamed	" sets clipboard to global
 set expandtab		" uses space characters instead of tab character
 set shiftwidth=4	" shift by 4 characters
 set tabstop=4           " set tab size to 4
@@ -74,6 +71,15 @@ set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
+
+" if statement, vim on mac needs unnamed, vim on linux needs unnamedplus
+" this command needs to be 'unnamed' to work on mac, probably works on other
+" platforms as well
+if( system('uname -s') == 'Darwin') 
+    set clipboard=unnamed
+else
+    set clipboard=unnamedplus
+endif
 
 " things for eclim and ycm
 " allow YouCompleteMe to auto complete for eclim

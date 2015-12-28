@@ -106,5 +106,6 @@ if [ $(uname) == 'Darwin' ] ; then
 else
     export PATH=$PATH:
     export ECLIPSE_HOME=~/eclipse
+    export POWERLINE=/usr/lib/python2.7/site-packages/powerline/
 fi
 
