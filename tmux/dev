@@ -2,7 +2,7 @@
 
 # create a new tmux session
 # running 'top' command
-tmux new-session -s topclock -d 'top'
+tmux new-session -s devel -d 'top'
 
 # split window
 tmux split-window -p 85
@@ -15,4 +15,4 @@ tmux clock-mode
 tmux select-pane -t 1
 
 # attach session
-tmux -2 attach-session -d
+tmux -2 attach-session -t devel -d

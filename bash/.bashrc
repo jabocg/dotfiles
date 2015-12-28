@@ -1,17 +1,33 @@
 # .bashrc
 # add to home dir '~'
 
-# add ~/bin to path
-export PATH=$PATH:~/bin/
+# force color terminal
+force_color_prompt=yes
 
-# stuff for mac
-if [ $(uname) == 'Darwin' ] ; then
-    export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin
-    export ECLIPSE_HOME=~/Applications/Eclipse.app/Contents/Eclipse/
-else
-    export PATH=$PATH:
-    export ECLIPSE_HOME=~/eclipse
+if [ -n "$force_color_prompt" ]; then
+    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
+  # We have color support; assume it's compliant with Ecma-48
+  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
+  # a case would tend to support setf rather than setaf.)
+  color_prompt=yes
+    else
+  color_prompt=
+    fi
 fi
+
+# set the special Raspberry Pi colors ONLY IF it is a pi via hostname
+if [ "$color_prompt" = yes -a $HOSTNAME == "raspberrypi" ]; then
+    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
+elif [ "$(uname)" == "Darwin" ]; then
+    # stuff to do with Mac
+    PS1='\e[0;33m[\!]\e[m \u@\H \e[0;36m\W\e[m $ '
+else
+    # else set to custom coloring
+    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
+    PS1='\[\e[0m\][\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;36m\]\h \[\e[0;37m\]\W\[\e[0m\]]\[\e[0m\]\$ '
+fi
+unset color_prompt force_color_prompt
+
 
 # Source global definitions
 if [ -f /etc/bashrc ]; then
@@ -70,31 +86,25 @@ alias cbwd="pwd | cb"
 # Copy most recent command in bash history
 alias cbhs="cat $HISTFILE | tail -n 1 | cb"  
 
+## ADD USER STUFF BELOW THIS LINE ##
 
-# force color terminal
-force_color_prompt=yes
-
-if [ -n "$force_color_prompt" ]; then
-    if [ -x /usr/bin/tput ] && tput setaf 1 >&/dev/null; then
-  # We have color support; assume it's compliant with Ecma-48
-  # (ISO/IEC-6429). (Lack of such support is extremely rare, and such
-  # a case would tend to support setf rather than setaf.)
-  color_prompt=yes
-    else
-  color_prompt=
-    fi
+# stuff for powerline
+if [ -f `which powerline-daemon` ]; then
+  powerline-daemon -q
+  POWERLINE_BASH_CONTINUATION=1
+  POWERLINE_BASH_SELECT=1
+  . /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
 fi
 
-# set the special Raspberry Pi colors ONLY IF it is a pi via hostname
-if [ "$color_prompt" = yes -a $HOSTNAME == "raspberrypi" ]; then
-    PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
-elif [ "$(uname)" == "Darwin" ]; then
-    # stuff to do with Mac
-    PS1='\e[0;33m[\!]\e[m \u@\H \e[0;36m\W\e[m $ '
+# add ~/bin to path
+export PATH=$PATH:~/bin/
+
+# stuff for mac
+if [ $(uname) == 'Darwin' ] ; then
+    export PATH=$PATH:/usr/local/apache-maven-3.3.9/bin
+    export ECLIPSE_HOME=~/Applications/Eclipse.app/Contents/Eclipse/
 else
-    # else set to custom coloring
-    # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\[\e[0m\][\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;36m\]\h \[\e[0;37m\]\W\[\e[0m\]]\[\e[0m\]\$ '
+    export PATH=$PATH:
+    export ECLIPSE_HOME=~/eclipse
 fi
-unset color_prompt force_color_prompt
 
