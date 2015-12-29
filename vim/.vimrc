@@ -30,6 +30,10 @@ Bundle 'plasticboy/vim-markdown'
 " parameter and other things movement
 Bundle 'AndrewRadev/sideways.vim'
 
+" airline over powerline
+" Bundle 'bling/vim-airline'
+
+call vundle#end()
 filetype plugin indent on
 
 " put leader at top of file, can be used by all now
@@ -71,6 +75,12 @@ set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
+set laststatus=2        " always enable status line
+
+" Powerline stuff
+python from powerline.vim import setup as powerline_setup
+python powerline_setup()
+python del powerline_setup
 
 " if statement, vim on mac needs unnamed, vim on linux needs unnamedplus
 " this command needs to be 'unnamed' to work on mac, probably works on other
