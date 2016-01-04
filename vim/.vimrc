@@ -82,10 +82,10 @@ python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup
 
-" if statement, vim on mac needs unnamed, vim on linux needs unnamedplus
-" this command needs to be 'unnamed' to work on mac, probably works on other
-" platforms as well
-if( system('uname -s') == 'Darwin') 
+" if check for setting clipboard
+" Mac(Darwin) needs to be unnamed
+" Linux(at least Fedora) needs to be unnamedplus
+if(system("uname -s") == "Darwin\n")
     set clipboard=unnamed
 else
     set clipboard=unnamedplus
