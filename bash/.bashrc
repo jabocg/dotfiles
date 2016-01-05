@@ -115,3 +115,12 @@ fi
 
 # fzf intergration
 [ -f ~/.fzf.bash ] && source ~/.fzf.bash
+
+# add some fzf functions
+
+# fzim - call to call fzf, select file(s), edit
+# will close on ESC out of fzf
+fzim() {
+    local files
+    files=$(fzf-tmux -m) && echo "vim $files " && vim $files
+}
