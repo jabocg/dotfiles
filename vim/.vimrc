@@ -30,9 +30,6 @@ Bundle 'plasticboy/vim-markdown'
 " parameter and other things movement
 Bundle 'AndrewRadev/sideways.vim'
 
-" airline over powerline
-" Bundle 'bling/vim-airline'
-
 call vundle#end()
 filetype plugin indent on
 
@@ -54,6 +51,8 @@ if has("vms")
 else
   set backup		" keep a backup file (restore to previous version)
   set undofile		" keep an undo file (undo changes after closing)
+  set backupdir=~/.vim/backup//	" no longer disabling this, just moving files
+  set undodir=~/.vim/undo//
 endif
 
 set history=50		" keep 50 lines of command line history
@@ -70,8 +69,6 @@ set cindent         	" Like smartindent, but stricter and more customizable
 set background=dark	" tells vim to use colors better suited for a dark background
 set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
-set nobackup            " do not keep backup file
-set noundofile          " do not keep undo file
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
