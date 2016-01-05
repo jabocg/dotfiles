@@ -37,5 +37,5 @@ alias isodate="date +%F"
 alias vimnote="vim notes_$(isodate)"
 alias vimnoted="vim notes_$(isodate).md"
 
-# alias for development environment with tmux
-alias dev="dev && exit"
+# nuke alias, because funtimes
+alias nuke='rm -rf'
