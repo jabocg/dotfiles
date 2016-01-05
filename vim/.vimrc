@@ -141,12 +141,6 @@ nnoremap <LEADER><BS> :call Wraptog()<CR>
 " ctrl backspace deletes previous word in insert mode
 inoremap <C-BS> <C-W>
 
-" enter in normal mode marks with `
-nnoremap <CR> mA
-
-" space enter goes to marked value
-nnoremap <LEADER><CR> `A
-
 " tab goes to the next window
 nnoremap <TAB> <C-W>w
 
