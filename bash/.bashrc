@@ -124,3 +124,14 @@ fzim() {
     local files
     files=$(fzf-tmux -m) && echo "vim $files " && vim $files
 }
+
+# fd - call fzf, change to directory of selected file
+fd() {
+  local dir
+  dir=$(find ${1:-*} -path '*/\.*' -prune \
+                  -o -type d -print 2> /dev/null | fzf +m) &&
+  cd "$dir"
+}
+# added alias with cd start
+alias cdf='fd'
+
