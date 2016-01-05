@@ -113,3 +113,5 @@ else
     export POWERLINE=/usr/lib/python2.7/site-packages/powerline/
 fi
 
+# fzf intergration
+[ -f ~/.fzf.bash ] && source ~/.fzf.bash
