@@ -1,18 +1,17 @@
 #!/bin/bash
+# script to run several tmux windows for easy access
 
-# create a new tmux session
-# running 'top' command
-tmux new-session -s devel -d 'top'
-
-# split window
-tmux split-window -p 85
-
-# create time split
-tmux split-window -t 0 -p 15 -h 
-tmux clock-mode
-
-# select command line pane
-tmux select-pane -t 1
-
-# attach session
-tmux -2 attach-session -t devel -d
+if [ $# == 0 ] ; then
+    echo "please provide at least a name"
+    echo " dev <name> <dir>"
+else
+    tmux new-session -d -s $1
+    tmux rename-window -t 0 term
+    if [ ! $2 == '' ] ; then
+        tmux new-window -n devel -c $2
+    else
+        tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/java_swing/
+    fi
+    tmux new-window -n doc -c ~/SAIFE/ vim ExampleNotes.md
+    tmux attach-session -t $1
+fi
