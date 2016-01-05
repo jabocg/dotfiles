@@ -215,7 +215,7 @@ cmap ;ls ls<CR>:b
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
-highlight ColorColumn ctermbg=5
+highlight ColorColumn ctermbg=8
 call matchadd('ColorColumn', '\%81v', 100)
 
 " set spell checking items
