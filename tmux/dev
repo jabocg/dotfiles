@@ -12,6 +12,8 @@ else
     else
         tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/java_swing/
     fi
-    tmux new-window -n doc -c ~/SAIFE/ vim ExampleNotes.md
+    tmux new-window -n doc -c ~/SAIFE/ 
+    tmux swap-window -s 1 -t 0
+    tmux swap-window -s 2 -t 1
     tmux attach-session -t $1
 fi
