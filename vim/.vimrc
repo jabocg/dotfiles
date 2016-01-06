@@ -1,36 +1,44 @@
 " put into home dir '~'
 
-" begin Vundle stuff
-set nocompatible
+call plug#begin('~/.vim/plugged')
 
-filetype off
-set runtimepath+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
-call vundle#begin()
-
-Bundle 'gmarik/vundle'
 " smarter substitute
-Bundle 'tpope/vim-abolish'  
-" smarter split closing
-Bundle 'qpkorr/vim-bufkill' 
-" quick key commenting
-Bundle 'tpope/vim-commentary'   
-" git stuff
-Bundle 'tpope/vim-fugitive' 
-" smart . commands
-Bundle 'tpope/vim-repeat'   
-" surround add/rem/edit
-Bundle 'tpope/vim-surround' 
-" auto completion for programming
-Bundle 'Valloric/YouCompleteMe' 
-" better tabs?
-Bundle 'godlygeek/tabular'  
-" better markdown support
-Bundle 'plasticboy/vim-markdown'    
-" parameter and other things movement
-Bundle 'AndrewRadev/sideways.vim'
+Plug 'tpope/vim-abolish'  
 
-call vundle#end()
+" smarter split closing
+Plug 'qpkorr/vim-bufkill' 
+
+" quick key commenting
+Plug 'tpope/vim-commentary'   
+
+" git stuff
+Plug 'tpope/vim-fugitive' 
+
+" smart . commands
+Plug 'tpope/vim-repeat'   
+
+" surround add/rem/edit
+Plug 'tpope/vim-surround' 
+
+" auto completion for programming
+function! BuildYCM(info)
+  if a:info.status == 'installed' || a:info.force
+    !./install.sh
+  endif
+endfunction
+Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
+
+" better tabs?
+Plug 'godlygeek/tabular'  
+
+" better markdown support
+Plug 'plasticboy/vim-markdown'    
+
+" parameter and other things movement
+Plug 'AndrewRadev/sideways.vim'
+
+call plug#end()
+
 filetype plugin indent on
 
 " put leader at top of file, can be used by all now

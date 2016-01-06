@@ -6,7 +6,6 @@
 
 
 # make the directories if needed
-mkdir -p ~/.vim/bundle
 mkdir -p ~/.vim/ftplugin
 
 # make symlink for .vimrc
@@ -18,17 +17,11 @@ fi
 echo "creating symlink for .vimrc"
 ln -s ~/git/dotfiles/vim/.vimrc ~/.vimrc
 
-# get Vundle
-cd ~/.vim/bundle
+# get vim-plug
 echo "cloning Vundle"
-git clone https://github.com/VundleVim/Vundle.vim.git Vundle.vim
+curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
 # run vim and install plugins
-vim +PluginInstall +all
-
-# install YCM
-echo "installing YouCompleteMe"
-cd ~/.vim/bundle/YouCompleteMe
-./install.py --clang-completer
+vim +PluginInstall 
 
 # put eclim stuff here?
