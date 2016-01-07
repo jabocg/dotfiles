@@ -15,6 +15,16 @@ if [ -n "$force_color_prompt" ]; then
     fi
 fi
 
+# reminder to kill softwareupdate process
+if [ $(uname -s) == 'Darwin' -a $TERM != 'screen-256color' ] ; then
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+fi
+
 # set the special Raspberry Pi colors ONLY IF it is a pi via hostname
 if [ "$color_prompt" = yes -a $HOSTNAME == "raspberrypi" ]; then
     PS1='${debian_chroot:+($debian_chroot)}\[\033[01;32m\]\u@\h\[\033[00m\] \[\033[01;34m\]\w \$\[\033[00m\] '
@@ -24,7 +34,8 @@ elif [ "$(uname)" == "Darwin" ]; then
 else
     # else set to custom coloring
     # PS1='${debian_chroot:+($debian_chroot)}\u@\h:\w\$ '
-    PS1='\[\e[0m\][\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;36m\]\h \[\e[0;37m\]\W\[\e[0m\]]\[\e[0m\]\$ '
+    # PS1='\[\e[0m\][\[\e[0;33m\]\u\[\e[0m\]@\[\e[0;36m\]\h \[\e[0;37m\]\W\[\e[0m\]]\[\e[0m\]\$ '
+    echo
 fi
 unset color_prompt force_color_prompt
 
@@ -41,6 +52,9 @@ fi
 if [ -e ~/.bash_aliases ]; then
     . ~/.bash_aliases
 fi
+
+# set env settings
+export EDITOR=vim
 
 # A shortcut function that simplifies usage of xclip.
 # - Accepts input from either stdin (pipe), or params.
