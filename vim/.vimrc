@@ -32,10 +32,13 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'godlygeek/tabular'  
 
 " better markdown support
-Plug 'plasticboy/vim-markdown'    
+Plug 'plasticboy/vim-markdown', { 'for': ['md', 'markdown']}
 
 " parameter and other things movement
 Plug 'AndrewRadev/sideways.vim'
+
+" enable FZF
+set rtp+=~/git/fzf/
 
 call plug#end()
 
@@ -81,6 +84,8 @@ set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 set laststatus=2        " always enable status line
+set wildmenu            " enable wildmenu
+set wildmode=longest:full,full   " longest match, then wildmenu
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -111,6 +116,9 @@ autocmd BufNewFile,BufRead *.md set filetype=markdown
 " disable fold column for markdown files
 au BufRead,BufNewFile, *.md setlocal textwidth=80
 au BufRead,BufNewFile, *.md setlocal foldcolumn=0
+
+" set setting for crontab
+au FileType crontab setlocal bkc=yes
 
 " -----------------------------------------------------------------------------
 " User defined mappings
