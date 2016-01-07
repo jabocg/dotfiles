@@ -10,7 +10,7 @@ else
     if [ ! $2 == '' ] ; then
         tmux new-window -n devel -c $2
     else
-        tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/java_swing/
+        tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/java/
     fi
     tmux new-window -n doc -c ~/SAIFE/ 
     tmux swap-window -s 1 -t 0
