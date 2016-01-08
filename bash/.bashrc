@@ -17,12 +17,12 @@ fi
 
 # reminder to kill softwareupdate process
 if [ $(uname -s) == 'Darwin' -a $TERM != 'screen-256color' ] ; then
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
-    echo "KILL KILL KILL softwareupdate KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
+    echo "KILL KILL KILL softwareupdated KILL KILL KILL"
 fi
 
 # set the special Raspberry Pi colors ONLY IF it is a pi via hostname
