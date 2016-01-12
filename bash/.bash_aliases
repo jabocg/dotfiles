@@ -39,3 +39,6 @@ alias vimnoted="vim notes_$(isodate).md"
 
 # nuke alias, because funtimes
 alias nuke='rm -rf'
+
+# telling tree command to ignore .git structures
+alias tree='tree -I .git -C'
