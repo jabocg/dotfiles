@@ -138,6 +138,8 @@ fzim() {
     local files
     files=$(fzf-tmux -m) && echo "vim $files " && vim $files
 }
+# add alias with vim start
+alias vimf='fzim'
 
 # fd - call fzf, change to directory of selected file
 fd() {
