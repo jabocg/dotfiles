@@ -37,6 +37,9 @@ Plug 'plasticboy/vim-markdown', { 'for': ['md', 'markdown']}
 " parameter and other things movement
 Plug 'AndrewRadev/sideways.vim'
 
+" auto-close for brackets, parenthesis, and whatnot
+Plug 'rstacruz/vim-closer'
+
 " enable FZF
 set rtp+=~/git/fzf/
 
