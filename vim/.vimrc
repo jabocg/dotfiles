@@ -32,7 +32,7 @@ Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 Plug 'godlygeek/tabular'  
 
 " better markdown support
-Plug 'plasticboy/vim-markdown', { 'for': ['md', 'markdown']}
+Plug 'plasticboy/vim-markdown'
 
 " parameter and other things movement
 Plug 'AndrewRadev/sideways.vim'
