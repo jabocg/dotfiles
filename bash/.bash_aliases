@@ -8,6 +8,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias tree="tree -C"
     alias pve2="source ~/.venv/py2/bin/activate"
     alias pve3="source ~/.venv/py3/bin/activate"
+    alias vbashrc="vim ~/.bash_profile"
 else # others(Fedora? nothing else I really run is used)
     alias ls="ls -hal --color=auto --time-style=long-iso"
     alias lsd="ls -hald */ .*/"
@@ -17,6 +18,8 @@ else # others(Fedora? nothing else I really run is used)
 
     # Alias to rename files with
     alias prename="/home/jabocg/bin/prename.pl"
+
+    alias vvimrc="vim ~/.vimrc"
 
     # Lenovo battery stuff
     if [ -e /sys/class/power_supply/BAT1 ] ; then
@@ -42,3 +45,6 @@ alias nuke='rm -rf'
 
 # telling tree command to ignore .git structures
 alias tree='tree -I .git -C'
+
+# edit vimrc quickly
+alias vvimrc='vim ~/.vimrc'
