@@ -3,22 +3,22 @@
 call plug#begin('~/.vim/plugged')
 
 " smarter substitute
-Plug 'tpope/vim-abolish'  
+Plug 'tpope/vim-abolish'
 
 " smarter split closing
-Plug 'qpkorr/vim-bufkill' 
+Plug 'qpkorr/vim-bufkill'
 
 " quick key commenting
-Plug 'tpope/vim-commentary'   
+Plug 'tpope/vim-commentary'
 
 " git stuff
-Plug 'tpope/vim-fugitive' 
+Plug 'tpope/vim-fugitive'
 
 " smart . commands
-Plug 'tpope/vim-repeat'   
+Plug 'tpope/vim-repeat'
 
 " surround add/rem/edit
-Plug 'tpope/vim-surround' 
+Plug 'tpope/vim-surround'
 
 " auto completion for programming
 function! BuildYCM(info)
@@ -29,16 +29,21 @@ endfunction
 Plug 'Valloric/YouCompleteMe', { 'do': function('BuildYCM') }
 
 " better tabs?
-Plug 'godlygeek/tabular'  
+Plug 'godlygeek/tabular'
 
 " better markdown support
 Plug 'plasticboy/vim-markdown'
+" disable markdown folding, improve performance
+let g:vim_markdown_folding_disabled=1
 
 " parameter and other things movement
 Plug 'AndrewRadev/sideways.vim'
 
 " auto-close for brackets, parenthesis, and whatnot
 Plug 'rstacruz/vim-closer'
+
+" git diff markers
+Plug 'airblade/vim-gitgutter'
 
 " enable FZF
 set rtp+=~/git/fzf/
