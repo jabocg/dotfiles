@@ -230,6 +230,10 @@ nnoremap <LEADER>co :copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cf :cexpr []<CR>
 
+" make n and N more useful
+nnoremap n nzz
+nnoremap N Nzz
+
 " bind to go to end of previous word, slightly faster than be
 " needs to be more, maybe some VimScript, look into maybe over break?
 " nnoremap <LEADER>e be
