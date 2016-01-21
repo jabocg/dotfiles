@@ -158,8 +158,9 @@ bar {
 
 # i3 + powerline bar
 # bar {
-#     i3bar_command i3bgbar
+#     # i3bar_command i3bgbar
 
-#     status_command python $POWERLINE/bindings/i3/powerline-i3.py
+#     status_command "python $POWERLINE/bindings/bar/powerline-bar.py --i3 | /usr/bin/lemonbar"
 #     font pango:DejaVu Sans Mono for Powerline 8
 # }
+
