@@ -234,6 +234,11 @@ nnoremap <LEADER>cf :cexpr []<CR>
 nnoremap n nzz
 nnoremap N Nzz
 
+" mapping to delete a character, then place if after the current character
+"   essentially switching the two and clearing the register
+" will not work on last character in line
+nnoremap <LEADER>x "cdl"cpqcq
+
 " bind to go to end of previous word, slightly faster than be
 " needs to be more, maybe some VimScript, look into maybe over break?
 " nnoremap <LEADER>e be
