@@ -209,7 +209,7 @@ nnoremap <C-Y> 3<C-Y>
 nnoremap <C-J> "ldd"lp
 nnoremap <C-K> "lddkk"lp
 
-" rebinding : to ;
+" remapping : to ;
 nnoremap ; :
 
 " adding :Q and command to force quit
@@ -220,15 +220,16 @@ cmap qq q!
 nnoremap <C-H> :SidewaysLeft<CR>
 nnoremap <C-L> :SidewaysRight<CR>
 
-" binds for quick lsing
+" mapping for quick lsing
 cmap ;ls ls<CR>:b 
 
-" binds for opening, closing, and clearing quickfix and location list windows
+" mappings for opening, closing, and clearing quickfix and location list windows
 nnoremap <LEADER>lo :lopen<CR>
 nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>co :copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
-nnoremap <LEADER>cf :cexpr []<CR>
+" mapping to clear(delete) the quickfix expression
+nnoremap <LEADER>cd :cexpr []<CR>
 
 " make n and N more useful
 nnoremap n nzz
@@ -238,10 +239,6 @@ nnoremap N Nzz
 "   essentially switching the two and clearing the register
 " will not work on last character in line
 nnoremap <LEADER>x "cdl"cpqcq
-
-" bind to go to end of previous word, slightly faster than be
-" needs to be more, maybe some VimScript, look into maybe over break?
-" nnoremap <LEADER>e be
 
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
