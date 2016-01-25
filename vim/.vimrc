@@ -240,6 +240,9 @@ nnoremap N Nzz
 " will not work on last character in line
 nnoremap <LEADER>x "cdl"cpqcq
 
+" mapping for FZF buffers
+nnoremap <LEADER>ls :Buffers<CR>
+
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
