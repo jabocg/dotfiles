@@ -128,6 +128,9 @@ au BufRead,BufNewFile, *.md setlocal foldcolumn=0
 " set setting for crontab
 au FileType crontab setlocal bkc=yes
 
+" set default edit option for FZF :Buffers command
+let g:EclimBuffersDefaultAction = 'edit'
+
 " -----------------------------------------------------------------------------
 " User defined mappings
 
