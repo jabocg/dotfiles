@@ -45,6 +45,9 @@ Plug 'rstacruz/vim-closer'
 " git diff markers
 Plug 'airblade/vim-gitgutter'
 
+" FZF
+Plug 'junegunn/fzf.vim'
+
 " enable FZF
 set rtp+=~/git/fzf/
 
