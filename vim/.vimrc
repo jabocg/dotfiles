@@ -1,5 +1,5 @@
-" put into home dir '~'
-
+" -----------------------------------------------------------------------------
+"  Using vim-plug, plugin definitions
 call plug#begin('~/.vim/plugged')
 
 " smarter substitute
@@ -54,6 +54,8 @@ set rtp+=~/git/fzf/
 call plug#end()
 
 filetype plugin indent on
+
+" -----------------------------------------------------------------------------
 
 " put leader at top of file, can be used by all now
 " make space do nothing to use as LEADER
@@ -256,6 +258,11 @@ nnoremap <LEADER>x "cdl"cpqcq
 " mapping for FZF buffers
 nnoremap <LEADER>ls :Buffers<CR>
 
+" go to last character in file
+nnoremap <LEADER>G G$
+
+" -----------------------------------------------------------------------------
+"  User-define Highlighting and colors
 " shamelessly stolen(permission) from Vim video, IBV2013 something
 
 " OR ELSE just the 81st column of wide lines...
@@ -333,4 +340,3 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
-
