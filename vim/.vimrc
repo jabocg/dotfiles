@@ -88,7 +88,6 @@ set tabstop=4           " set tab size to 4
 set autoindent      	" Keep indentation from previous line
 set smartindent     	" Automatically inserts indentation in some cases
 set cindent         	" Like smartindent, but stricter and more customizable
-set background=dark	" tells vim to use colors better suited for a dark background
 set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
 set foldmethod=syntax   " use syntactic folding
@@ -97,6 +96,7 @@ set foldcolumn=1        " enables the fold colun(shows folds) for width 1
 set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
+set background=dark	" tells vim to use colors better suited for a dark background
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -262,6 +262,9 @@ highlight SpellBad ctermbg=1 ctermfg=NONE
 highlight SpellCap ctermbg=4 ctermfg=NONE
 highlight SpellRare ctermbg=7 ctermfg=3*
 highlight SpellLocal ctermbg=6 ctermfg=0
+
+" set gui(gvim) background and foreground
+highlight Normal guifg=white guibg=black
 
 " -----------------------------------------------------------------------------
 
