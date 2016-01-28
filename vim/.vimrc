@@ -92,11 +92,18 @@ set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
 set foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
-set foldcolumn=1        " enables the fold colun(shows folds) for width 1
+set foldcolumn=1        " enables the fold column(shows folds) for width 1
 set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
-set background=dark	" tells vim to use colors better suited for a dark background
+
+" colorscheme stuff
+if &term == "builtin_gui" 
+    colorscheme morning
+else
+    colorscheme default " set terminals to default colorscheme
+    set background=dark	" tells vim to use colors better suited for a dark background
+endif
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -262,9 +269,6 @@ highlight SpellBad ctermbg=1 ctermfg=NONE
 highlight SpellCap ctermbg=4 ctermfg=NONE
 highlight SpellRare ctermbg=7 ctermfg=3*
 highlight SpellLocal ctermbg=6 ctermfg=0
-
-" set gui(gvim) background and foreground
-highlight Normal guifg=white guibg=black
 
 " -----------------------------------------------------------------------------
 
