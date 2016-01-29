@@ -75,7 +75,7 @@ else
     highlight ColorColumn ctermbg=235
 endif
 
-" highlight SpellBad ctermbg=1 ctermfg=NONE 
+highlight SpellBad ctermbg=52 ctermfg=NONE 
 " highlight SpellCap ctermbg=4 ctermfg=NONE
 " highlight SpellRare ctermbg=7 ctermfg=3*
 " highlight SpellLocal ctermbg=6 ctermfg=0
@@ -340,3 +340,16 @@ if !exists(":DiffOrig")
 		  \ | wincmd p | diffthis
 endif
 
+" script that appends to current buffer and demonstrates all the colors
+
+function! VimColTest() 
+    botright new
+    let num = 255
+    while num >= 0
+        exec 'hi col_'.num.' ctermbg='.num.' ctermfg=white'
+        exec 'syn match col_'.num.' "ctermbg='.num.':...." containedIn=ALL'
+        call append(0, 'ctermbg='.num.':....')
+        let num = num - 1
+    endwhile
+endfunction
+command! VimColTest call VimColTest()
