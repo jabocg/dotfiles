@@ -51,6 +51,9 @@ Plug 'junegunn/fzf.vim'
 " enable FZF
 set rtp+=~/git/fzf/
 
+" color schemes!
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()
 
 filetype plugin indent on
@@ -64,19 +67,21 @@ let mapleader="\<SPACE>"
 
 " colorscheme stuff
 if &term == "builtin_gui" 
-    colorscheme morning
+    colorscheme morning     " set GUI to morning colorscheme
 else
-    colorscheme default " set terminals to default colorscheme
-    set background=dark	" tells vim to use colors better suited for a dark background
+    colorscheme railscasts       " set terminals to delek colorscheme
+    set background=dark     " tells vim to use colors better suited for a dark background
+    " set color for 80+ char line
+    highlight ColorColumn ctermbg=232   
 endif
 
+" highlight SpellBad ctermbg=1 ctermfg=NONE 
+" highlight SpellCap ctermbg=4 ctermfg=NONE
+" highlight SpellRare ctermbg=7 ctermfg=3*
+" highlight SpellLocal ctermbg=6 ctermfg=0
+
 " highlighting for over 80 columns
-if &filetype == "java" || &filetype == "cpp" || &filetype == "python"
-    highlight ColorColumn ctermbg=232
-    set colorcolumn=80
-else
-    set colorcolumn=0
-endif
+au BufEnter *.java setlocal colorcolumn=80
 
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -270,10 +275,6 @@ nnoremap <LEADER>ls :Buffers<CR>
 " set spell checking items
 
 setlocal spell spelllang=en_us
-highlight SpellBad ctermbg=1 ctermfg=NONE 
-highlight SpellCap ctermbg=4 ctermfg=NONE
-highlight SpellRare ctermbg=7 ctermfg=3*
-highlight SpellLocal ctermbg=6 ctermfg=0
 
 " -----------------------------------------------------------------------------
 
