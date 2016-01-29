@@ -72,7 +72,7 @@ else
     colorscheme railscasts       " set terminals to delek colorscheme
     set background=dark     " tells vim to use colors better suited for a dark background
     " set color for 80+ char line
-    highlight ColorColumn ctermbg=232   
+    highlight ColorColumn ctermbg=235
 endif
 
 " highlight SpellBad ctermbg=1 ctermfg=NONE 
