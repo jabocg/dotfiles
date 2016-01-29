@@ -1,5 +1,5 @@
-" put into home dir '~'
-
+" -----------------------------------------------------------------------------
+"  using vim-plug, plugin stuff goes here
 call plug#begin('~/.vim/plugged')
 
 " smarter substitute
@@ -55,10 +55,29 @@ call plug#end()
 
 filetype plugin indent on
 
+" -----------------------------------------------------------------------------
+
 " put leader at top of file, can be used by all now
 " make space do nothing to use as LEADER
 nnoremap <SPACE> <NOP>
 let mapleader="\<SPACE>"
+
+" colorscheme stuff
+if &term == "builtin_gui" 
+    colorscheme morning
+else
+    colorscheme default " set terminals to default colorscheme
+    set background=dark	" tells vim to use colors better suited for a dark background
+endif
+
+" highlighting for over 80 columns
+if &filetype == "java" || &filetype == "cpp" || &filetype == "python"
+    highlight ColorColumn ctermbg=232
+    set colorcolumn=80
+else
+    set colorcolumn=0
+endif
+
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -96,14 +115,6 @@ set foldcolumn=1        " enables the fold column(shows folds) for width 1
 set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
-
-" colorscheme stuff
-if &term == "builtin_gui" 
-    colorscheme morning
-else
-    colorscheme default " set terminals to default colorscheme
-    set background=dark	" tells vim to use colors better suited for a dark background
-endif
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -255,12 +266,6 @@ nnoremap <LEADER>x "cdl"cpqcq
 
 " mapping for FZF buffers
 nnoremap <LEADER>ls :Buffers<CR>
-
-" shamelessly stolen(permission) from Vim video, IBV2013 something
-
-" OR ELSE just the 81st column of wide lines...
-highlight ColorColumn ctermbg=8
-call matchadd('ColorColumn', '\%81v', 100)
 
 " set spell checking items
 
