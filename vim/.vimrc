@@ -1,9 +1,5 @@
 " -----------------------------------------------------------------------------
-<<<<<<< HEAD
 "  Using vim-plug, plugin definitions
-=======
-"  using vim-plug, plugin stuff goes here
->>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
 call plug#begin('~/.vim/plugged')
 
 " smarter substitute
@@ -277,20 +273,9 @@ nnoremap <LEADER>x "cdl"cpqcq
 " mapping for FZF buffers
 nnoremap <LEADER>ls :Buffers<CR>
 
-<<<<<<< HEAD
 " go to last character in file
 nnoremap <LEADER>G G$
 
-" -----------------------------------------------------------------------------
-"  User-define Highlighting and colors
-" shamelessly stolen(permission) from Vim video, IBV2013 something
-
-" OR ELSE just the 81st column of wide lines...
-highlight ColorColumn ctermbg=8
-call matchadd('ColorColumn', '\%81v', 100)
-
-=======
->>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
 " set spell checking items
 
 setlocal spell spelllang=en_us
@@ -358,8 +343,6 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
-<<<<<<< HEAD
-=======
 
 " script that appends to current buffer and demonstrates all the colors
 
@@ -374,4 +357,3 @@ function! VimColorTest()
     endwhile
 endfunction
 command! VimColTest call VimColTest()
->>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
