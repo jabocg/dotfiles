@@ -76,9 +76,9 @@ else
 endif
 
 highlight SpellBad ctermbg=52 ctermfg=NONE 
-" highlight SpellCap ctermbg=4 ctermfg=NONE
-" highlight SpellRare ctermbg=7 ctermfg=3*
-" highlight SpellLocal ctermbg=6 ctermfg=0
+highlight SpellCap ctermbg=17 ctermfg=NONE
+highlight SpellRare ctermbg=237 ctermfg=NONE
+highlight SpellLocal ctermbg=26 ctermfg=NONE
 
 " highlighting for over 80 columns
 au BufEnter *.java setlocal colorcolumn=80
