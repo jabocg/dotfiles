@@ -1,5 +1,9 @@
 " -----------------------------------------------------------------------------
+<<<<<<< HEAD
 "  Using vim-plug, plugin definitions
+=======
+"  using vim-plug, plugin stuff goes here
+>>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
 call plug#begin('~/.vim/plugged')
 
 " smarter substitute
@@ -51,6 +55,9 @@ Plug 'junegunn/fzf.vim'
 " enable FZF
 set rtp+=~/git/fzf/
 
+" color schemes!
+Plug 'flazz/vim-colorschemes'
+
 call plug#end()
 
 filetype plugin indent on
@@ -61,6 +68,26 @@ filetype plugin indent on
 " make space do nothing to use as LEADER
 nnoremap <SPACE> <NOP>
 let mapleader="\<SPACE>"
+
+" colorscheme stuff
+if &term == "builtin_gui" 
+    colorscheme morning     " set GUI to morning colorscheme
+else
+    colorscheme railscasts       " set terminals to delek colorscheme
+    set background=dark     " tells vim to use colors better suited for a dark background
+    " set color for 80+ char line
+    highlight ColorColumn ctermbg=235
+endif
+
+highlight SpellBad ctermbg=52 ctermfg=NONE 
+highlight SpellCap ctermbg=17 ctermfg=NONE
+highlight SpellRare ctermbg=237 ctermfg=NONE
+highlight SpellLocal ctermbg=26 ctermfg=NONE
+
+" highlighting for over 80 columns
+au BufRead,BufNewFile, *.java setlocal colorcolumn=80
+au BufRead,BufNewFile, *.java setlocal textwidth=80
+
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -98,14 +125,6 @@ set foldcolumn=1        " enables the fold column(shows folds) for width 1
 set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
-
-" colorscheme stuff
-if &term == "builtin_gui" 
-    colorscheme morning
-else
-    colorscheme default " set terminals to default colorscheme
-    set background=dark	" tells vim to use colors better suited for a dark background
-endif
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -258,6 +277,7 @@ nnoremap <LEADER>x "cdl"cpqcq
 " mapping for FZF buffers
 nnoremap <LEADER>ls :Buffers<CR>
 
+<<<<<<< HEAD
 " go to last character in file
 nnoremap <LEADER>G G$
 
@@ -269,13 +289,11 @@ nnoremap <LEADER>G G$
 highlight ColorColumn ctermbg=8
 call matchadd('ColorColumn', '\%81v', 100)
 
+=======
+>>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
 " set spell checking items
 
 setlocal spell spelllang=en_us
-highlight SpellBad ctermbg=1 ctermfg=NONE 
-highlight SpellCap ctermbg=4 ctermfg=NONE
-highlight SpellRare ctermbg=7 ctermfg=3*
-highlight SpellLocal ctermbg=6 ctermfg=0
 
 " -----------------------------------------------------------------------------
 
@@ -340,3 +358,20 @@ if !exists(":DiffOrig")
   command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
 		  \ | wincmd p | diffthis
 endif
+<<<<<<< HEAD
+=======
+
+" script that appends to current buffer and demonstrates all the colors
+
+function! VimColorTest() 
+    botright new
+    let num = 255
+    while num >= 0
+        exec 'hi col_'.num.' ctermbg='.num.' ctermfg=white'
+        exec 'syn match col_'.num.' "ctermbg='.num.':...." containedIn=ALL'
+        call append(0, 'ctermbg='.num.':....')
+        let num = num - 1
+    endwhile
+endfunction
+command! VimColTest call VimColTest()
+>>>>>>> c1f2b833c159b89fdc41970d89b499b225828393
