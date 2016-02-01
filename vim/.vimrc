@@ -81,7 +81,8 @@ highlight SpellRare ctermbg=237 ctermfg=NONE
 highlight SpellLocal ctermbg=26 ctermfg=NONE
 
 " highlighting for over 80 columns
-au BufEnter *.java setlocal colorcolumn=80
+au BufRead,BufNewFile, *.java setlocal colorcolumn=80
+au BufRead,BufNewFile, *.java setlocal textwidth=80
 
 
 " When started as "evim", evim.vim will already have done these settings.
@@ -342,7 +343,7 @@ endif
 
 " script that appends to current buffer and demonstrates all the colors
 
-function! VimColTest() 
+function! VimColorTest() 
     botright new
     let num = 255
     while num >= 0
