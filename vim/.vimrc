@@ -246,9 +246,11 @@ nnoremap ; :
 command Q execute ":q!"
 cmap qq q!
 
-" ctrl-h and ctrl-l call sideways commands
+" sideways command mappings
 nnoremap <C-H> :SidewaysLeft<CR>
 nnoremap <C-L> :SidewaysRight<CR>
+nnoremap <LEADER>h :SidewaysJumpLeft<CR>
+nnoremap <LEADER>l :SidewaysJumpRight<CR>
 
 " mapping for quick lsing
 cmap ;ls ls<CR>:b 
