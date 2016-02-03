@@ -278,7 +278,7 @@ nnoremap <LEADER>G G$
 
 " set spell checking items
 
-setlocal spell spelllang=en_us
+set spell spelllang=en_us
 
 " -----------------------------------------------------------------------------
 
