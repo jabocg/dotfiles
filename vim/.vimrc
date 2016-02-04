@@ -58,13 +58,9 @@ call plug#end()
 
 filetype plugin indent on
 
+
 " -----------------------------------------------------------------------------
-
-" put leader at top of file, can be used by all now
-" make space do nothing to use as LEADER
-nnoremap <SPACE> <NOP>
-let mapleader="\<SPACE>"
-
+"
 " colorscheme stuff
 if &term == "builtin_gui" 
     colorscheme morning     " set GUI to morning colorscheme
@@ -79,11 +75,19 @@ highlight SpellBad ctermbg=52 ctermfg=NONE
 highlight SpellCap ctermbg=17 ctermfg=NONE
 highlight SpellRare ctermbg=237 ctermfg=NONE
 highlight SpellLocal ctermbg=26 ctermfg=NONE
+" highlight Search ctermbg=226 ctermfg=232
+highlight Search ctermbg=229 ctermfg=0
 
 " highlighting for over 80 columns
 au BufRead,BufNewFile, *.java setlocal colorcolumn=80
 au BufRead,BufNewFile, *.java setlocal textwidth=80
 
+" -----------------------------------------------------------------------------
+"
+" put leader at top of file, can be used by all now
+" make space do nothing to use as LEADER
+nnoremap <SPACE> <NOP>
+let mapleader="\<SPACE>"
 
 " When started as "evim", evim.vim will already have done these settings.
 if v:progname =~? "evim"
@@ -358,4 +362,4 @@ function! VimColorTest()
         let num = num - 1
     endwhile
 endfunction
-command! VimColTest call VimColTest()
+command! VimColorTest call VimColorTest()
