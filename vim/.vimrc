@@ -54,6 +54,9 @@ set rtp+=~/git/fzf/
 " color schemes!
 Plug 'flazz/vim-colorschemes'
 
+" Unicode characters done better
+Plug 'chrisbra/unicode.vim'
+
 call plug#end()
 
 filetype plugin indent on
@@ -214,18 +217,6 @@ nnoremap <LEADER>y :.,$y<CR>
 " space Y yanks entire file
 nnoremap <LEADER>Y :%y<CR>
 
-" ctrl-j in insert mode goes down one line
-inoremap <C-J> <C-O>j
-
-" ctrl-k in insert mode goes up one line
-inoremap <C-K> <C-O>k
-
-" ctrl-h in insert mode goes to beginning of line
-inoremap <C-H> <C-O>^
-
-" ctrl-l in insert mode goes to end of line 
-inoremap <C-L> <C-O>$
-
 " mapping Y to yank till end of line
 map Y y$
 
@@ -239,10 +230,6 @@ nnoremap x "_x
 nnoremap <C-E> 3<C-E>
 nnoremap <C-Y> 3<C-Y>
 
-" C-j and C-k move lines up or down
-nnoremap <C-J> "ldd"lp
-nnoremap <C-K> "lddkk"lp
-
 " remapping : to ;
 nnoremap ; :
 
@@ -251,8 +238,8 @@ command Q execute ":q!"
 cmap qq q!
 
 " sideways command mappings
-nnoremap <C-H> :SidewaysLeft<CR>
-nnoremap <C-L> :SidewaysRight<CR>
+nnoremap <LEADER>H :SidewaysLeft<CR>
+nnoremap <LEADER>L :SidewaysRight<CR>
 nnoremap <LEADER>h :SidewaysJumpLeft<CR>
 nnoremap <LEADER>l :SidewaysJumpRight<CR>
 
