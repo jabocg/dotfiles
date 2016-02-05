@@ -254,10 +254,6 @@ nnoremap <LEADER>cc :cclose<CR>
 " mapping to clear(delete) the quickfix expression
 nnoremap <LEADER>cd :cexpr []<CR>
 
-" make n and N more useful
-nnoremap n nzz
-nnoremap N Nzz
-
 " mapping to delete a character, then place if after the current character
 "   essentially switching the two and clearing the register
 " will not work on last character in line
