@@ -55,3 +55,6 @@ alias tree='tree -I .git -C'
 
 # edit vimrc quickly
 alias vvimrc='vim ~/.vimrc'
+
+# ed alias, possibly useless but wfc
+alias ed='ed -p:'
