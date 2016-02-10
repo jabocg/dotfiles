@@ -129,7 +129,6 @@ set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
 set splitright          " create vertical splits to the right
-set splitbelow          " create horizontal splits below
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
