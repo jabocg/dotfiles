@@ -250,10 +250,10 @@ cmap ;ls ls<CR>:b
 " mappings for opening, closing, and clearing quickfix and location list windows
 nnoremap <LEADER>lo :lopen<CR>
 nnoremap <LEADER>lc :lclose<CR>
+nnoremap <LEADER>ld :LocationListClear<CR>
 nnoremap <LEADER>co :copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
-" mapping to clear(delete) the quickfix expression
-nnoremap <LEADER>cd :cexpr []<CR>
+nnoremap <LEADER>cd :QuikFixclear<CR>
 
 " mapping to delete a character, then place if after the current character
 "   essentially switching the two and clearing the register

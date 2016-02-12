@@ -6,3 +6,5 @@ nnoremap <silent> <buffer> <LEADER>i :JavaImport<cr>
 nnoremap <silent> <buffer> <LEADER>d :JavaDocSearch -x declarations<cr>
 " perform context sensitive search for element under cursor
 nnoremap <silent> <buffer> <LEADER>s :JavaSearchContext<cr>
+" user command for :ProjectTodo
+nnoremap <LEADER>todo :ProjectTodo<CR>
