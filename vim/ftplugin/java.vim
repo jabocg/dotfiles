@@ -8,3 +8,7 @@ nnoremap <silent> <buffer> <LEADER>d :JavaDocSearch -x declarations<cr>
 nnoremap <silent> <buffer> <LEADER>s :JavaSearchContext<cr>
 " user command for :ProjectTodo
 nnoremap <LEADER>todo :ProjectTodo<CR>
+
+" mappings to split and join string lines
+nnoremap <LEADER>sp a"<CR>+ "<ESC>
+nnoremap <LEADER>jo J^2f"5x
