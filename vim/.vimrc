@@ -253,7 +253,7 @@ nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>ld :LocationListClear<CR>
 nnoremap <LEADER>co :copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
-nnoremap <LEADER>cd :QuikFixclear<CR>
+nnoremap <LEADER>cd :QuickFixclear<CR>
 
 " mapping to delete a character, then place if after the current character
 "   essentially switching the two and clearing the register
