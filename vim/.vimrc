@@ -57,6 +57,9 @@ Plug 'flazz/vim-colorschemes'
 " Unicode characters done better
 Plug 'chrisbra/unicode.vim'
 
+" Python PEP8
+Plug 'nvie/vim-flake8'
+
 call plug#end()
 
 filetype plugin indent on
@@ -81,9 +84,9 @@ highlight SpellLocal ctermbg=26 ctermfg=NONE
 " highlight Search ctermbg=226 ctermfg=232
 highlight Search ctermbg=229 ctermfg=0
 
-" highlighting for over 80 columns
-au BufRead,BufNewFile, *.java setlocal colorcolumn=80
-au BufRead,BufNewFile, *.java setlocal textwidth=80
+" highlighting for over 79 columns
+au BufRead,BufNewFile, *.java,*.py,*.c,*.cpp setlocal colorcolumn=79
+au BufRead,BufNewFile, *.java,*.py,*.c,*.cpp setlocal textwidth=79
 
 " -----------------------------------------------------------------------------
 "
@@ -129,6 +132,7 @@ set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
 set splitright          " create vertical splits to the right
+set encoding=utf-8      " setting to utf-8 encoding
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -165,6 +169,16 @@ au FileType crontab setlocal bkc=yes
 
 " set default edit option for FZF :Buffers command
 let g:EclimBuffersDefaultAction = 'edit'
+"
+"python with virtualenv support
+py << EOF
+import os
+import sys
+if 'VIRTUAL_ENV' in os.environ:
+  project_base_dir = os.environ['VIRTUAL_ENV']
+  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
+  execfile(activate_this, dict(__file__=activate_this))
+EOF
 
 " -----------------------------------------------------------------------------
 " User defined mappings
@@ -253,7 +267,7 @@ nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>ld :LocationListClear<CR>
 nnoremap <LEADER>co :copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
-nnoremap <LEADER>cd :QuickFixclear<CR>
+nnoremap <LEADER>cd :QuickFixClear<CR>
 
 " mapping to delete a character, then place if after the current character
 "   essentially switching the two and clearing the register
@@ -347,3 +361,11 @@ function! VimColorTest()
     endwhile
 endfunction
 command! VimColorTest call VimColorTest()
+
+function! Python(...)
+    execute "!python % " . join(a:000, " ")
+endfunction
+
+command! -nargs=* Py call Python(<f-args>)
+
+command! Flake8 call Flake8()
