@@ -12,3 +12,6 @@ nnoremap <LEADER>todo :ProjectTodo<CR>
 " mappings to split and join string lines
 nnoremap <LEADER>sp a"<CR>+ "<ESC>
 nnoremap <LEADER>jo J^2f"5x
+
+setlocal colorcolumn=80
+setlocal textwidth=80

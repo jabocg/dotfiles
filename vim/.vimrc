@@ -60,6 +60,9 @@ Plug 'chrisbra/unicode.vim'
 " Python PEP8
 Plug 'nvie/vim-flake8'
 
+" Python indenting
+Plug 'vim-scripts/indentpython.vim'
+
 call plug#end()
 
 filetype plugin indent on
