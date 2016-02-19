@@ -61,7 +61,10 @@ Plug 'chrisbra/unicode.vim'
 Plug 'nvie/vim-flake8'
 
 " Python indenting
-Plug 'vim-scripts/indentpython.vim'
+Plug 'hynek/vim-python-pep8-indent'
+
+" python virtual environment 
+Plug 'jmcantrell/vim-virtualenv'
 
 call plug#end()
 
@@ -87,9 +90,6 @@ highlight SpellLocal ctermbg=26 ctermfg=NONE
 " highlight Search ctermbg=226 ctermfg=232
 highlight Search ctermbg=229 ctermfg=0
 
-" highlighting for over 79 columns
-au BufRead,BufNewFile, *.java,*.py,*.c,*.cpp setlocal colorcolumn=79
-au BufRead,BufNewFile, *.java,*.py,*.c,*.cpp setlocal textwidth=79
 
 " -----------------------------------------------------------------------------
 "
@@ -173,15 +173,6 @@ au FileType crontab setlocal bkc=yes
 " set default edit option for FZF :Buffers command
 let g:EclimBuffersDefaultAction = 'edit'
 "
-"python with virtualenv support
-py << EOF
-import os
-import sys
-if 'VIRTUAL_ENV' in os.environ:
-  project_base_dir = os.environ['VIRTUAL_ENV']
-  activate_this = os.path.join(project_base_dir, 'bin/activate_this.py')
-  execfile(activate_this, dict(__file__=activate_this))
-EOF
 
 " -----------------------------------------------------------------------------
 " User defined mappings

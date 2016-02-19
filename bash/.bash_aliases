@@ -6,8 +6,6 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias ls="ls -axhlG"
     alias grep="grep --color=always"
     alias tree="tree -C"
-    alias pve2="source ~/.venv/py2/bin/activate"
-    alias pve3="source ~/.venv/py3/bin/activate"
     alias vbashrc="vim ~/.bash_profile"
 
     # This check will set the alias if you are trying to run launchctl inside screen or tmux
@@ -26,8 +24,6 @@ else # others(Fedora? nothing else I really run is used)
     # Alias to rename files with
     alias prename="/home/jabocg/bin/prename.pl"
 
-    alias vvimrc="vim ~/.vimrc"
-
     # Lenovo battery stuff
     if [ -e /sys/class/power_supply/BAT1 ] ; then
         BATTERY="/sys/class/power_supply/BAT1"
@@ -41,6 +37,8 @@ else # others(Fedora? nothing else I really run is used)
 fi
 
 
+alias pve2="source ~/.venv/py2/bin/activate"
+alias pve3="source ~/.venv/py3/bin/activate"
 
 alias isodate="date +%F"
 
