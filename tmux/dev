@@ -1,20 +1,16 @@
 #!/bin/bash
 # script to run several tmux windows for easy access
 
-if [ $# == 0 ] ; then
-    echo "please provide at least a name"
-    echo " dev <name> <dir>"
+date=$(date "+%F")
+tmux new-session -d -s $date
+tmux rename-window -t 0 term
+if [ ! $1 == '' ] ; then
+    tmux new-window -n devel -c $1
 else
-    tmux new-session -d -s $1
-    tmux rename-window -t 0 term
-    if [ ! $2 == '' ] ; then
-        tmux new-window -n devel -c $2
-    else
-        tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/
-    fi
-    tmux new-window -n doc -c ~/SAIFE/ 
-    tmux swap-window -s 1 -t 0
-    tmux swap-window -s 2 -t 1
-    tmux select-window -t 0
-    tmux attach-session -t $1
+    tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SAIFENSDemo/
 fi
+tmux new-window -n doc -c ~/SAIFE/ 
+tmux swap-window -s 1 -t 0
+tmux swap-window -s 2 -t 1
+tmux select-window -t 0
+tmux attach-session -t $date
