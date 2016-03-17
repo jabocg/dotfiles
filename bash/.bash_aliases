@@ -6,6 +6,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     alias ls="ls -axhlG"
     alias grep="grep --color=always"
     alias tree="tree -C"
+    alias vim="mvim -v"
     alias vbashrc="vim ~/.bash_profile"
 
     # This check will set the alias if you are trying to run launchctl inside screen or tmux
