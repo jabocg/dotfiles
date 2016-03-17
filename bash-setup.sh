@@ -1,14 +1,25 @@
 #!/bin/bash
 
 # if .bashrc exists, make a backup and then create the symlink
-if [ -e ~/.bashrc ] ; then
-    echo "Backing up .bashrc"
-    cp ~/.bashrc ~/.bashrc.bak
-    echo "Removing .bashrc"
-    rm ~/.bashrc
+if [ "$(uname)" == "Darwin" ]; then # Mac OS
+    if [ -e ~/.bash_profile ] ; then
+        echo "Backing up .bash_profile"
+        cp ~/.bash_profile ~/.bash_profile.bak
+        echo "Removing .bash_profile"
+        rm ~/.bash_profile
+    fi
+    echo "Creating a symlink to .bash_profile"
+    ln -s ~/git/dotfiles/bash/.bash_profile ~/.bash_profile
+else
+    if [ -e ~/.bashrc ] ; then
+        echo "Backing up .bashrc"
+        cp ~/.bashrc ~/.bashrc.bak
+        echo "Removing .bashrc"
+        rm ~/.bashrc
+    fi
+    echo "Creating a symlink to .bashrc"
+    ln -s ~/git/dotfiles/bash/.bashrc ~/.bashrc
 fi
-echo "Creating a symlink to .bashrc"
-ln -s ~/git/dotfiles/bash/.bashrc ~/.bashrc
 
 # if .bash_aliases exists, make a backup and then create the symlink
 if [ -e ~/.bash_aliases ] ; then
@@ -30,6 +41,8 @@ fi
 echo "Creating a symlink to .dircolors"
 ln -s ~/git/dotfiles/bash/.dircolors ~/.dircolors
 
+# make bin dir if needed
+mkdir -p ~/bin/
 # move dev into ~/bin
 if [ -e ~/bin/dev ] ; then
     echo "Backing up dev"
