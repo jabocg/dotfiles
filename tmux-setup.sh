@@ -1,5 +1,10 @@
 #!/bin/bash
 
+# install
+brew install tmux
+apt-get install tmux
+dnf install tmux
+
 # if .tmux.conf exists, back up
 if [ -e ~/.tmux.conf ] ; then
     echo "Backing up .tmux.conf"
