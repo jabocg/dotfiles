@@ -105,8 +105,6 @@ if [ -f `which powerline-daemon` ]; then
   if [ $(uname) != 'Darwin' ] ; then
       . /usr/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
   else
-      # keep top one for old mac compatibility
-      . /Library/Python/2.7/site-packages/powerline/bindings/bash/powerline.sh
       . /usr/local/lib/python2.7/site-packages/powerline/bindings/bash/powerline.sh
   fi
 fi
