@@ -9,7 +9,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
         rm ~/.bash_profile
     fi
     echo "Creating a symlink to .bash_profile"
-    ln -s ~/git/dotfiles/bash/.bash_profile ~/.bash_profile
+    ln -s ~/git/dotfiles/bash/.bashrc ~/.bash_profile
 else
     if [ -e ~/.bashrc ] ; then
         echo "Backing up .bashrc"
