@@ -257,10 +257,10 @@ nnoremap <LEADER>l :SidewaysJumpRight<CR>
 cmap ;ls ls<CR>:b 
 
 " mappings for opening, closing, and clearing quickfix and location list windows
-nnoremap <LEADER>lo :lopen<CR>
+nnoremap <LEADER>lo :botright lopen<CR>
 nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>ld :LocationListClear<CR>
-nnoremap <LEADER>co :copen<CR>
+nnoremap <LEADER>co :botright copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cd :QuickFixClear<CR>
 
