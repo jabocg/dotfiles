@@ -50,6 +50,7 @@ if [ -e ~/bin/dev ] ; then
     echo "Removing dev"
     rm ~/bin/dev
 fi
+
 echo "Creating a symlink to dev"
-ln -s ~/git/dotfiles/bash/dev ~/bin/dev
+ln -s ~/git/dotfiles/tmux/dev ~/bin/dev
 
