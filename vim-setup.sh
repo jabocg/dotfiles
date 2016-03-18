@@ -8,6 +8,10 @@
 # make the directories if needed
 mkdir -p ~/.vim/ftplugin
 
+# make backup and undo directories
+mkdir -p ~/.vim/backup/
+mkdir -p ~/.vim/undo/
+
 # make symlink for .vimrc
 if [ -e ~/.vimrc ] ; then
     echo ".vimrc exists, backing up"
@@ -21,6 +25,8 @@ ln -s ~/git/dotfiles/vim/.vimrc ~/.vimrc
 echo "cloning Vundle"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
 
+# install cmake
+brew install cmake || sudo dnf install cmake || sudo apt-get install cmake
 # run vim and install plugins
 vim +PlugInstall 
 
