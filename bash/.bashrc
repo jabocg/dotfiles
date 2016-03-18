@@ -100,7 +100,7 @@ if [ -f `which powerline-daemon` ]; then
 fi
 
 # add ~/bin to path
-export PATH=$PATH:~/bin/
+export PATH=$PATH:~/bin
 
 # stuff for mac
 if [ $(uname) == 'Darwin' ] ; then
