@@ -9,8 +9,6 @@ if [ ! $1 == '' ] ; then
 else
     tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SaifeMessageDemo/
 fi
-tmux new-window -n doc -c ~/SAIFE/ 
 tmux swap-window -s 1 -t 0
-tmux swap-window -s 2 -t 1
 tmux select-window -t 0
 tmux attach-session -t $date
