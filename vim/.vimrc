@@ -206,9 +206,6 @@ function Wraptog()
 endfunction
 nnoremap <LEADER><BS> :call Wraptog()<CR>
 
-" ctrl backspace deletes previous word in insert mode
-inoremap <C-BS> <C-W>
-
 " tab goes to the next window
 nnoremap <TAB> <C-W>w
 
@@ -243,10 +240,6 @@ nnoremap <C-Y> 3<C-Y>
 " remapping : to ;
 nnoremap ; :
 
-" adding :Q and command to force quit
-command Q execute ":q!"
-cmap qq q!
-
 " sideways command mappings
 nnoremap <LEADER>H :SidewaysLeft<CR>
 nnoremap <LEADER>L :SidewaysRight<CR>
@@ -274,6 +267,10 @@ nnoremap <LEADER>ls :Buffers<CR>
 
 " go to last character in file
 nnoremap <LEADER>G G$
+
+" when lines are selected(visual), copy, comment, and paste
+xnoremap gC ygvgcP
+
 
 " set spell checking items
 
