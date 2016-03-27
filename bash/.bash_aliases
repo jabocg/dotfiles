@@ -3,7 +3,7 @@
 
 # OS biased aliases
 if [ "$(uname)" == "Darwin" ]; then # Mac OS
-    alias ls="ls -axhlG"
+    alias ls="ls -axhlFG"
     alias grep="grep --color=always"
     alias tree="tree -C"
     alias vim="mvim -v"
@@ -16,7 +16,7 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
     fi
 
 else # others(Fedora? nothing else I really run is used)
-    alias ls="ls -hal --color=auto --time-style=long-iso"
+    alias ls="ls -haFl --color=auto --time-style=long-iso"
     alias lsd="ls -hald */ .*/"
 
     # alias to ssh into pi, should change IP as needed
@@ -41,7 +41,7 @@ fi
 alias pve2="source ~/.venv/py2/bin/activate"
 alias pve3="source ~/.venv/py3/bin/activate"
 
-alias isodate="date +%F"
+alias isodate="date +%f"
 
 alias vimnote="vim notes_$(isodate)"
 alias vimnoted="vim notes_$(isodate).md"
@@ -50,7 +50,7 @@ alias vimnoted="vim notes_$(isodate).md"
 alias nuke='rm -rf'
 
 # telling tree command to ignore .git structures
-alias tree='tree -I .git -C'
+alias tree='tree -i .git -c'
 
 # edit vimrc quickly
 alias vvimrc='vim ~/.vimrc'
