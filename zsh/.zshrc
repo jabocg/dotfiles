@@ -83,9 +83,6 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
-# load aliases
-. ~/.zsh_aliases
-
 # powerline setup
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
@@ -113,3 +110,51 @@ fd() {
 # added alias with cd start
 alias cdf='fd'
 
+# ----------------------------------------------------------------------------
+# aliases 
+# ----------------------------------------------------------------------------
+
+
+if [[ `uname` == "Darwin" ]] ; then
+    # Mac stuff
+    #--------------------------------------------------------------------------
+    # ls all, long, readable, colored, special markers
+    # requires: coreutils
+    alias ls="gls -haFl --color=auto --time-style=long-iso"
+
+    # add color to grep and tree
+    alias grep="grep --color=always"
+
+    # using macvim
+    alias vim="mvim -v"
+
+    # prevent launchctl from running in tmux
+    if [[ $TERM == "screen-256color" ]] ; then
+        alias launchctl="echo 'DO NOT RUN THIS INSIDE OF SCREEN OR TMUX'"
+    fi
+else
+    # not Mac stuff
+
+    # ls all, long, readable, special characters, color, iso date
+    alias ls="ls -haFl --color=auto --time-style=long-iso"
+fi
+
+# python virtual evnironment
+alias pve2="source ~/.venv/py2/bin/activate"
+alias pve3="source ~/.venv/py3/bin/activate"
+
+# date in ISO8601 format
+alias isodate="date +%f"
+
+# vim notes with ISO date
+alias vimnote="vim notes_$(isodate)"
+alias vimnoted="vim notes_$(isodate).md"
+
+# nuke alias, because funtimes
+alias nuke='rm -rf'
+
+# tree colored, ginore git
+alias tree='tree -i .git -c'
+
+# ed alias, possibly useless but wfc
+alias ed='ed -p:'
