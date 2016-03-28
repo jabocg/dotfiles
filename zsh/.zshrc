@@ -83,7 +83,10 @@ fi
 # alias zshconfig="mate ~/.zshrc"
 # alias ohmyzsh="mate ~/.oh-my-zsh"
 
+export TERM="xterm-256color"
+
 # powerline setup
+export XDG_CONFIG_HOME=/Users/jacob.gersztyn/.config/
 . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # fzf integration
@@ -154,7 +157,7 @@ alias vimnoted="vim notes_$(isodate).md"
 alias nuke='rm -rf'
 
 # tree colored, ginore git
-alias tree='tree -i .git -c'
+alias tree='tree -I .git -c'
 
 # ed alias, possibly useless but wfc
 alias ed='ed -p:'

@@ -24,3 +24,7 @@ pip install powerline-status
 git clone git@home.github.com:powerline/fonts ~/git/powerline-fonts
 . ~/git/powerline-fonts/install.sh
 echo "install the fonts from ~/git/powerline-fonts"
+
+# install configs
+mkdir -p ~/.config/powerline/
+ln -s ~/git/dotfiles/powerline/ ~/.config/powerline/
