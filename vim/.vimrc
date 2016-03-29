@@ -137,6 +137,7 @@ set wildmode=longest:full,full   " longest match, then wildmenu
 set splitright          " create vertical splits to the right
 set encoding=utf-8      " setting to utf-8 encoding
 set colorcolumn=80      " set default color column
+set t_ut=               " disable background color erase
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup

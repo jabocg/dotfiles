@@ -1,5 +1,9 @@
 # Path to your oh-my-zsh installation.
-export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
+if [[ $(uname) == "Darwin" ]] ; then
+    export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
+else
+    export ZSH=/home/jabocg/.oh-my-zsh
+fi
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -53,7 +57,11 @@ plugins=(git aws brew gem httpie python web-search wd)
 
 # User configuration
 
-export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/git/fzf/bin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin"
+if [[ $(uname) == "Darwin" ]] ; then
+    export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/git/fzf/bin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin"
+else
+  export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/jabocg/bin:/home/jabocg/git/fzf/bin:/home/jabocg/.local/bin:/home/jabocg/bin:/home/jabocg/bin:/home/jabocg/bin:/home/jabocg/.local/bin:/home/jabocg/bin"
+fi
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -86,8 +94,13 @@ fi
 export TERM="xterm-256color"
 
 # powerline setup
-export XDG_CONFIG_HOME=/Users/jacob.gersztyn/.config/
-. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+if [[ $(uname) != 'Darwin' ]] ; then
+    XDG_CONFIG_HOME=/Users/jacob.gersztyn/.config/
+  . /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+else
+    XDG_CONFIG_HOME=/home/jabocg/.config/
+  . /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 # fzf integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
