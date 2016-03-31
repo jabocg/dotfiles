@@ -158,6 +158,8 @@ endif
 let g:EclimCompletionMethod = 'omnifunc'
 " close the autocomplete preview window after leaving insert mode
 let g:ycm_autoclose_preview_window_after_insertion = 1
+" disable eclim automatic logging
+let g:EclimLoggingDisabled = 1
 
 " force .md files to be treated as a markdown
 autocmd BufNewFile,BufRead *.md set filetype=markdown
