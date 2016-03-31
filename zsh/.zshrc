@@ -107,15 +107,6 @@ fi
 
 # add some fzf functions
 
-# fzim - call to call fzf, select file(s), edit
-# will close on ESC out of fzf
-fzim() {
-    local files
-    files=$(fzf-tmux -m) && echo "vim $files " && vim $files
-}
-# add alias with vim start
-alias vimf='fzim'
-
 # fd - call fzf, change to directory of selected file
 fd() {
   local dir
