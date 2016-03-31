@@ -174,3 +174,6 @@ alias tree='tree -I .git -c'
 
 # ed alias, possibly useless but wfc
 alias ed='ed -p:'
+
+# alias to shutdown elcim
+alias qeq='vim +ShutdownEclim +qa'
