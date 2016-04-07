@@ -15,3 +15,14 @@ nnoremap <LEADER>jo J^2f"5x
 
 setlocal colorcolumn=80
 setlocal textwidth=80
+
+" create a catch block for the specified exception, creating a variable for
+" the message as well
+function! CatchException(exception)
+    let exname = substitute(a:exception, "[a-z]", "", "g")
+    let exname = tolower(exname)
+    " let comm = "normal! o} catch (final " . a:exception . " " . exname . ") {"
+    " execute comm
+    execute "normal! o} catch (final " . a:exception . " " . exname . ") {\<CR>final String m = " . exname . ".getMessage();\<ESC>"
+endfunc
+command! -nargs=1 JavaCatch call CatchException(<f-args>)
