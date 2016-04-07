@@ -274,6 +274,8 @@ nnoremap <LEADER>G G$
 " when lines are selected(visual), copy, comment, and paste
 xnoremap gC ygvgcP
 
+" automatically search for whole, exclusive word
+nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 
 " set spell checking items
 
