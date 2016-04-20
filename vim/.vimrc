@@ -138,6 +138,7 @@ set splitright          " create vertical splits to the right
 set encoding=utf-8      " setting to utf-8 encoding
 set colorcolumn=80      " set default color column
 set t_ut=               " disable background color erase
+set cursorline  " show line cursor is on
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
