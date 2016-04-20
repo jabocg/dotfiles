@@ -277,6 +277,10 @@ xnoremap gC ygvgcP
 " automatically search for whole, exclusive word
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 
+" remapping , to ; and <LEADER>, to ,
+nnoremap <LEADER>, ,
+nnoremap , ;
+
 " set spell checking items
 
 set spell spelllang=en_us
