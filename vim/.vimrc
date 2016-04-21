@@ -282,6 +282,9 @@ nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 nnoremap <LEADER>, ,
 nnoremap , ;
 
+" mapping to delete entire buffer's contents
+nnoremap <LEADER>D ggdG
+
 " set spell checking items
 
 set spell spelllang=en_us
