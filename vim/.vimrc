@@ -282,8 +282,11 @@ nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 nnoremap <LEADER>, ,
 nnoremap , ;
 
-" mapping to delete entire buffer's contents
-nnoremap <LEADER>D ggdG
+" space d deletes from cursor line to end of file
+nnoremap <LEADER>d :.,$d<CR>
+
+" space d deletes entire file
+nnoremap <LEADER>Y :%d<CR>
 
 " set spell checking items
 
