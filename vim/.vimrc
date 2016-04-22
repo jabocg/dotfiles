@@ -286,7 +286,7 @@ nnoremap , ;
 nnoremap <LEADER>d :.,$d<CR>
 
 " space d deletes entire file
-nnoremap <LEADER>Y :%d<CR>
+nnoremap <LEADER>D :%d<CR>
 
 " set spell checking items
 
