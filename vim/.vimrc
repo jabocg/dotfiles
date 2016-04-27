@@ -115,7 +115,7 @@ else
   set undodir=~/.vim/undo//
 endif
 
-set history=50		" keep 50 lines of command line history
+set history=256		" keep 256 lines of command line history
 set ruler		" show the cursor position all the time
 set incsearch		" do incremental searching
 set nu			" enable line numbering
@@ -135,10 +135,11 @@ set laststatus=2        " always enable status line
 set wildmenu            " enable wildmenu
 set wildmode=longest:full,full   " longest match, then wildmenu
 set splitright          " create vertical splits to the right
-set encoding=utf-8      " setting to utf-8 encoding
+set encoding=utf-8      " setting to UTF-8 encoding
 set colorcolumn=80      " set default color column
 set t_ut=               " disable background color erase
 set cursorline  " show line cursor is on
+set smartcase   " use smart case when searching
 
 " Powerline stuff
 python from powerline.vim import setup as powerline_setup
@@ -281,6 +282,12 @@ nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 " remapping , to ; and <LEADER>, to ,
 nnoremap <LEADER>, ,
 nnoremap , ;
+
+" space d deletes from cursor line to end of file
+nnoremap <LEADER>d :.,$d<CR>
+
+" space d deletes entire file
+nnoremap <LEADER>D :%d<CR>
 
 " set spell checking items
 

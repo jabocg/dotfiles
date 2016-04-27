@@ -105,17 +105,6 @@ fi
 # fzf integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
 
-# add some fzf functions
-
-# fd - call fzf, change to directory of selected file
-fd() {
-  local dir
-  dir=$(find ${1:-*} -path '*/\.*' -prune \
-                  -o -type d -print 2> /dev/null | fzf +m) &&
-  cd "$dir"
-}
-# added alias with cd start
-alias cdf='fd'
 
 # ----------------------------------------------------------------------------
 # aliases 
@@ -139,6 +128,9 @@ if [[ `uname` == "Darwin" ]] ; then
     if [[ $TERM == "screen-256color" ]] ; then
         alias launchctl="echo 'DO NOT RUN THIS INSIDE OF SCREEN OR TMUX'"
     fi
+
+    # use coreutils echo
+    alias echo="gecho"
 else
     # not Mac stuff
 
