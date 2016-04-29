@@ -21,8 +21,6 @@ setlocal textwidth=80
 function! CatchException(exception)
     let exname = substitute(a:exception, "[a-z]", "", "g")
     let exname = tolower(exname)
-    " let comm = "normal! o} catch (final " . a:exception . " " . exname . ") {"
-    " execute comm
-    execute "normal! o} catch (final " . a:exception . " " . exname . ") {\<CR>final String m = " . exname . ".getMessage();\<ESC>"
+    execute "normal! o} catch (final " . a:exception . " " . exname . ") {\<CR>final String m = " . exname . ".getMessage();/<CR>System.out.println(m);\<ESC>"
 endfunc
 command! -nargs=1 JavaCatch call CatchException(<f-args>)
