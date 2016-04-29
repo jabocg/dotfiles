@@ -160,3 +160,7 @@ alias ed='ed -p:'
 
 # alias to shutdown elcim
 alias qeq='vim +ShutdownEclim +qa'
+
+# vulgar programming
+eval "$(thefuck --alias shit)"
+alias fucking='sudo'
