@@ -54,6 +54,9 @@ set rtp+=~/git/fzf/
 " color schemes!
 Plug 'flazz/vim-colorschemes'
 
+" color scheme changer
+Plug 'felixhummel/setcolors.vim'
+
 " Unicode characters done better
 Plug 'chrisbra/unicode.vim'
 
