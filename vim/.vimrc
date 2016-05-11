@@ -80,18 +80,9 @@ filetype plugin indent on
 if &term == "builtin_gui" 
     colorscheme morning     " set GUI to morning colorscheme
 else
-    colorscheme railscasts       " set terminals to delek colorscheme
+    colorscheme tolerable       " set terminals to delek colorscheme
     " set background=dark     " tells vim to use colors better suited for a dark background
-    " set color for 80+ char line
-    highlight ColorColumn ctermbg=235
 endif
-
-" highlight SpellBad ctermbg=52 ctermfg=NONE 
-" highlight SpellCap ctermbg=17 ctermfg=NONE
-" highlight SpellRare ctermbg=237 ctermfg=NONE
-" highlight SpellLocal ctermbg=26 ctermfg=NONE
-" " highlight Search ctermbg=226 ctermfg=232
-" highlight Search ctermbg=229 ctermfg=0
 
 
 " -----------------------------------------------------------------------------
