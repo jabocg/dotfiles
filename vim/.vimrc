@@ -147,6 +147,8 @@ if(system("uname -s") == "Darwin\n")
     set clipboard=unnamed
 else
     set clipboard=unnamedplus
+    " also set colorscheme on not Mac
+    colorscheme railscasts
 endif
 
 " things for eclim and ycm
