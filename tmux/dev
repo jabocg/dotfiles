@@ -7,7 +7,7 @@ tmux rename-window -t 0 term
 if [ ! $1 == '' ] ; then
     tmux new-window -n devel -c $1
 else
-    tmux new-window -n devel -c ~/SAIFE/examples-saife-endpoint-lib/SaifeMessageDemo/
+    tmux new-window -n devel -c ~/SAIFE/
 fi
 tmux swap-window -s 1 -t 0
 tmux select-window -t 0
