@@ -13,6 +13,9 @@ nnoremap <LEADER>todo :ProjectTodo<CR>
 nnoremap <LEADER>sp a"<CR>+ "<ESC>
 nnoremap <LEADER>jo J^2f"5x
 
+" duplicate and comment current line
+nnoremap <LEADER>gcc yygccp
+
 setlocal colorcolumn=80
 setlocal textwidth=80
 
