@@ -180,10 +180,10 @@ let g:EclimBuffersDefaultAction = 'edit'
 " User defined mappings
 
 " Create a new line and move to it
-nnoremap <LEADER>o o<ESC>
+nnoremap <LEADER>o o<C-[>
 
 " Create a new line below cursor
-nnoremap <LEADER>O O<ESC>
+nnoremap <LEADER>O O<C-[>
 
 " backspace toggle highlighting search
 function Toghls()
