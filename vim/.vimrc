@@ -186,7 +186,7 @@ nnoremap <LEADER>o o<C-[>
 nnoremap <LEADER>O O<C-[>
 
 " backspace toggle highlighting search
-function Toghls()
+function! Toghls()
     set hls!
     if &hls == 1
         echom "hlsearch"
@@ -197,7 +197,7 @@ endfunction
 nnoremap <BS> :call Toghls()<CR>
 
 " wrapping toggle function
-function Wraptog()
+function! Wraptog()
   set wrap!
   if &wrap
     echom "wrap"
