@@ -76,6 +76,10 @@ else
   export EDITOR='mvim -v'
 fi
 
+if [[ $(uname) != "Darwin" ]] ; then
+    expirt EDITOR="vim"
+fi
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
