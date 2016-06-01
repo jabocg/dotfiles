@@ -9,3 +9,8 @@ if [ "$(uname)" == "Darwin" ]; then # Mac OS
 else 
     git config --global core.editor vim
 fi
+
+if [ -e ~/.gitignore_global ] ; then
+    mv ~/.gitignore_global ~/.gitignore_global.bak
+fi
+ln -s ~/git/dotfiles/git/.gitignore_global ~/.gitignore_global
