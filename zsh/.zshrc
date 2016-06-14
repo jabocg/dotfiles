@@ -135,6 +135,9 @@ if [[ `uname` == "Darwin" ]] ; then
 
     # use coreutils echo
     alias echo="gecho"
+
+    # java home or something
+    export JAVA_HOME=/System/Library/Frameworks/JavaVM.framework/Versions/Current/Commands
 else
     # not Mac stuff
 
