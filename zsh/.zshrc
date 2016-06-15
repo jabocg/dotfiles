@@ -122,9 +122,6 @@ if [[ `uname` == "Darwin" ]] ; then
     # requires: coreutils
     alias ls="gls -haFl --color=auto --time-style=long-iso"
 
-    # add color to grep and tree
-    alias grep="grep --color=always"
-
     # using macvim
     alias vim="mvim -v"
 
@@ -142,6 +139,9 @@ else
     # ls all, long, readable, special characters, color, iso date
     alias ls="ls -haFl --color=auto --time-style=long-iso"
 fi
+
+# add color to grep and tree
+alias grep="grep --color=always"
 
 # python virtual evnironment
 alias pve2="source ~/.venv/py2/bin/activate"
