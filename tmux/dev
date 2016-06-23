@@ -4,11 +4,9 @@
 date=$(date "+%F")
 tmux new-session -d -s $date
 tmux rename-window -t 0 term
-if [ ! $1 == '' ] ; then
-    tmux new-window -n devel -c $1
-else
-    tmux new-window -n devel -c ~/SAIFE/
-fi
+tmux new-window -n devel -c ~/SAIFE/exadel-java-test/
+tmux select-window -t 1
+tmux split-window -c ~/SAIFE/java-framework/
 tmux swap-window -s 1 -t 0
 tmux select-window -t 0
 tmux attach-session -t $date
