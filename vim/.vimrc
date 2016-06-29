@@ -159,8 +159,14 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " disable eclim automatic logging
 let g:EclimLoggingDisabled = 1
 
+" settings for filetype detect
+augroup filetypedetec 
+    autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
+    autocmd BufNew,BufNewFile,BufRead *.log :setfiletype log
+augroup END
+
 " force .md files to be treated as a markdown
-autocmd BufNewFile,BufRead *.md set filetype=markdown
+" autocmd BufNewFile,BufRead *.md set filetype=markdown
 
 " set some settings for markdown files
 "

@@ -31,3 +31,9 @@ brew install cmake || sudo dnf install cmake || sudo apt-get install cmake
 vim +PlugInstall 
 
 # put eclim stuff here?
+
+echo "symlinking ftplugin files"
+for i in ~/git/dotfiles/vim/ftplugin/* ; do
+    echo "symlinking $i"
+    ln -s ~/git/dotfiles/vim/ftplugin/$i ~/.vim/ftplugin/$i
+done
