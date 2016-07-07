@@ -21,6 +21,15 @@ fi
 echo "creating symlink for .vimrc"
 ln -s ~/git/dotfiles/vim/.vimrc ~/.vimrc
 
+if [ -e ~/.vimkey ] ; then
+    echo ".vimkey already exists, making back up"
+    mv ~/.vimkey ~/.vimkey.bak
+fi
+
+echo "creating symlink for .vikey"
+ln -s ~/git/dotfiles/vim/.vimkey ~/.vimkey
+
+
 # get vim-plug
 echo "cloning Vundle"
 curl -fLo ~/.vim/autoload/plug.vim --create-dirs https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
