@@ -274,3 +274,43 @@ endfunction
 command! -nargs=* Py call Python(<f-args>)
 
 command! Flake8 call Flake8()
+
+" function to flip a written boolean
+" e.g. "false" -> "true"
+" works for lowercase, capitol, and ALL CAPS
+function! BangBool(boolean)
+    if a:boolean ==? "true"
+        if a:boolean[0] ==# "T"
+            if a:boolean[1] ==# "R"
+                echo "all caps"
+                let rep = "FALSE"
+            else
+                echo "capitol"
+                let rep = "False"
+            endif
+        else
+            echo "lowercase"
+            let rep = "false"
+        endif
+    elseif a:boolean ==? "false"
+        if a:boolean[0] ==# "F"
+            if a:boolean[1] ==# "A"
+                echo "all caps"
+                let rep = "TRUE"
+            else
+                echo "capitol"
+                let rep = "True"
+            endif
+        else
+            echo "lowercase"
+            let rep = "true"
+        endif
+    endif
+
+    if a:boolean !=? "true" || a:boolean !=? "false"
+        execute "normal! ciw" . rep . "\<ESC>"
+    else
+        echo "invalid boolean detected"
+    endif
+endfunction
+command! -nargs=1 Bang call BangBool(<f-args>)
