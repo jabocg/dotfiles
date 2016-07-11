@@ -185,11 +185,20 @@ let g:EclimBuffersDefaultAction = 'edit'
 " user mappings
 source ~/.vimkey
 
-" set spell checking items
+" -----------------------------------------------------------------------------
+" spelling config
 
 set spell spelllang=en_us
 
 " -----------------------------------------------------------------------------
+
+
+" -----------------------------------------------------------------------------
+"  Abbreviations
+
+
+" -----------------------------------------------------------------------------
+
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
