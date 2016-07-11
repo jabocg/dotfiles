@@ -110,3 +110,6 @@ nnoremap <LEADER>d :.,$d<CR>
 
 " space d deletes entire file
 nnoremap <LEADER>D :%d<CR>
+
+" key map to call boolean flip function
+nnoremap <LEADER>b :Bang <ENTER>
