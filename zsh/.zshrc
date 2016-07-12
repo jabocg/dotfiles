@@ -169,3 +169,7 @@ alias qeq='vim +ShutdownEclim +qa'
 # vulgar programming
 eval "$(thefuck --alias shit)"
 alias fucking='sudo'
+
+# git stuffs
+alias grc='git rebase -v --continue'
+alias grs='git rebase -v --skip'
