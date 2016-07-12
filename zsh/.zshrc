@@ -171,5 +171,5 @@ eval "$(thefuck --alias shit)"
 alias fucking='sudo'
 
 # git stuffs
-alias grc='git rebase -v --continue'
-alias grs='git rebase -v --skip'
+alias grc='git rebase --continue'
+alias grs='git rebase --skip'
