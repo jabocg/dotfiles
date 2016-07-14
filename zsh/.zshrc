@@ -173,3 +173,6 @@ alias fucking='sudo'
 # git stuffs
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
+alias gpl='git pull '
+alias gplv='git pull --verbose'
+alias gl='git log -u'
