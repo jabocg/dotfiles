@@ -38,6 +38,11 @@ ehthumbs.db
 Thumbs.db
 
 # Vim temp files #
-#################
+##################
 .*.swo
 .*.swp
+
+# Backup Files #
+################
+*.bak
+.*.bak
