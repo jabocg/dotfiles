@@ -1,8 +1,8 @@
 {
 	"name": "Overwatch_Light",
 	"groups": {
-		"information:additional":       { "fg": "overwatch_light:grey", "bg": "overwatch_light:offwhite", "attrs": [] },
-		"information:regular":       { "fg": "overwatch_light:grey", "bg": "overwatch_light:offwhite", "attrs": ["bold"] },
+		"information:additional":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:lightgrey", "attrs": [] },
+		"information:regular":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:lightgrey", "attrs": ["bold"] },
 		"information:highlighted":   { "fg": "white", "bg": "gray4", "attrs": [] },
 		"information:priority":      { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
 		"warning:regular":           { "fg": "white", "bg": "brightred", "attrs": ["bold"] },
@@ -10,7 +10,7 @@
 		"critical:success":          { "fg": "overwatch_light:white", "bg": "overwatch_light:blue", "attrs": [] },
 		"background":        { "fg": "overwatch_light:darkblue", "bg": "overwatch_light:lightgrey", "attrs": [] },
 		"background:divider":        { "fg": "overwatch_light:darkblue", "bg": "overwatch_light:offwhite", "attrs": [] },
-        "divider":                   { "fg": "overwatch_light:red", "bg": "overwatch_light:offwhite", "attrs": []},
+        "divider":                   { "fg": "overwatch_light:darkblue", "bg": "overwatch_light:lightgrey", "attrs": []},
 		"session":                   { "fg": "black", "bg": "gray10", "attrs": ["bold"] },
 		"date":                      { "fg": "gray8", "bg": "gray2", "attrs": [] },
 		"time":                      { "fg": "gray10", "bg": "gray2", "attrs": ["bold"] },
