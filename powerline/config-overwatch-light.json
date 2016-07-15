@@ -17,20 +17,20 @@
 			"theme": "default"
 		},
 		"shell": {
-			"colorscheme": "overwatch-dark",
-			"theme": "overwatch-dark",
+			"colorscheme": "overwatch-light",
+			"theme": "overwatch-light",
 			"local_themes": {
 				"continuation": "continuation",
 				"select": "select"
 			}
 		},
 		"tmux": {
-			"colorscheme": "overwatch-dark",
-			"theme": "overwatch-dark"
+			"colorscheme": "overwatch-light",
+			"theme": "overwatch-light"
 		},
 		"vim": {
-			"colorscheme": "overwatch-dark",
-			"theme": "overwatch-dark",
+			"colorscheme": "overwatch-light",
+			"theme": "overwatch-light",
 			"local_themes": {
 				"__tabline__": "tabline",
 
