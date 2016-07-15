@@ -77,7 +77,22 @@
 		"solarized:violet": [13, "6c71c4"],
 		"solarized:blue": [4, "268bd2"],
 		"solarized:cyan": [6, "2aa198"],
-		"solarized:green": [2, "859900"]
+		"solarized:green": [2, "859900"],
+
+        
+        "overwatch_light:darkblue": [17, "001052"],
+        "overwatch_light:white": [255, "f5f5f5"],
+        "overwatch_light:red": [ 197, "fd3546"],
+        "overwatch_light:orange": [208, "fe8222"],
+        "overwatch_light:grey": [24, "768c9b"],
+        "overwatch_light:yellow": [220, "fcbe49"],
+        "overwatch_light:darkgrey": [241, "727272"],
+        "overwatch_light:darkred": [166, "ce5b3b"],
+        "overwatch_light:darkyellow": [172, "c98d3d"],
+        "overwatch_light:lightgrey": [146, "b7c7c7"],
+        "overwatch_light:offwhite": [255, "e8ecf3"],
+        "overwatch_light:blue": [39, "00c3ff"],
+        "overwatch_light:medblue": [25, "167097"]
 	},
 	"gradients": {
 		"dark_GREEN_Orange_red": [

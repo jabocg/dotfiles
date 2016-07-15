@@ -32,7 +32,13 @@
 			},
 			{
 				"function": "powerline.segments.common.vcs.branch",
-				"priority": 40
+                "args": {
+                    "status_colors": true,
+                    "ignore_statuses": [
+                        "U"
+                    ]
+                },
+				"priority": 10
 			}
 		]
 	}

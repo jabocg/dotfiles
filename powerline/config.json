@@ -1,6 +1,6 @@
 {
 	"common": {
-		"term_truecolor": false
+		"term_truecolor": true
 	},
 	"ext": {
 		"ipython": {
@@ -17,20 +17,20 @@
 			"theme": "default"
 		},
 		"shell": {
-			"colorscheme": "zephyr",
-			"theme": "zephyr",
+			"colorscheme": "overwatch_light",
+			"theme": "overwatch_light",
 			"local_themes": {
 				"continuation": "continuation",
 				"select": "select"
 			}
 		},
 		"tmux": {
-			"colorscheme": "default",
-			"theme": "default"
+			"colorscheme": "overwatch_light",
+			"theme": "overwatch_light"
 		},
 		"vim": {
-			"colorscheme": "zephyr",
-			"theme": "default",
+			"colorscheme": "overwatch_light",
+			"theme": "overwatch_light",
 			"local_themes": {
 				"__tabline__": "tabline",
 
