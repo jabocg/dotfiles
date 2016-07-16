@@ -1,5 +1,5 @@
 {
-	"name": "Default color scheme",
+	"name": "Overwatch Light",
 	"groups": {
 		"information:unimportant":  { "fg": "gray8", "bg": "gray2", "attrs": [] },
 		"information:additional":   { "fg": "gray9", "bg": "gray4", "attrs": [] },
