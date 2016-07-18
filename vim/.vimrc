@@ -80,7 +80,7 @@ filetype plugin indent on
 if &term == "builtin_gui" 
     colorscheme morning     " set GUI to morning colorscheme
 else
-    colorscheme tolerable       " set terminals to delek colorscheme
+    colorscheme tolerable       " set terminal's colorscheme
     " set background=dark     " tells vim to use colors better suited for a dark background
 endif
 
