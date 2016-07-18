@@ -1,8 +1,8 @@
 {
 	"name": "Overwatch Light",
 	"groups": {
-		"information:additional":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:lightgrey", "attrs": [] },
-		"information:regular":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:lightgrey", "attrs": ["bold"] },
+		"information:additional":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:offwhite", "attrs": [] },
+		"information:regular":       { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:offwhite", "attrs": ["bold"] },
 		"information:highlighted":   { "fg": "overwatch_light:darkgrey", "bg": "overwatch_light:yellow", "attrs": [] },
 		"information:priority":      { "fg": "brightyellow", "bg": "mediumorange", "attrs": [] },
 		"warning:regular":           { "fg": "overwatch_light:white", "bg": "overwatch_light:red", "attrs": ["bold"] },
