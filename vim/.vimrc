@@ -69,6 +69,9 @@ Plug 'hynek/vim-python-pep8-indent'
 " python virtual environment 
 Plug 'jmcantrell/vim-virtualenv'
 
+" Python auto-completion
+Plug 'davidhalter/jedi-vim'
+
 call plug#end()
 
 filetype plugin indent on
