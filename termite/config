@@ -12,7 +12,7 @@ font = DejaVu Sans Mono for Powerline Book 10
 # special
 foreground      = #000940
 foreground_bold = #000940
-cursor          = #000940
+cursor          = #FF8700
 background      = #f2f2f2
 
 # black
