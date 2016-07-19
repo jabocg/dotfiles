@@ -151,7 +151,7 @@ if(system("uname -s") == "Darwin\n")
 else
     set clipboard=unnamedplus
     " also set colorscheme on not Mac
-    colorscheme railscasts
+    " colorscheme railscasts
 endif
 
 " things for eclim and ycm
@@ -167,16 +167,6 @@ augroup filetypedetec
     autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
     autocmd BufNew,BufNewFile,BufRead *.log :setfiletype log
 augroup END
-
-" force .md files to be treated as a markdown
-" autocmd BufNewFile,BufRead *.md set filetype=markdown
-
-" set some settings for markdown files
-"
-" set text wrapping for markdown files
-" disable fold column for markdown files
-au BufRead,BufNewFile, *.md setlocal textwidth=80
-au BufRead,BufNewFile, *.md setlocal foldcolumn=0
 
 " set setting for crontab
 au FileType crontab setlocal bkc=yes
