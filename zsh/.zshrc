@@ -135,12 +135,16 @@ if [[ `uname` == "Darwin" ]] ; then
 
     # use coreutils echo
     alias echo="gecho"
+    
+    # alias to sl 
+    alias sl="ls -r"
 
 else
     # not Mac stuff
 
     # ls all, long, readable, special characters, color, iso date
     alias ls="ls -haFl --color=auto --time-style=long-iso"
+    alias sl="ls -r"
 fi
 
 # add color to grep and tree
@@ -180,3 +184,4 @@ alias gpl='git pull '
 alias gplv='git pull --verbose'
 alias gl='git log -u'
 alias gpsu='git push --set-upstream origin master'
+
