@@ -189,6 +189,10 @@ set spell spelllang=en_us
 " -----------------------------------------------------------------------------
 "  Abbreviations
 
+ab indead indead
+ab instaed instead
+ab Indaed Indead
+ab Instaed Instead
 
 " -----------------------------------------------------------------------------
 
