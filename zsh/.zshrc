@@ -183,5 +183,5 @@ alias grs='git rebase --skip'
 alias gpl='git pull '
 alias gplv='git pull --verbose'
 alias gl='git log -u'
-alias gpsu='git push --set-upstream origin master'
+alias gpsu='git push --set-upstream origin'
 
