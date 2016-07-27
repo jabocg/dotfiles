@@ -165,7 +165,7 @@ alias vimnoted="vim notes_$(isodate).md"
 alias nuke='rm -rf'
 
 # tree colored, ignore git, sort by name
-alias tree='tree -I .git -c --sort=name'
+alias tree='tree -I .git -c -C'
 
 # ed alias, possibly useless but wfc
 alias ed='ed -p:'
