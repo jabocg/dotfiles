@@ -72,6 +72,12 @@ Plug 'jmcantrell/vim-virtualenv'
 " Python auto-completion
 Plug 'davidhalter/jedi-vim'
 
+" Peekaboo for seeing registers before accessing
+Plug 'junegunn/vim-peekaboo'
+
+" vim-journal note taking stuff
+Plug 'junegunn/vim-journal'
+
 call plug#end()
 
 filetype plugin indent on
