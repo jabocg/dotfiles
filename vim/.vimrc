@@ -78,6 +78,9 @@ Plug 'junegunn/vim-peekaboo'
 " vim-journal note taking stuff
 Plug 'junegunn/vim-journal'
 
+" increment and decrement dates
+Plug 'tpope/vim-speeddating'
+
 call plug#end()
 
 filetype plugin indent on
