@@ -17,6 +17,9 @@ nnoremap <LEADER>jo J^2f"5x
 " duplicate and comment current line
 nnoremap <LEADER>gcc yygccp
 
+" mapping to selectively add fail() blocks to caught exceptions
+nnoremap <LEADER>fail %s/^\(\s*\)\(e.printStackTrace();\)\(\n\s*fail()\)\@!/\1\2\r\1fail();/gc
+
 " java settings
 setlocal colorcolumn=80
 setlocal textwidth=80
