@@ -1,5 +1,5 @@
 " vim: set ft=vim:
-" setting file specifc options to make config look pretty
+" setting file specific options to make config look pretty
 "
 
 " -----------------------------------------------------------------------------
@@ -55,7 +55,7 @@ nnoremap <LEADER>Y :%y<CR>
 map Y y$
 
 " sudo write trick
-cmap w!! w !sudo tee > /dev/null %
+cnoremap w!! w !sudo tee > /dev/null %
 
 " tell x to use blackhole register
 nnoremap x "_x
@@ -74,7 +74,7 @@ nnoremap <LEADER>h :SidewaysJumpLeft<CR>
 nnoremap <LEADER>l :SidewaysJumpRight<CR>
 
 " mapping for quick lsing
-cmap ;ls ls<CR>:b 
+cnoremap ;ls ls<CR>:b 
 
 " mappings for opening, closing, and clearing quickfix and location list windows
 nnoremap <LEADER>lo :botright lopen<CR>
