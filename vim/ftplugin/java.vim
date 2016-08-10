@@ -10,6 +10,9 @@ nnoremap <silent> <buffer> <LEADER>s :JavaSearchContext<cr>
 nnoremap <LEADER>todo :ProjectTodo<CR>
 
 
+" THESE MAPPINGS WORK WITHOUT ECLIM
+"
+
 " mappings to split and join string lines
 nnoremap <LEADER>sp a"<CR>+ "<ESC>
 nnoremap <LEADER>jo J^2f"5x
@@ -18,7 +21,7 @@ nnoremap <LEADER>jo J^2f"5x
 nnoremap <LEADER>gcc yygccp
 
 " mapping to selectively add fail() blocks to caught exceptions
-nnoremap <LEADER>fail %s/^\(\s*\)\(e.printStackTrace();\)\(\n\s*fail()\)\@!/\1\2\r\1fail();/gc
+nnoremap <LEADER>fail :%s/^\(\s*\)\(e.printStackTrace();\)\(\n\s*fail()\)\@!/\1\2\r\1fail();/gc<CR>
 
 " java settings
 setlocal colorcolumn=80
