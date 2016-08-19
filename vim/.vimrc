@@ -148,6 +148,8 @@ set cursorline  " show line cursor is on
 set smartcase   " use smart case when searching
 
 " Powerline stuff
+set rtp+=/usr/local/bin/python3.5/site-packages/powerline/bindings/vim/
+
 python from powerline.vim import setup as powerline_setup
 python powerline_setup()
 python del powerline_setup

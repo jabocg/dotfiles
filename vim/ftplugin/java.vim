@@ -8,6 +8,8 @@ nnoremap <silent> <buffer> <LEADER>d :JavaDocSearch -x declarations<cr>
 nnoremap <silent> <buffer> <LEADER>s :JavaSearchContext<cr>
 " user command for :ProjectTodo
 nnoremap <LEADER>todo :ProjectTodo<CR>
+" mapping to correct current issue
+nnoremap <LEADER><CR> :JavaCorrect<CR>
 
 
 " THESE MAPPINGS WORK WITHOUT ECLIM

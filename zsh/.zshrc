@@ -53,7 +53,7 @@ HIST_STAMPS="yyyy-mm-dd"
 # Custom plugins may be added to ~/.oh-my-zsh/custom/plugins/
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
-plugins=(git aws brew gem httpie python web-search wd emoji)
+plugins=(git aws brew gem httpie python web-search wd emoji mvn)
 
 # User configuration
 
@@ -125,6 +125,14 @@ if [[ `uname` == "Darwin" ]] ; then
     # requires: coreutils
     alias ls="gls -haFl --color=auto --time-style=long-iso"
 
+    # alias to sl 
+    alias sl="ls -r"
+
+    # alias to list "visible" directories only
+    alias lsd="ls */ -d"
+    # alias to list all directories only
+    alias lsad="ls .*/ */ -d"
+
     # using macvim
     alias vim="mvim -v"
 
@@ -136,8 +144,6 @@ if [[ `uname` == "Darwin" ]] ; then
     # use coreutils echo
     alias echo="gecho"
     
-    # alias to sl 
-    alias sl="ls -r"
 
 else
     # not Mac stuff
