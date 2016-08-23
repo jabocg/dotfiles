@@ -31,8 +31,8 @@ setlocal textwidth=80
 
 " java abbvr
 " ab sout System.out.println(
-inoremap sout System.out.println(
-ab fout System.out.format("
+ab sout System.out.println(
+ab fout System.out.format(
 
 " create a catch block for the specified exception, creating a variable for
 " the message as well
