@@ -2,7 +2,7 @@
 # setup for ZSH
 
 # install zsh
-sudo dnf install zsh 
+sudo dnf install zsh -y
 
 # backup current zshrc
 if [ -e ~/.zshrc ] ; then 
