@@ -57,9 +57,6 @@ plugins=(git aws brew gem httpie python web-search wd emoji mvn)
 
 # User configuration
 
-# disable cd'ing into a directory via name alone
-unsetopt AUTO_CD
-
 if [[ $(uname) == "Darwin" ]] ; then
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/git/fzf/bin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/Library/Android/sdk/platform-tools"
 else
@@ -80,7 +77,7 @@ else
 fi
 
 if [[ $(uname) != "Darwin" ]] ; then
-    expirt EDITOR="vim"
+    export EDITOR="vim"
 fi
 
 # Compilation flags
@@ -193,4 +190,7 @@ alias gpl='git pull '
 alias gplv='git pull --verbose'
 alias gl='git log -u'
 alias gpsu='git push --set-upstream origin'
+
+# disable cd'ing into a directory via name alone
+unsetopt AUTO_CD
 
