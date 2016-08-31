@@ -2,8 +2,8 @@
 
 # install
 brew install tmux
-apt-get install tmux
-dnf install tmux
+sudo pt-get install tmux
+sudo dnf -y install tmux
 
 # if .tmux.conf exists, back up
 if [ -e ~/.tmux.conf ] ; then
