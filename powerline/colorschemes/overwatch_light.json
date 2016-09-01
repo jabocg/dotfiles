@@ -47,6 +47,20 @@
 		"cwd:current_folder":        "information:regular",
 		"cwd:divider":               "divider",
 		"virtualenv":                { "fg": "overwatch_light:white", "bg": "overwatch_light:darkblue", "attrs": [] },
-		"attached_clients":          { "fg": "gray8", "bg": "gray0", "attrs": [] }
+		"attached_clients":          { "fg": "gray8", "bg": "gray0", "attrs": [] },
+        "gitstatus":                 { "fg": "overwatch_light:offwhite",           "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_branch":          { "fg": "overwatch_light:white",           "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_branch_clean":    { "fg": "overwatch_light:white",           "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_branch_dirty":    { "fg": "overwatch_light:white",           "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_branch_detached": { "fg": "mediumpurple",    "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_tag":             { "fg": "darkcyan",        "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_behind":          { "fg": "overwatch_light:lightgrey",          "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_ahead":           { "fg": "overwatch_light:lightgrey",          "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_staged":          { "fg": "green",           "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_unmerged":        { "fg": "overwatch_light:orange",       "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_changed":         { "fg": "overwatch_light:red",    "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_untracked":       { "fg": "overwatch_light:yellow", "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus_stashed":         { "fg": "overwatch_light:darkblue",        "bg": "overwatch_light:medgrey", "attrs": [] },
+        "gitstatus:divider":         { "fg": "overwatch_light:white",           "bg": "overwatch_light:medgrey", "attrs": [] }
 	}
 }
