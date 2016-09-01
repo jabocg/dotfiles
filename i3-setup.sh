@@ -1,7 +1,7 @@
 # i3 setup 
 
 # install i3 and i3status
-sudo dnf install i3 i3status
+sudo dnf -y install i3 i3status
 
 # symlink the configs and shit
 if [ ! -e ~/.config/i3/config ] ; then

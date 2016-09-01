@@ -1,27 +1,27 @@
 #!/bin/bash
 # install automake and autoconf
 brew install automake
-dnf install automake
+sudo dnf -y install automake
 brew install autoconf
-dnf install autoconf
+sudo dnf -y install autoconf
 # install socat
-dnf install socat
+sudo dnf -y install socat
 brew install socat
-# install psutil, python
-pip install psutil
+sudo # install psutil, python
+sudo pip install psutil
 # req for pyuv, lib-toolize
-dnf install libtool
+sudo dnf -y install libtool
 brew install libtool
 # install pyuv, python
-pip install pyuv
+sudo pip install pyuv
 # install i3-py, python
-pip install i3-py
+sudo pip install i3-py
 
 # install powerline
-pip install powerline-status
+sudo pip install powerline-status
 
 # install fonts
-git clone git@home.github.com:powerline/fonts ~/git/powerline-fonts
+git clone https://github.com/powerline/fonts ~/git/powerline-fonts
 . ~/git/powerline-fonts/install.sh
 echo "install the fonts from ~/git/powerline-fonts"
 

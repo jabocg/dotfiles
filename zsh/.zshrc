@@ -153,6 +153,10 @@ else
     alias sl="ls -r"
 fi
 
+if [[ `uname` == "Linux" ]] ; then
+	alias vim="vimx"
+fi
+
 # add color to grep and tree
 alias grep="grep --color=always"
 
