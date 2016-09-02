@@ -192,7 +192,8 @@ alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias gpl='git pull '
 alias gplv='git pull --verbose'
-alias gl='git log -u'
+alias gl='git log'
+alias glv='git log -u'
 alias gpsu='git push --set-upstream origin'
 
 # disable cd'ing into a directory via name alone
