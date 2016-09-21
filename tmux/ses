@@ -1,0 +1,10 @@
+#!/bin/bash
+# script to run several tmux windows for easy access
+
+date=$(date "+%F")
+tmux new-session -d -s $date
+tmux rename-window -t 0 term
+tmux new-window -n notes 
+tmux swap-window -s 1 -t 0
+tmux select-window -t 0
+tmux attach-session -t $date
