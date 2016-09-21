@@ -155,7 +155,7 @@ else
     alias sl="ls -r"
 fi
 
-if [[ `uname` == "Linux" ]] ; then
+if [[ `hostname` == "haboob" ]] ; then
 	alias vim="vimx"
 fi
 
