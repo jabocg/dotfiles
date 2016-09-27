@@ -137,6 +137,8 @@ if [[ `uname` == "Darwin" ]] ; then
 
     # using macvim
     alias vim="mvim -v"
+    alias vimdiff='mvim -v -d'
+    alias view='mvim -v -R'
 
     # prevent launchctl from running in tmux
     if [[ $TERM == "screen-256color" ]] ; then
