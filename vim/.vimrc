@@ -182,6 +182,9 @@ augroup END
 " set setting for crontab
 au FileType crontab setlocal bkc=yes
 
+" always start on the top of a commit message
+au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
+
 " set default edit option for FZF :Buffers command
 let g:EclimBuffersDefaultAction = 'edit'
 "
