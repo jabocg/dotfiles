@@ -33,6 +33,25 @@
 		"weather":                 { "fg": "solarized:base1", "bg": "solarized:base03", "attrs": [] },
 		"uptime":                  { "fg": "solarized:base1", "bg": "solarized:base03", "attrs": [] },
 		"cpu_load_percent":          { "fg": "gray8", "bg": "gray0", "attrs": [] },
-		"cpu_load_percent_gradient": { "fg": "green_yellow_orange_red", "bg": "gray0", "attrs": [] }
+		"cpu_load_percent_gradient": { "fg": "green_yellow_orange_red", "bg": "gray0", "attrs": [] },
+		"battery":                   { "fg": "overwatch_light:darkgrey", "bg": "solarized:base02", "attrs": [] },
+		"battery_full":              { "fg": "red", "bg": "solarized:base02", "attrs": [] },
+		"battery_empty":             { "fg": "overwatch_light:darkgrey", "bg": "solarized:base02", "attrs": [] },
+        "gitstatus":                 { "fg": "overwatch_light:offwhite",        "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_branch":          { "fg": "overwatch_light:white",           "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_branch_clean":    { "fg": "overwatch_light:white",           "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_branch_dirty":    { "fg": "overwatch_light:white",           "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_branch_detached": { "fg": "mediumpurple",                    "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_tag":             { "fg": "darkcyan",                        "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_behind":          { "fg": "overwatch_light:lightgrey",       "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_ahead":           { "fg": "overwatch_light:lightgrey",       "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_staged":          { "fg": "green",                           "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_unmerged":        { "fg": "overwatch_light:orange",          "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_changed":         { "fg": "overwatch_light:red",             "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_untracked":       { "fg": "overwatch_light:yellow",          "bg": "solarized:base01", "attrs": [] },
+        "gitstatus_stashed":         { "fg": "overwatch_light:darkblue",        "bg": "solarized:base01", "attrs": [] },
+        "gitstatus:divider":         { "fg": "overwatch_light:white",           "bg": "solarized:base01", "attrs": [] },
+        "divider":                   { "fg": "overwatch_light:darkblue", "bg": "solarized:base02", "attrs": []},
+		"session":                   { "fg": "black", "bg": "solarized:base02", "attrs": ["bold"] }
 	}
 }
