@@ -196,7 +196,7 @@ autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
 
 " add Flake8 call on Python save
-autocmd BufWrite *.py call Flake8()
+autocmd BufWritePost *.py call Flake8()
 
 
 " user mappings
