@@ -176,6 +176,10 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " disable eclim automatic logging
 let g:EclimLoggingDisabled = 1
 
+" flake8 settings
+" show marks in the gutter
+let g:flake8_show_in_gutter=1
+
 " settings for filetype detect
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
@@ -211,7 +215,7 @@ set spell spelllang=en_us
 
 
 " -----------------------------------------------------------------------------
-"  Abbreviations
+"  Abbreviations (abvr abbr)
 
 ab indead indead
 ab instaed instead
@@ -220,6 +224,7 @@ ab Instaed Instead
 ab gropu group
 ab gorup group
 ab cerst certs
+ab countires countries
 
 " -----------------------------------------------------------------------------
 
