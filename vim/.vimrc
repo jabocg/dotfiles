@@ -81,6 +81,9 @@ Plug 'junegunn/vim-journal'
 " increment and decrement dates
 Plug 'tpope/vim-speeddating'
 
+" proper folding for Python
+Plug 'tmhedberg/SimpylFold'
+
 call plug#end()
 
 filetype plugin indent on
@@ -174,7 +177,7 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 let g:EclimLoggingDisabled = 1
 
 " settings for filetype detect
-augroup filetypedetec 
+augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
     autocmd BufNew,BufNewFile,BufRead *.log :setfiletype log
 augroup END
@@ -188,6 +191,13 @@ au FileType gitcommit au! BufEnter COMMIT_EDITMSG call setpos('.', [0, 1, 1, 0])
 " set default edit option for FZF :Buffers command
 let g:EclimBuffersDefaultAction = 'edit'
 "
+" stuff for SimpylFold
+autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
+autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+" add Flake8 call on Python save
+autocmd BufWrite *.py call Flake8()
+
 
 " user mappings
 source ~/.vimkey
