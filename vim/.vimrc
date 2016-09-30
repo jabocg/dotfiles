@@ -61,7 +61,7 @@ Plug 'felixhummel/setcolors.vim'
 Plug 'chrisbra/unicode.vim'
 
 " Python PEP8
-Plug 'andviro/flake8-vim'
+Plug 'nvie/vim-flake8'
 
 " Python indenting
 Plug 'hynek/vim-python-pep8-indent'
@@ -176,12 +176,6 @@ let g:ycm_autoclose_preview_window_after_insertion = 1
 " disable eclim automatic logging
 let g:EclimLoggingDisabled = 1
 
-" settings for Flake8
-" run flake on write
-let g:PyFlakeOnWrite = 1
-" force python3
-let g:PyFlakeForcePyVersion = 3
-
 " settings for filetype detect
 augroup filetypedetect
     autocmd BufNew,BufNewFile,BufRead *.txt,*.text,*.md,*.markdown :setfiletype markdown
@@ -200,6 +194,9 @@ let g:EclimBuffersDefaultAction = 'edit'
 " stuff for SimpylFold
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+
+" add Flake8 call on Python save
+autocmd BufWrite *.py call Flake8()
 
 
 " user mappings
@@ -305,6 +302,8 @@ function! Python(...)
 endfunction
 
 command! -nargs=* Py call Python(<f-args>)
+
+command! Flake8 call Flake8()
 
 " function to flip a written boolean
 " e.g. "false" -> "true"
