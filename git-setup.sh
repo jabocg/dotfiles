@@ -14,3 +14,4 @@ if [ -e ~/.gitignore_global ] ; then
     mv ~/.gitignore_global ~/.gitignore_global.bak
 fi
 ln -s ~/git/dotfiles/git/.gitignore_global ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
