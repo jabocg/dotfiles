@@ -1,7 +1,9 @@
-" python file vim settings
+if (&filetype == 'python')
+    " python file vim settings
 
-setlocal colorcolumn=79
-setlocal textwidth=79
+    setlocal colorcolumn=79
+    setlocal textwidth=79
 
-" duplicate and comment current line
-nnoremap <LEADER>gcc yygccp
+    " duplicate and comment current line
+    nnoremap <LEADER>gcc yygccp
+endif

@@ -1,5 +1,7 @@
-setlocal tabstop=2
-setlocal shiftwidth=2
-setlocal foldmethod=manual
+if (&filetype == 'html')
+    setlocal tabstop=2
+    setlocal shiftwidth=2
+    setlocal foldmethod=manual
 
-nnoremap <LEADER>gc A <!--  --><ESC><LEFT><LEFT><LEFT>i
+    nnoremap <LEADER>gc A <!--  --><ESC><LEFT><LEFT><LEFT>i
+endif

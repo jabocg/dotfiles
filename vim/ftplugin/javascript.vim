@@ -1,2 +1,4 @@
-setlocal tabstop=2
-setlocal shiftwidth=2
+if (&filetype == 'javascript')
+    setlocal tabstop=2
+    setlocal shiftwidth=2
+endif
