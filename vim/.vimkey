@@ -113,3 +113,7 @@ nnoremap <LEADER>bool :Bang <C-R><C-W><CR>
 
 " quick close without saving mapping
 cnoremap qq q!
+
+" quick mapping for next quickfix list item
+nnoremap <LEADER>n :cnext<CR>
+nnoremap <LEADER>N :cprevious<CR>
