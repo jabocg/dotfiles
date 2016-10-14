@@ -87,6 +87,9 @@ Plug 'tmhedberg/SimpylFold'
 " more motions and control
 Plug 'easymotion/vim-easymotion'
 
+" javascript support
+Plug 'pangloss/vim-javascript'
+
 call plug#end()
 
 filetype plugin indent on
