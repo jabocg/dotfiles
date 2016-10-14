@@ -84,6 +84,9 @@ Plug 'tpope/vim-speeddating'
 " proper folding for Python
 Plug 'tmhedberg/SimpylFold'
 
+" more motions and control
+Plug 'easymotion/vim-easymotion'
+
 call plug#end()
 
 filetype plugin indent on
