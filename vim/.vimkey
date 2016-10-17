@@ -70,8 +70,8 @@ nnoremap ; :
 " sideways command mappings
 nnoremap <LEADER>H :SidewaysLeft<CR>
 nnoremap <LEADER>L :SidewaysRight<CR>
-nnoremap <LEADER>h :SidewaysJumpLeft<CR>
-nnoremap <LEADER>l :SidewaysJumpRight<CR>
+nnoremap <LEADER>hh :SidewaysJumpLeft<CR>
+nnoremap <LEADER>ll :SidewaysJumpRight<CR>
 
 " mapping for quick lsing
 cnoremap ;ls ls<CR>:b 
