@@ -110,6 +110,7 @@ nnoremap <LEADER>D :%d<CR>
 
 " key map to call boolean flip function
 nnoremap <LEADER>bool :Bang <C-R><C-W><CR>
+nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 
 " quick close without saving mapping
 cnoremap qq q!
