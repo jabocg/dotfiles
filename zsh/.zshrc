@@ -199,6 +199,10 @@ alias gplv='git pull --verbose'
 alias gl='git log'
 alias glv='git log -u'
 alias gpsu='git push --set-upstream origin'
+alias gc='git commit'
+alias gcv='git commit --verbose'
+alias gca='git commit --all'
+alias gcav='git commit --verbose --all'
 
 # disable cd'ing into a directory via name alone
 unsetopt AUTO_CD
