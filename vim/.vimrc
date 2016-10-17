@@ -143,7 +143,7 @@ set smartindent     	" Automatically inserts indentation in some cases
 set cindent         	" Like smartindent, but stricter and more customizable
 set showcmd		" display incomplete commands
 set nohlsearch          " don't highlight search(I think)
-" set foldmethod=syntax   " use syntactic folding
+setglobal foldmethod=syntax   " use syntactic folding
 set foldlevel=99        " unfold everything at default, use 'zM' to fold everything, 'zR' to unfold
 set foldcolumn=1        " enables the fold column(shows folds) for width 1
 set laststatus=2        " always enable status line
