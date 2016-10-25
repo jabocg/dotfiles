@@ -119,7 +119,7 @@ if v:progname =~? "evim"
 endif
 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol,start
+set backspace=indent,eol
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
