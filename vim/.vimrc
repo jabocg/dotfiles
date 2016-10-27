@@ -237,6 +237,15 @@ ab donwlaod download
 
 " -----------------------------------------------------------------------------
 
+" -----------------------------------------------------------------------------
+"  Commands (misc)
+
+" split
+command! VSP botright vsp
+command! SP topleft sp
+
+" -----------------------------------------------------------------------------
+"
 
 " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
 " let &guioptions = substitute(&guioptions, "t", "", "g")
