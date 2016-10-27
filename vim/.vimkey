@@ -45,6 +45,9 @@ nnoremap <LEADER><TAB> :bn<CR>
 " space shift tab goes to previous buffer
 nnoremap <LEADER><S-TAB> :bp<CR>
 
+" space w is control w in normal mode(useful for window commands)
+nnoremap <LEADER>w <C-W>
+
 " space y yanks from cursor line to end of file
 nnoremap <LEADER>y :.,$y<CR>
 
