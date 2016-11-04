@@ -90,6 +90,13 @@ Plug 'easymotion/vim-easymotion'
 " javascript support
 Plug 'pangloss/vim-javascript'
 
+" snippet support(think live templates)
+Plug 'sirver/ultisnips'
+Plug 'honza/vim-snippets'
+
+" super tab(mostly for snippets
+Plug 'ervandew/supertab'
+
 call plug#end()
 
 filetype plugin indent on
@@ -119,7 +126,7 @@ if v:progname =~? "evim"
 endif
 
 " allow backspacing over everything in insert mode
-set backspace=indent,eol
+set backspace=indent,eol,start
 
 if has("vms")
   set nobackup		" do not keep a backup file, use versions instead
@@ -185,6 +192,19 @@ let g:EclimLoggingDisabled = 1
 " flake8 settings
 " show marks in the gutter
 let g:flake8_show_in_gutter=1
+
+" ultisnips directory
+let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
+
+" make YCM compatible with UltiSnips (using supertab)
+let g:ycm_key_list_select_completion = ['<C-n>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<C-p>', '<Up>']
+let g:SuperTabDefaultCompletionType = '<C-n>'
+
+" better key bindings for UltiSnipsExpandTrigger
+let g:UltiSnipsExpandTrigger = "<tab>"
+let g:UltiSnipsJumpForwardTrigger = "<C-l>"
+let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
 
 " settings for filetype detect
 augroup filetypedetect
