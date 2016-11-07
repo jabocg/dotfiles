@@ -193,6 +193,10 @@ let g:EclimLoggingDisabled = 1
 " show marks in the gutter
 let g:flake8_show_in_gutter=1
 
+" jedi-vim force python3 compliance
+" let g:ycm_python_binary_path = '/usr/local/bin/python3'
+" let g:jedi#force_py_version = 3
+
 " ultisnips directory
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 
