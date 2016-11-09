@@ -230,6 +230,7 @@ let g:EclimBuffersDefaultAction = 'edit'
 " stuff for SimpylFold
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+autocmd BufWinEnter *.js,*.java setlocal foldmethod=syntax
 
 " add Flake8 call on Python save
 autocmd BufWritePost *.py call Flake8()
