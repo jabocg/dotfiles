@@ -121,3 +121,7 @@ cnoremap qq q!
 " quick mapping for next quickfix list item
 nnoremap <LEADER>n :cnext<CR>
 nnoremap <LEADER>N :cprevious<CR>
+
+" quick mapping for next locallist list item
+nnoremap <LEADER>ln :lnext<CR>
+nnoremap <LEADER>lN :lprevious<CR>

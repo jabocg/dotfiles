@@ -90,6 +90,9 @@ Plug 'easymotion/vim-easymotion'
 " javascript support
 Plug 'pangloss/vim-javascript'
 
+" syntastic(syntax support)
+Plug 'scrooloose/syntastic'
+
 call plug#end()
 
 filetype plugin indent on
@@ -185,6 +188,9 @@ let g:EclimLoggingDisabled = 1
 " flake8 settings
 " show marks in the gutter
 let g:flake8_show_in_gutter=1
+
+" syntastic settings
+let g:syntastic_always_populate_loc_list = 1
 
 " settings for filetype detect
 augroup filetypedetect
