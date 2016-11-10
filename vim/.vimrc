@@ -202,6 +202,8 @@ let g:flake8_show_in_gutter=1
 
 " syntastic settings
 let g:syntastic_always_populate_loc_list = 1
+" don't override flake
+let g:syntastic_mode_map = { 'passive_filetypes': ['python'] }
 "
 " ultisnips directory
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
