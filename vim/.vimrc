@@ -90,6 +90,9 @@ Plug 'easymotion/vim-easymotion'
 " javascript support
 Plug 'pangloss/vim-javascript'
 
+" syntastic(syntax support)
+Plug 'scrooloose/syntastic'
+
 " snippet support(think live templates)
 Plug 'sirver/ultisnips'
 Plug 'honza/vim-snippets'
@@ -197,6 +200,9 @@ let g:flake8_show_in_gutter=1
 " let g:ycm_python_binary_path = '/usr/local/bin/python3'
 " let g:jedi#force_py_version = 3
 
+" syntastic settings
+let g:syntastic_always_populate_loc_list = 1
+"
 " ultisnips directory
 let g:UltiSnipsSnippetsDir = '~/.vim/ultisnips'
 
@@ -228,6 +234,7 @@ let g:EclimBuffersDefaultAction = 'edit'
 " stuff for SimpylFold
 autocmd BufWinEnter *.py setlocal foldexpr=SimpylFold(v:lnum) foldmethod=expr
 autocmd BufWinLeave *.py setlocal foldexpr< foldmethod<
+autocmd BufWinEnter *.js,*.java setlocal foldmethod=syntax
 
 " add Flake8 call on Python save
 autocmd BufWritePost *.py call Flake8()
