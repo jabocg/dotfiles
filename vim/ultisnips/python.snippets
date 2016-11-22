@@ -1,5 +1,10 @@
 snippet forkv
-for ${1:key}, ${2:value} in enumerate(${3:dictionary}):
+for ${1:key}, ${2:value} in ${3:dictionary}.items():
+	${4:pass}
+endsnippet
+
+snippet forkve
+for ${1:key}, ${2:value} in enumerate(${3:array}):
 	${4:pass}
 endsnippet
 
