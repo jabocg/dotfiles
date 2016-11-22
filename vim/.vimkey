@@ -119,8 +119,8 @@ nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 cnoremap qq q!
 
 " quick mapping for next quickfix list item
-nnoremap <LEADER>n :cnext<CR>
-nnoremap <LEADER>N :cprevious<CR>
+nnoremap <LEADER>cn :cnext<CR>
+nnoremap <LEADER>cN :cprevious<CR>
 
 " quick mapping for next locallist list item
 nnoremap <LEADER>ln :lnext<CR>
