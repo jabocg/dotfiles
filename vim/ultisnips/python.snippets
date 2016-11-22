@@ -4,5 +4,9 @@ for ${1:key}, ${2:value} in enumerate(${3:dictionary}):
 endsnippet
 
 snippet ldb
-logging.debug('${1:message}')
+logging.debug('${1:message}'${2})
+endsnippet
+
+snippet ler
+logging.error('${1:message}'${2})
 endsnippet
