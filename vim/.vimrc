@@ -100,6 +100,9 @@ Plug 'honza/vim-snippets'
 " super tab(mostly for snippets
 Plug 'ervandew/supertab'
 
+" changes to netwr
+Plug 'tpope/vim-vinegar'
+
 call plug#end()
 
 filetype plugin indent on
@@ -217,6 +220,12 @@ let g:SuperTabDefaultCompletionType = '<C-n>'
 let g:UltiSnipsExpandTrigger = "<tab>"
 let g:UltiSnipsJumpForwardTrigger = "<C-l>"
 let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
+
+" netrw settings(file/directory browser)
+" let g:netrw_liststyle = 3
+" let g:netrw_banner = 0
+" let g:netrw_winsize = 25
+" let g:netrw_browse_split = 4
 
 " settings for filetype detect
 augroup filetypedetect
