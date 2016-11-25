@@ -226,6 +226,10 @@ let g:UltiSnipsJumpBackwardTrigger = "<C-h>"
 " let g:netrw_banner = 0
 " let g:netrw_winsize = 25
 " let g:netrw_browse_split = 4
+"
+" peek-a-boo settings
+" let g:peekaboo_delay = 750  " make a delay, might be better than leader
+let g:peekaboo_prefix = '<LEADER>'  " add prefix for peeking
 
 " settings for filetype detect
 augroup filetypedetect
@@ -265,20 +269,20 @@ set spell spelllang=en_us
 " -----------------------------------------------------------------------------
 "  Abbreviations (abvr abbr)
 
-ab indead indead
-ab instaed instead
-ab Indaed Indead
-ab Instaed Instead
-ab gropu group
-ab gorup group
-ab cerst certs
-ab countires countries
-ab downlaod download
-ab donwload download
-ab donwlaod download
-ab downlaods downloads
-ab donwloads downloads
-ab donwlaods downloads
+noreab indead indead
+noreab instaed instead
+noreab Indaed Indead
+noreab Instaed Instead
+noreab gropu group
+noreab gorup group
+noreab cerst certs
+noreab countires countries
+noreab downlaod download
+noreab donwload download
+noreab donwlaod download
+noreab downlaods downloads
+noreab donwloads downloads
+noreab donwlaods downloads
 
 " -----------------------------------------------------------------------------
 
