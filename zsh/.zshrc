@@ -167,6 +167,8 @@ alias grep="grep --color=always"
 # python virtual evnironment
 alias pv2="source ~/.venv/py2/bin/activate"
 alias pv3="source ~/.venv/py3/bin/activate"
+# new venv
+alias venv='source $VENV_PATH/activate'
 
 # date in ISO8601 format
 alias isodate="date +%f"
