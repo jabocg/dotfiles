@@ -209,3 +209,8 @@ alias gcav='git commit --verbose --all'
 # disable cd'ing into a directory via name alone
 unsetopt AUTO_CD
 
+# source alias
+alias so='source'
+
+# lessing ls with color
+alias lss='ls --color=always | less'
