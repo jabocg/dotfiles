@@ -18,27 +18,29 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
+" Plug 'davidhalter/jedi-vim'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/neosnippet.vim'
 Plug 'airblade/vim-gitgutter'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chrisbra/unicode.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'junegunn/fzf.vim'
+Plug 'junegunn/vim-peekaboo'
 Plug 'neomake/neomake'
+Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
-Plug 'junegunn/fzf.vim'
-Plug 'altercation/vim-colors-solarized'
-Plug 'chrisbra/unicode.vim'
-Plug 'nvie/vim-flake8'
-Plug 'jmcantrell/vim-virtualenv'
-Plug 'davidhalter/jedi-vim'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
-Plug 'junegunn/vim-peekaboo'
-Plug 'tpope/vim-speeddating'
-Plug 'easymotion/vim-easymotion'
 Plug 'tpope/vim-vinegar'
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 set rtp+=~/git/fzf/
 
@@ -50,6 +52,15 @@ set rtp+=~/git/fzf/
 " \-----------------------/
 " #settings
 
+let g:deoplete#enable_at_startup = 1
+autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
+
+let g:neosnippet#disable_runtime_snippets = {'_': 1}
+
+let g:python_host_prog = "$HOME/.venv/neomake2/bin/python"
+let g:python3_host_prog = "$HOME/.venv/neomake2/bin/python"
+
+let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 
 
 " /-----------------------\
@@ -70,6 +81,13 @@ nnoremap <LEADER>bool :Bang <C-R><C-W><CR>
 nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 
 nnoremap <LEADER>ls :Buffers<CR>
+
+" tab as next
+inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
+" shift-tab as prev
+inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
+" control space as start completion
+inoremap <C-SPACE> <C-X><C-O>
 
 
 " /------------------------\
@@ -139,6 +157,11 @@ set clipboard+=unnamed,unnamedplus
 " ===========
 colorscheme solarized
 set bg=dark
+
+" LIST CHARACTERS
+" ===============
+set list
+set lcs=eol:¬,tab:»­,nbsp:×,trail:·
 
 
 " /------------------------\
