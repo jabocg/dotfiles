@@ -3,17 +3,19 @@
 " |    LEADER    |
 " |              |
 " \--------------/
+" #leader
 
 " map leader to space
 nnoremap <SPACE> <NOP>
 let mapleader="\<SPACE>"
 
 
-" /----------------\
-" |                |
-" |    SETTINGS    |
-" |                |
-" \----------------/
+" /------------------------\
+" |                        |
+" |    VANILLA SETTINGS    |
+" |                        |
+" \------------------------/
+" #settings
 
 " BACKUP AND UNDO
 " ===============
@@ -76,6 +78,7 @@ set clipboard+=unnamed,unnamedplus
 " |    VANILLA MAPPINGS    |
 " |                        |
 " \------------------------/
+" #mappings
 
 " experiment
 inoremap <CR> <C-G>u<CR>
@@ -120,11 +123,54 @@ nnoremap <LEADER>lc :lclose<CR>
 nnoremap <LEADER>ld :LocationListClear<CR>
 
 
+" /-------------------------\
+" |                         |
+" |    PLUGIN MANAGEMENT    |
+" |                         |
+" \-------------------------/
+" #plugins
+
+call plug#begin('~/.config/nvim/plugged')
+Plug 'AndrewRadev/sideways.vim'
+Plug 'airblade/vim-gitgutter'
+Plug 'neomake/neomake'
+Plug 'qpkorr/vim-bufkill'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
+Plug 'tpope/vim-repeat'
+Plug 'tpope/vim-surround'
+Plug 'tpope/vim-unimpaired'
+Plug 'junegunn/fzf.vim'
+Plug 'altercation/vim-colors-solarized'
+Plug 'chrisbra/unicode.vim'
+Plug 'nvie/vim-flake8'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'davidhalter/jedi-vim'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'junegunn/vim-peekaboo'
+Plug 'tpope/vim-speeddating'
+Plug 'easymotion/vim-easymotion'
+Plug 'tpope/vim-vinegar'
+call plug#end()
+set rtp+=~/git/fzf/
+
+
+" /-----------------------\
+" |                       |
+" |    PLUGIN SETTINGS    |
+" |                       |
+" \-----------------------/
+" #settings
+
+
+
 " /-----------------------\
 " |                       |
 " |    PLUGIN MAPPINGS    |
 " |                       |
 " \-----------------------/
+" #mappings
 
 nnoremap <LEADER>H :SidewaysLeft<CR>
 nnoremap <LEADER>L :SidewaysRight<CR>
