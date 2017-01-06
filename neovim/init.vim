@@ -57,8 +57,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:neosnippet#disable_runtime_snippets = {'_': 1}
 
-let g:python_host_prog = "$HOME/.venv/neomake2/bin/python"
-let g:python3_host_prog = "$HOME/.venv/neomake2/bin/python"
+" let g:python_host_prog = "$HOME/.venv/neomake2/bin/python"
+" let g:python3_host_prog = "$HOME/.venv/neomake2/bin/python"
 
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 
@@ -82,12 +82,15 @@ nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 
 nnoremap <LEADER>ls :Buffers<CR>
 
-" tab as next
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
-" shift-tab as prev
 inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
-" control space as start completion
-inoremap <C-SPACE> <C-X><C-O>
+
+" these **HAVE** to be *RECURSIVE* mappings
+imap <expr><C-SPACE> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-X><C-O>"
+smap <expr><C-SPACE> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-X><C-O>"
+imap <expr><C-L> "\<Plug>(neosnippet_jump)"
+smap <expr><C-L> "\<Plug>(neosnippet_jump)"
+
 
 
 " /------------------------\
@@ -171,8 +174,10 @@ set lcs=eol:¬,tab:»­,nbsp:×,trail:·
 " \------------------------/
 " #mappings
 
-" experiment
+" MISCELLANEOUS 
+" ==============
 inoremap <CR> <C-G>u<CR>
+nnoremap <C-SPACE> <NOP>
 
 " COMMAND MAPPINGS
 " ================
