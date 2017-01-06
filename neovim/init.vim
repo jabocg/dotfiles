@@ -136,6 +136,8 @@ xnoremap gC ygvgcP
 nnoremap <LEADER>bool :Bang <C-R><C-W><CR>
 nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 
+nnoremap <LEADER>ls :Buffers<CR>
+
 " /-----------------\
 " |                 |
 " |    FUNCTIONS    |
