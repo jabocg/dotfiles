@@ -6,12 +6,15 @@
 " User defined mappings
 
 " Create a new line and move to it
+" @TODO use tpope plugin
 nnoremap <LEADER>o o<C-[>
 
 " Create a new line below cursor
+" @TODO use tpope plugin
 nnoremap <LEADER>O O<C-[>
 
 " backspace toggle highlighting search
+" @TODO use tpope plugin
 function! Toghls()
     set hls!
     if &hls == 1
@@ -23,6 +26,7 @@ endfunction
 nnoremap <BS> :call Toghls()<CR>
 
 " wrapping toggle function
+" @TODO use tpope plugin
 function! Wraptog()
   set wrap!
   if &wrap
@@ -40,9 +44,11 @@ nnoremap <TAB> <C-W>w
 nnoremap <S-TAB> <C-W>W
 
 " space tab goes to the next buffer
+" @TODO use tpope plugin
 nnoremap <LEADER><TAB> :bn<CR>
 
 " space shift tab goes to previous buffer
+" @TODO use tpope plugin
 nnoremap <LEADER><S-TAB> :bp<CR>
 
 " space w is control w in normal mode(useful for window commands)
@@ -119,9 +125,11 @@ nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
 cnoremap qq q!
 
 " quick mapping for next quickfix list item
+" @TODO use tpope plugin
 nnoremap <LEADER>cn :cnext<CR>
 nnoremap <LEADER>cN :cprevious<CR>
 
 " quick mapping for next locallist list item
+" @TODO use tpope plugin
 nnoremap <LEADER>ln :lnext<CR>
 nnoremap <LEADER>lN :lprevious<CR>
