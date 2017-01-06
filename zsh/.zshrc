@@ -214,3 +214,5 @@ alias so='source'
 
 # lessing ls with color
 alias lss='ls --color=always | less'
+
+alias nvimin='nvim ~/.config/nvim/init.vim'
