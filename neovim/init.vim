@@ -85,12 +85,9 @@ nnoremap <LEADER>ls :Buffers<CR>
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 
-" these **HAVE** to be *RECURSIVE* mappings
-imap <expr><C-SPACE> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-X><C-O>"
-smap <expr><C-SPACE> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<C-X><C-O>"
-imap <expr><C-L> "\<Plug>(neosnippet_jump)"
+inoremap <expr><C-SPACE> pumvisible() ? "\<C-Y>" : deoplete#mappings#manual_complete()
+imap <expr><C-L> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<Plug>(neosnippet_jump)"
 smap <expr><C-L> "\<Plug>(neosnippet_jump)"
-
 
 
 " /------------------------\
