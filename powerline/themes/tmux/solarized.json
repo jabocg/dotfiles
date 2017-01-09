@@ -1,11 +1,11 @@
 {
 	"segments": {
 		"right": [
-            {
-                "function": "powerline.segments.common.bat.battery",
-                "args": { "gamify": "True", "steps": 10 },
-                "priority": 40
-            },
+			{
+				"function": "powerline.segments.common.bat.battery",
+				"args": { "gamify": "True", "steps": 10 },
+				"priority": 40
+			},
 			{
 				"function": "powerline.segments.common.time.date",
 				"name": "time",
@@ -24,7 +24,7 @@
 			},
 			{
 				"function": "powerline.segments.common.net.hostname",
-                "priority": 50
+				"priority": 50
 			}
 		]
 	}
