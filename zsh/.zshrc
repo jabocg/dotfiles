@@ -125,7 +125,7 @@ if [[ `uname` == "Darwin" ]] ; then
     #--------------------------------------------------------------------------
     # ls all, long, readable, colored, special markers
     # requires: coreutils
-    alias ls="gls -haFl --color=auto --time-style=long-iso"
+    alias ls="gls -haFlv --color=auto --time-style=long-iso"
 
     # alias to sl 
     alias sl="ls -r"
@@ -153,7 +153,7 @@ else
     # not Mac stuff
 
     # ls all, long, readable, special characters, color, iso date
-    alias ls="ls -haFl --color=auto --time-style=long-iso"
+    alias ls="ls -haFlv --color=auto --time-style=long-iso"
     alias sl="ls -r"
 fi
 
