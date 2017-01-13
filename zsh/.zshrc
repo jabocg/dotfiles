@@ -1,9 +1,10 @@
 # Path to your oh-my-zsh installation.
-if [[ $(uname) == "Darwin" ]] ; then
-    export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
-else
-    export ZSH=/home/jabocg/.oh-my-zsh
-fi
+# if [[ $(uname) == "Darwin" ]] ; then
+#     export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
+# else
+#     export ZSH=/home/jabocg/.oh-my-zsh
+# fi
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -165,10 +166,10 @@ fi
 alias grep="grep --color=always"
 
 # python virtual evnironment
-alias pv2="source ~/.venv/py2/bin/activate"
-alias pv3="source ~/.venv/py3/bin/activate"
+alias pv2="source $HOME/.venv/py2/bin/activate"
+alias pv3="source $HOME/.venv/py3/bin/activate"
 # new venv
-alias venv='source $VENV_PATH/activate'
+alias venv="source $VENV_PATH/activate"
 
 # date in ISO8601 format
 alias isodate="date +%f"
@@ -215,4 +216,4 @@ alias so='source'
 # lessing ls with color
 alias lss='ls --color=always | less'
 
-alias nvimin='nvim ~/.config/nvim/init.vim'
+alias nvimin="nvim $HOME/.config/nvim/init.vim"
