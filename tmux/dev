@@ -4,7 +4,7 @@
 date=$(date "+%F")
 tmux new-session -d -s $date
 tmux rename-window -t 0 term
-tmux new-window -n devel -c ~/SAIFE/deploymentservice/
+tmux new-window -n devel -c ~/SAIFE/
 tmux swap-window -s 1 -t 0
 tmux select-window -t 0
 tmux attach-session -t $date
