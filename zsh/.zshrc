@@ -61,8 +61,10 @@ plugins=(git brew gem httpie python web-search wd mvn)
 # User configuration
 
 if [[ $(uname) == "Darwin" ]] ; then
+    plugins=(git brew gem httpie python web-search wd mvn)
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/git/fzf/bin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/Library/Android/sdk/platform-tools"
 else
+  plugins=(git gem httpie python web-search wd mvn)
   export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/jabocg/bin:/home/jabocg/git/fzf/bin:/home/jabocg/.local/bin:"
 fi
 # export MANPATH="/usr/local/man:$MANPATH"
