@@ -1,9 +1,10 @@
 # Path to your oh-my-zsh installation.
-if [[ $(uname) == "Darwin" ]] ; then
-    export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
-else
-    export ZSH=/home/jabocg/.oh-my-zsh
-fi
+# if [[ $(uname) == "Darwin" ]] ; then
+#     export ZSH=/Users/jacob.gersztyn/.oh-my-zsh
+# else
+#     export ZSH=/home/jabocg/.oh-my-zsh
+# fi
+export ZSH=$HOME/.oh-my-zsh
 
 # Set name of the theme to load.
 # Look in ~/.oh-my-zsh/themes/
@@ -60,8 +61,10 @@ plugins=(git brew gem httpie python web-search wd mvn)
 # User configuration
 
 if [[ $(uname) == "Darwin" ]] ; then
+    plugins=(git brew gem httpie python web-search wd mvn)
     export PATH="/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/git/fzf/bin:/Users/jacob.gersztyn/bin:/usr/local/apache-maven-3.3.9/bin:/Users/jacob.gersztyn/Library/Android/sdk/platform-tools"
 else
+  plugins=(git gem httpie python web-search wd mvn)
   export PATH="/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:/home/jabocg/bin:/home/jabocg/git/fzf/bin:/home/jabocg/.local/bin:"
 fi
 # export MANPATH="/usr/local/man:$MANPATH"
@@ -162,10 +165,10 @@ fi
 alias grep="grep --color=always"
 
 # python virtual evnironment
-alias pv2="source ~/.venv/py2/bin/activate"
-alias pv3="source ~/.venv/py3/bin/activate"
+alias pv2="source $HOME/.venv/py2/bin/activate"
+alias pv3="source $HOME/.venv/py3/bin/activate"
 # new venv
-alias venv='source $VENV_PATH/activate'
+alias venv="source $VENV_PATH/activate"
 
 # date in ISO8601 format
 alias isodate="date +%f"
@@ -212,4 +215,4 @@ alias so='source'
 # lessing ls with color
 alias lss='ls --color=always | less'
 
-alias nvimin='nvim ~/.config/nvim/init.vim'
+alias nvimin="nvim $HOME/.config/nvim/init.vim"
