@@ -125,15 +125,9 @@ if [[ `uname` == "Darwin" ]] ; then
     #--------------------------------------------------------------------------
     # ls all, long, readable, colored, special markers
     # requires: coreutils
-    alias ls="gls -haFlv --color=auto --time-style=long-iso"
-
-    # alias to sl 
-    alias sl="ls -r"
-
-    # alias to list "visible" directories only
-    alias lsd="ls */ -d"
-    # alias to list all directories only
-    alias lsad="ls .*/ */ -d"
+    alias la="gls -haFlv --color=auto --time-style=long-iso"
+    alias ll="gls -hFlv --color=auto --time-style=long-iso"
+    alias ls="gls -Fv --color=auto "
 
     # using macvim
     alias vim="mvim -v"
@@ -147,14 +141,14 @@ if [[ `uname` == "Darwin" ]] ; then
 
     # use coreutils echo
     alias echo="gecho"
-    
 
 else
     # not Mac stuff
 
     # ls all, long, readable, special characters, color, iso date
-    alias ls="ls -haFlv --color=auto --time-style=long-iso"
-    alias sl="ls -r"
+    alias la="ls -haFlv --color=auto --time-style=long-iso"
+    alias ll="ls -hFlv --color=auto --time-style=long-iso"
+    alias ls="ls -Fv --color=auto"
 fi
 
 if [[ `hostname` == "haboob" ]] ; then
