@@ -32,6 +32,7 @@ Plug 'junegunn/vim-peekaboo'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
+Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
@@ -85,7 +86,8 @@ nnoremap <LEADER>ls :Buffers<CR>
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 
-inoremap <expr><C-SPACE> pumvisible() ? "\<C-Y>" : deoplete#mappings#manual_complete()
+" @TODO fix c-space and c-l mappings
+imap <expr><C-SPACE> pumvisible() ? "\<C-Y>" : deoplete#mappings#manual_complete()
 imap <expr><C-L> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<Plug>(neosnippet_jump)"
 smap <expr><C-L> "\<Plug>(neosnippet_jump)"
 
