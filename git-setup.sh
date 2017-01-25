@@ -7,7 +7,7 @@ git config --global push.default simple
 if [ "$(uname)" == "Darwin" ]; then # Mac OS
     git config --global core.editor "mvim -v"
 else 
-    git config --global core.editor vim
+    git config --global core.editor nvim
 fi
 
 if [ -e ~/.gitignore_global ] ; then

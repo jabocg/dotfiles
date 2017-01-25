@@ -157,8 +157,9 @@ set clipboard+=unnamed,unnamedplus
 
 " COLORSCHEME
 " ===========
-colorscheme solarized
+set t_Co=256
 set bg=dark
+colorscheme solarized
 
 " LIST CHARACTERS
 " ===============

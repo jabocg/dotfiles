@@ -67,6 +67,11 @@ else
   plugins=(git gem httpie python web-search wd mvn)
   export PATH="$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:$HOME/git/fzf/bin:$HOME/bin:/opt/apache-maven/bin:"
 fi
+
+if [[ $(hostname) == "mako" ]] ; then
+    export PATH="$PATH:/opt/blender"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -148,7 +153,7 @@ else
     # ls all, long, readable, special characters, color, iso date
     alias la="ls -haFlv --color=auto --time-style=long-iso"
     alias ll="ls -hFlv --color=auto --time-style=long-iso"
-    alias ls="ls -Fv --color=auto"
+    alias ls="ls -Fv --color=auto --group-directories-first"
 fi
 
 if [[ `hostname` == "haboob" ]] ; then
@@ -207,6 +212,6 @@ unsetopt AUTO_CD
 alias so='source'
 
 # lessing ls with color
-alias lss='ls --color=always | less'
+alias lss='la --color=always | less'
 
 alias nvimin="nvim $HOME/.config/nvim/init.vim"
