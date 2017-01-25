@@ -130,9 +130,9 @@ if [[ `uname` == "Darwin" ]] ; then
     #--------------------------------------------------------------------------
     # ls all, long, readable, colored, special markers
     # requires: coreutils
+    alias ls="gls -Fv --color=auto --group-directories-first"
     alias la="gls -aFhlv --color=auto --time-style=long-iso"
     alias ll="gls -Fhlv --color=auto --time-style=long-iso"
-    alias ls="gls -Fv --color=auto "
     alias ll.="gls -dFhlv --color=auto --time-style=long-iso .*"
     alias l.="gls -dFv --color=auto --time-style=long-iso .*"
 
