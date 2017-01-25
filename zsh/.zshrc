@@ -155,7 +155,7 @@ else
     # ls all, long, readable, special characters, color, iso date
     alias ls="ls -Fv --color=auto --group-directories-first"
     alias ll="ls -hFlv --color=auto --time-style=long-iso"
-    alias la="ls -haFlv --color=auto --time-style=long-iso"
+    alias la="ls -aFhlv --color=auto --time-style=long-iso"
     alias l.="ls -dFhlv --color=auto --time-style=long-iso"
 fi
 
