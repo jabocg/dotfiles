@@ -130,9 +130,9 @@ if [[ `uname` == "Darwin" ]] ; then
     #--------------------------------------------------------------------------
     # ls all, long, readable, colored, special markers
     # requires: coreutils
-    alias la="gls -haFlv --color=auto --time-style=long-iso"
-    alias ll="gls -hFlv --color=auto --time-style=long-iso"
-    alias ls="gls -Fv --color=auto "
+    alias ls="gls -Fv --color=auto --group-directories-first"
+    alias la="gls -aFhlv --color=auto --time-style=long-iso"
+    alias ll="gls -Fhlv --color=auto --time-style=long-iso"
 
     # using macvim
     alias vim="mvim -v"
@@ -151,13 +151,9 @@ else
     # not Mac stuff
 
     # ls all, long, readable, special characters, color, iso date
-    alias la="ls -haFlv --color=auto --time-style=long-iso"
-    alias ll="ls -hFlv --color=auto --time-style=long-iso"
     alias ls="ls -Fv --color=auto --group-directories-first"
-fi
-
-if [[ `hostname` == "haboob" ]] ; then
-	alias vim="vimx"
+    alias ll="ls -hFlv --color=auto --time-style=long-iso"
+    alias la="ls -aFhlv --color=auto --time-style=long-iso"
 fi
 
 # add color to grep and tree
