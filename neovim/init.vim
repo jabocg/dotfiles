@@ -42,6 +42,7 @@ Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
 Plug 'zchee/deoplete-jedi'
+Plug 'zchee/deoplete-clang'
 call plug#end()
 set rtp+=~/git/fzf/
 
