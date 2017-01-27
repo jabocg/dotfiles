@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 " Plug 'davidhalter/jedi-vim'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
@@ -41,8 +42,8 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'zchee/deoplete-jedi'
 Plug 'zchee/deoplete-clang'
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 set rtp+=~/git/fzf/
 
