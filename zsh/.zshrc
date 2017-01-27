@@ -214,3 +214,6 @@ alias so='source'
 alias lss='la --color=always | less'
 
 alias nvimin="nvim $HOME/.config/nvim/init.vim"
+
+# view .ssh/config stuff
+alias ssh-config="cat $HOME/.ssh/config"
