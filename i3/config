@@ -15,6 +15,9 @@ set $mod Mod4
 # is used in the bar {} block below.
 font pango:monospace 8
 
+# wallpaper setup
+exec --no-startup-id feh --bg-scale /home/jabocg//Pictures/walls/wall.jpg
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -78,6 +81,7 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
@@ -156,7 +160,7 @@ mode "shutdown-mode" {
         # binds for shutting down, enter mode with $mod+shift+e
         bindsym s exec "shutdown -h now"
         bindsym l exit
-        bindsym r restart
+        bindsym r exec "shutdown -r now"
         # back to normal: Enter or Escape
         bindsym Return mode "default"
         bindsym Escape mode "default"
