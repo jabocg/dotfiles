@@ -72,6 +72,10 @@ if [[ $(hostname) == "mako" ]] ; then
     export PATH="$PATH:/opt/blender"
 fi
 
+if [[ -e /opt/eclipse/eclipse ]] ; then
+	export PATH="$PATH:/opt/eclipse/"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,17 +85,15 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 
-if [[ $(uname) != "Darwin" ]] ; then
-    export EDITOR="nvim"
-else
-	export EDITOR="mvim -v"
-fi
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+# eval $(ssh-agent -s)
+# ssh-add ~/.ssh/id_rsa_home
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
