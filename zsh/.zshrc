@@ -186,10 +186,6 @@ alias ed='ed -p:'
 # alias to shutdown elcim
 alias qeq='vim +ShutdownEclim +qa'
 
-# vulgar programming
-eval "$(thefuck --alias shit)"
-alias fucking='sudo'
-
 # git stuffs
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
@@ -202,6 +198,7 @@ alias gc='git commit'
 alias gcv='git commit --verbose'
 alias gca='git commit --all'
 alias gcav='git commit --verbose --all'
+alias gwt='git worktree'
 
 # disable cd'ing into a directory via name alone
 unsetopt AUTO_CD

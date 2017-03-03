@@ -226,7 +226,7 @@ bar {
 }
 
 # set border to only pixel
-new_window pixel 5
+new_window pixel 2
 
 # set gaps
 gaps inner 17
