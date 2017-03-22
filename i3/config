@@ -175,7 +175,7 @@ bindsym $mod+r mode "resize"
 mode "shutdown-mode" {
 	# binds for shutting down, enter mode with $mod+shift+e
 	bindsym s mode "confirm-shutdown"
-	bindsym l exec i3lock --image="/home/jabocg/Pictures/wall/lock.png" | i3 mode "default"
+	bindsym l exec i3lock --image="/home/jabocg/Pictures/walls/lock.png" & i3 mode "default"
 	bindsym r mode "confirm-restart"
 	bindsym o mode "confirm-logout"
 
