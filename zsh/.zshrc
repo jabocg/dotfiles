@@ -187,7 +187,7 @@ alias ed='ed -p:'
 # alias to shutdown elcim
 alias qeq='vim +ShutdownEclim +qa'
 
-# git stuffs
+# git aliases
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias gpl='git pull '
@@ -200,6 +200,7 @@ alias gcv='git commit --verbose'
 alias gca='git commit --all'
 alias gcav='git commit --verbose --all'
 alias gwt='git worktree'
+alias glg="git log --all --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --graph"
 
 # disable cd'ing into a directory via name alone
 unsetopt AUTO_CD
