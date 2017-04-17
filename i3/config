@@ -254,7 +254,9 @@ gaps outer -2
 # Green:   859900
 
 # class                 border 		backgr. 	text 		indicator	child_border
-client.focused          'd33682' 	'073542' 	'93a1a1' 	'571635 	'd33682'
+# client.focused          'd33682' 	'073542' 	'93a1a1' 	'571635 	'd33682'
+# client.focused          'b58900' 	'073542' 	'93a1a1' 	'b59800 	'b58900'
+client.focused          '859900' 	'073542' 	'93a1a1' 	'b58900' 	'859900'
 # client.focused_inactive '333333' '5f676a' 'ffffff' '484e50'   '5f676a'
 # client.unfocused        '333333' '222222' '888888' '292d2e'   '222222'
 client.urgent           'dc322f' '900000' 'ffffff' '900000'   'dc322f'
