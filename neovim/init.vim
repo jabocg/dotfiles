@@ -44,6 +44,8 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
 Plug 'zchee/deoplete-jedi'
 call plug#end()
 set rtp+=~/git/fzf/
@@ -67,6 +69,13 @@ let g:neosnippet#disable_runtime_snippets = {'_': 1}
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 
 let g:peekaboo_prefix  = "<leader>"
+
+" #airline
+let g:airline_powerline_fonts=1
+let g:airline_detect_spell=0
+
+" let g:airline_section_z='%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
+let g:airline_section_z='%4l% ,%3v% '
 
 
 " /-----------------------\
@@ -183,7 +192,7 @@ set nowrap
 " \------------------------/
 " #mappings
 
-" MISCELLANEOUS 
+" MISCELLANEOUS
 " ==============
 inoremap <CR> <C-G>u<CR>
 nnoremap <C-SPACE> <NOP>
@@ -246,38 +255,38 @@ endif
 " e.g. "false" -> "true"
 " works for lowercase, capitol, and ALL CAPS
 function! BangBool(boolean)
-    if a:boolean ==? "true"
-        if a:boolean[0] ==# "T"
-            if a:boolean[1] ==# "R"
-                echo "all caps"
-                let rep = "FALSE"
-            else
-                echo "capitol"
-                let rep = "False"
-            endif
-        else
-            echo "lowercase"
-            let rep = "false"
-        endif
-    elseif a:boolean ==? "false"
-        if a:boolean[0] ==# "F"
-            if a:boolean[1] ==# "A"
-                echo "all caps"
-                let rep = "TRUE"
-            else
-                echo "capitol"
-                let rep = "True"
-            endif
-        else
-            echo "lowercase"
-            let rep = "true"
-        endif
-    endif
+	if a:boolean ==? "true"
+		if a:boolean[0] ==# "T"
+			if a:boolean[1] ==# "R"
+				echo "all caps"
+				let rep = "FALSE"
+			else
+				echo "capitol"
+				let rep = "False"
+			endif
+		else
+			echo "lowercase"
+			let rep = "false"
+		endif
+	elseif a:boolean ==? "false"
+		if a:boolean[0] ==# "F"
+			if a:boolean[1] ==# "A"
+				echo "all caps"
+				let rep = "TRUE"
+			else
+				echo "capitol"
+				let rep = "True"
+			endif
+		else
+			echo "lowercase"
+			let rep = "true"
+		endif
+	endif
 
-    if a:boolean !=? "true" || a:boolean !=? "false"
-        execute "normal! ciw" . rep . "\<ESC>"
-    else
-        echo "invalid boolean detected"
-    endif
+	if a:boolean !=? "true" || a:boolean !=? "false"
+		execute "normal! ciw" . rep . "\<ESC>"
+	else
+		echo "invalid boolean detected"
+	endif
 endfunction
 command! -nargs=1 Bang call BangBool(<f-args>)
