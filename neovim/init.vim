@@ -19,7 +19,9 @@ let mapleader="\<SPACE>"
 
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'davidhalter/jedi-vim'
+" Plug 'zchee/deoplete-clang'
 Plug 'AndrewRadev/sideways.vim'
+Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
@@ -42,7 +44,6 @@ Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'zchee/deoplete-clang'
 Plug 'zchee/deoplete-jedi'
 call plug#end()
 set rtp+=~/git/fzf/
@@ -64,6 +65,8 @@ let g:neosnippet#disable_runtime_snippets = {'_': 1}
 " let g:python3_host_prog = "$HOME/.venv/neomake2/bin/python"
 
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
+
+let g:peekaboo_prefix  = "<leader>"
 
 
 " /-----------------------\
@@ -109,11 +112,12 @@ set backupdir-=.
 set undofile
 set undodir+=$HOME/.config/nvim/undo/
 
-" MISC. STATUS
-" ============
+" STATUS INFO
+" ===========
 set ruler
 set showcmd
 set laststatus=2
+set showtabline=2
 set colorcolumn=80
 set cursorline
 
@@ -124,7 +128,6 @@ set relativenumber
 
 " HANDLING TABS
 " =============
-" set expandtab
 set shiftwidth=4
 set tabstop=4
 
@@ -167,6 +170,10 @@ colorscheme solarized
 " ===============
 set list
 set lcs=eol:¬,tab:»­,nbsp:×,trail:·
+
+" TEXT WRAPPING
+" =============
+set nowrap
 
 
 " /------------------------\
