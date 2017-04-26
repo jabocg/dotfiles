@@ -77,6 +77,16 @@ let g:airline_detect_spell=0
 " let g:airline_section_z='%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z='%4l% ,%3v% '
 
+	" make these changes to solarized theme
+    " let s:N2 = [s:base2, (s:tty ? s:base01 : s:base0), '']
+    " let s:N3 = [s:base2, s:base01, '']
+let g:airline_theme_patch_func = 'AirlineThemePatch'
+function! AirlineThemePatch(palette)
+	if g:airline_theme == 'solarized'
+		let g:airline_solarized_normal_green=1
+	endif
+endfunction
+
 
 " /-----------------------\
 " |                       |
