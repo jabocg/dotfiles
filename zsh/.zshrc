@@ -76,6 +76,10 @@ if [[ -e /opt/eclipse/eclipse ]] ; then
 	export PATH="$PATH:/opt/eclipse/"
 fi
 
+if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
+	export PATH="$PATH:/opt/android-studio/bin/"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -92,9 +96,10 @@ export EDITOR="nvim"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
-eval $(ssh-agent -s)
-ssh-add ~/.ssh/id_rsa_home
-ssh-add ~/.ssh/id_rsa_school
+# eval $(ssh-agent -s)
+# ssh-add ~/.ssh/id_rsa_home
+# ssh-add ~/.ssh/id_rsa_school
+eval $(keychain --eval id_rsa_home id_rsa_school)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
