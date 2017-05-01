@@ -10,7 +10,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="evan"
+ZSH_THEME="alanpeabody"
 
 # Uncomment the following line to use case-sensitive completion.
 # CASE_SENSITIVE="true"
@@ -72,6 +72,14 @@ if [[ $(hostname) == "mako" ]] ; then
     export PATH="$PATH:/opt/blender"
 fi
 
+if [[ -e /opt/eclipse/eclipse ]] ; then
+	export PATH="$PATH:/opt/eclipse/"
+fi
+
+if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
+	export PATH="$PATH:/opt/android-studio/bin/"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -81,17 +89,17 @@ source $ZSH/oh-my-zsh.sh
 
 # Preferred editor for local and remote sessions
 
-if [[ $(uname) != "Darwin" ]] ; then
-    export EDITOR="nvim"
-else
-	export EDITOR="mvim -v"
-fi
+export EDITOR="nvim"
 
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
 # ssh
 # export SSH_KEY_PATH="~/.ssh/dsa_id"
+# eval $(ssh-agent -s)
+# ssh-add ~/.ssh/id_rsa_home
+# ssh-add ~/.ssh/id_rsa_school
+eval $(keychain --eval id_rsa_home id_rsa_school)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
@@ -184,11 +192,7 @@ alias ed='ed -p:'
 # alias to shutdown elcim
 alias qeq='vim +ShutdownEclim +qa'
 
-# vulgar programming
-eval "$(thefuck --alias shit)"
-alias fucking='sudo'
-
-# git stuffs
+# git aliases
 alias grc='git rebase --continue'
 alias grs='git rebase --skip'
 alias gpl='git pull '
@@ -200,6 +204,8 @@ alias gc='git commit'
 alias gcv='git commit --verbose'
 alias gca='git commit --all'
 alias gcav='git commit --verbose --all'
+alias gwt='git worktree'
+alias glg="git log --all --pretty=format:'%C(yellow)%h %Cred%ad %Cblue%an%Cgreen%d %Creset%s' --date=short --graph"
 
 # disable cd'ing into a directory via name alone
 unsetopt AUTO_CD

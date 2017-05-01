@@ -13,11 +13,14 @@ set $mod Mod4
 
 # Font for window titles. Will also be used by the bar unless a different font
 # is used in the bar {} block below.
-# font pango:monospace 8
+font pango:monospace 8
+
+# wallpaper setup
+exec --no-startup-id feh --bg-scale /home/jabocg//Pictures/walls/wall.jpg
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
-font pango:DejaVu Sans Mono for Powerline 8
+#font pango:DejaVu Sans Mono 8
 
 # Before i3 v4.8, we used to recommend this one as the default:
 # font -misc-fixed-medium-r-normal--13-120-75-75-C-70-iso10646-1
@@ -30,10 +33,20 @@ font pango:DejaVu Sans Mono for Powerline 8
 floating_modifier $mod
 
 # start a terminal
-bindsym $mod+Return exec i3-sensible-terminal
+bindsym $mod+Return exec gnome-terminal
 
 # kill focused window
 bindsym $mod+Shift+q kill
+bindsym $mod+q mode "confirm-kill"
+
+mode confirm-kill {
+	bindsym q kill window ; mode default
+	bindsym $mod+q kill window ; mode default
+	# back to normal: Enter, Escape, or [
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Control+bracketleft mode "default"
+}
 
 # start dmenu (a program launcher)
 bindsym $mod+d exec dmenu_run
@@ -66,11 +79,14 @@ bindsym $mod+Shift+Down move down
 bindsym $mod+Shift+Up move up
 bindsym $mod+Shift+Right move right
 
-# split in horizontal orientation
-bindsym $mod+v split v
+# change how focus is kept
+force_focus_wrapping no
 
-# split in vertical orientation
-bindsym $mod+g split h
+# split in (vim)horizontal orientation
+bindsym $mod+g split v
+
+# split in (vim)vertical orientation
+bindsym $mod+v split h
 
 # enter fullscreen mode for the focused container
 bindsym $mod+f fullscreen toggle
@@ -78,20 +94,20 @@ bindsym $mod+f fullscreen toggle
 # change container layout (stacked, tabbed, toggle split)
 bindsym $mod+s layout stacking
 bindsym $mod+w layout tabbed
+bindsym $mod+t layout tabbed
 bindsym $mod+e layout toggle split
 
 # toggle tiling / floating
 bindsym $mod+Shift+space floating toggle
 
 # change focus between tiling / floating windows
-# bindsym $mod+space focus mode_toggle
+bindsym $mod+space focus mode_toggle
 
 # focus the parent container
 bindsym $mod+a focus parent
 
 # focus the child container
-#bindsym $mod+d focus child
-bindsym $mod+space focus child
+bindsym $mod+c focus child
 
 # switch to workspace
 bindsym $mod+1 workspace 1
@@ -107,8 +123,9 @@ bindsym $mod+0 workspace 10
 
 # added binds to move to next and previous workspaces
 bindsym $mod+Tab workspace next
+bindsym $mod+bracketright workspace next
 bindsym $mod+Shift+Tab workspace prev
-
+bindsym $mod+bracketleft workspace prev
 # move focused container to workspace
 bindsym $mod+Shift+1 move container to workspace 1
 bindsym $mod+Shift+2 move container to workspace 2
@@ -130,53 +147,122 @@ bindsym $mod+Shift+r restart
 
 # resize window (you can also use the mouse for that)
 mode "resize" {
-        # These bindings trigger as soon as you enter the resize mode
+	# These bindings trigger as soon as you enter the resize mode
 
-        # Pressing left will shrink the window’s width.
-        # Pressing right will grow the window’s width.
-        # Pressing up will shrink the window’s height.
-        # Pressing down will grow the window’s height.
-        bindsym h resize shrink width 10 px or 10 ppt
-        bindsym j resize grow height 10 px or 10 ppt
-        bindsym k resize shrink height 10 px or 10 ppt
-        bindsym l resize grow width 10 px or 10 ppt
+	# Pressing left will shrink the window’s width.
+	# Pressing right will grow the window’s width.
+	# Pressing up will shrink the window’s height.
+	# Pressing down will grow the window’s height.
+	bindsym h resize shrink width 10 px or 10 ppt
+	bindsym j resize grow height 10 px or 10 ppt
+	bindsym k resize shrink height 10 px or 10 ppt
+	bindsym l resize grow width 10 px or 10 ppt
 
-        # same bindings, but for the arrow keys
-        bindsym Left resize shrink width 10 px or 10 ppt
-        bindsym Down resize grow height 10 px or 10 ppt
-        bindsym Up resize shrink height 10 px or 10 ppt
-        bindsym Right resize grow width 10 px or 10 ppt
+	# same bindings, but for the arrow keys
+	bindsym Left resize shrink width 10 px or 10 ppt
+	bindsym Down resize grow height 10 px or 10 ppt
+	bindsym Up resize shrink height 10 px or 10 ppt
+	bindsym Right resize grow width 10 px or 10 ppt
 
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
+	# back to normal: Enter or Escape
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Control+bracketleft mode "default"
 }
 
 bindsym $mod+r mode "resize"
 
 mode "shutdown-mode" {
-        # binds for shutting down, enter mode with $mod+shift+e
-        bindsym s exec "shutdown -h now"
-        bindsym l exit
-        bindsym r restart
-        # back to normal: Enter or Escape
-        bindsym Return mode "default"
-        bindsym Escape mode "default"
-}
-bindsym $mod+Shift+e mode shutdown-mode
+	# binds for shutting down, enter mode with $mod+shift+e
+	bindsym s mode "confirm-shutdown"
+	bindsym l exec i3lock --image="/home/jabocg/Pictures/walls/lock.png" & i3 mode "default"
+	bindsym r mode "confirm-restart"
+	bindsym o mode "confirm-logout"
 
+	# back to normal: Enter, Escape, or [
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Control+bracketleft mode "default"
+}
+
+mode "confirm-shutdown" {
+	bindsym s exec "shutdown -h now"
+	bindsym r mode "default"
+	bindsym o mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Bracketleft mode "default"
+	bindsym Control+bracketleft mode "default"
+}
+
+mode "confirm-restart" {
+	bindsym s mode "default"
+	bindsym r exec shutdown -r now
+	bindsym o mode "default"
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Bracketleft mode "default"
+	bindsym Control+bracketleft mode "default"
+}
+
+mode "confirm-logout" {
+	bindsym s mode "default"
+	bindsym r mode "default"
+	bindsym o exec i3 exit
+
+	bindsym Return mode "default"
+	bindsym Escape mode "default"
+	bindsym Bracketleft mode "default"
+}
+
+bindsym $mod+Shift+e mode shutdown-mode
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
 bar {
-        status_command i3status
-        tray_output primary
+	status_command i3status
+	position top
 }
 
-# i3 + powerline bar
-# bar {
-#     # i3bar_command i3bgbar
+# set border to only pixel
+new_window pixel 2
 
-#     status_command "python $POWERLINE/bindings/bar/powerline-bar.py --i3 | /usr/bin/lemonbar"
-#     font pango:DejaVu Sans Mono for Powerline 8
-# }
+# set gaps
+gaps inner 17
+gaps outer -2
 
+# set colors
+#
+# solarized colors
+# Base03:  002b36
+# Base02:  073542
+# Base01:  586e75
+# Base00:  657b83
+# Base0:   839496
+# Base1:   93a1a1
+# Base2:   eee8d5
+# Base3:   fdf6e3
+# Yellow:  b58900
+# Orange:  cb4b16
+# Red:     dc322f
+# Magenta: d33682
+# DarkM:   ad2c6b
+# Violet:  6271c4
+# Blue:    268bd2
+# Cyan:    2aa198
+# Green:   859900
+
+# class                 border 		backgr. 	text 		indicator	child_border
+# client.focused          'd33682' 	'073542' 	'93a1a1' 	'571635 	'd33682'
+# client.focused          'b58900' 	'073542' 	'93a1a1' 	'b59800 	'b58900'
+client.focused          '859900' 	'073542' 	'93a1a1' 	'b58900' 	'859900'
+# client.focused_inactive '333333' '5f676a' 'ffffff' '484e50'   '5f676a'
+# client.unfocused        '333333' '222222' '888888' '292d2e'   '222222'
+client.urgent           'dc322f' '900000' 'ffffff' '900000'   'dc322f'
+# client.placeholder      '000000' '0c0c0c' 'ffffff' '000000'   '0c0c0c'
+
+client.background       ffffff
+
+# wallpaper
+exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/wall/wall.jpg
