@@ -233,6 +233,8 @@ nnoremap <LEADER>G G$
 nnoremap <LEADER>, ,
 nnoremap , ;
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
+nnoremap zl 5zl
+nnoremap zh 5zh
 
 " QUICK-FIX
 " =========
