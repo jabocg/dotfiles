@@ -142,8 +142,8 @@ if [[ `uname` == "Darwin" ]] ; then
     # ls all, long, readable, colored, special markers
     # requires: coreutils
     alias ls="gls -Fv --color=auto --group-directories-first"
-    alias la="gls -aFhlv --color=auto --time-style=long-iso"
-    alias ll="gls -Fhlv --color=auto --time-style=long-iso"
+    alias la="gls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
+    alias ll="gls -Fhlv --color=auto --time-style=long-iso --group-directories-first"
 
     # using macvim
     alias vim="mvim -v"
