@@ -99,7 +99,10 @@ export EDITOR="nvim"
 # eval $(ssh-agent -s)
 # ssh-add ~/.ssh/id_rsa_home
 # ssh-add ~/.ssh/id_rsa_school
-eval $(keychain --eval id_rsa_home id_rsa_school)
+if [[ -e /opt/keychain/ ]] ; then
+	export PATH="$PATH:/opt/keychain/"
+fi
+eval $(keychain --eval id_rsa id_rsa_home id_rsa_school)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
