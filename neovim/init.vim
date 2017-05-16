@@ -216,6 +216,11 @@ cnoremap w!! w !sudo tee > /dev/null %
 " ===============
 nnoremap <LEADER>w <C-W>
 
+" TAB MAPPINGS
+" ============
+nnoremap gH :tabmove -1<CR>
+nnoremap gL :tabmove +1<CR>
+
 " TEXT MODIFICATION
 " =================
 map Y y$
@@ -233,8 +238,8 @@ nnoremap <LEADER>G G$
 nnoremap <LEADER>, ,
 nnoremap , ;
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
-nnoremap zl 5zl
-nnoremap zh 5zh
+nnoremap zll 10zl
+nnoremap zhh 10zh
 
 " QUICK-FIX
 " =========

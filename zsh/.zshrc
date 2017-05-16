@@ -91,6 +91,10 @@ source $ZSH/oh-my-zsh.sh
 
 export EDITOR="nvim"
 
+# Preferred terminal: gnome-terminal
+
+export TERMINAL="gnome-terminal"
+
 # Compilation flags
 # export ARCHFLAGS="-arch x86_64"
 
