@@ -20,6 +20,7 @@ let mapleader="\<SPACE>"
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'davidhalter/jedi-vim'
 " Plug 'zchee/deoplete-clang'
+Plug 'mkarmona/materialbox'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
@@ -181,9 +182,13 @@ set clipboard+=unnamed,unnamedplus
 
 " COLORSCHEME
 " ===========
+" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+set termguicolors
 set t_Co=256
 set bg=dark
-colorscheme solarized
+" colorscheme solarized
+" colorscheme default
+colorscheme materialbox
 
 " LIST CHARACTERS
 " ===============
