@@ -64,8 +64,8 @@ autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 
 let g:neosnippet#disable_runtime_snippets = {'_': 1}
 
-" let g:python_host_prog = "$HOME/.venv/neomake2/bin/python"
-" let g:python3_host_prog = "$HOME/.venv/neomake2/bin/python"
+" let g:python_host_prog 	= "$HOME/.pyenv/versions/neovim2/bin/python"
+" let g:python3_host_prog = "$HOME/.pyenv/versions/neovim3/bin/python"
 
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 

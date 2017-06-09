@@ -80,6 +80,10 @@ if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
 	export PATH="$PATH:/opt/android-studio/bin/"
 fi
 
+if [[ -e $HOME/.pyenv/ ]] ; then
+	export PATH="$PATH:$HOME/.pyenv/bin"
+fi
+
 # export MANPATH="/usr/local/man:$MANPATH"
 
 source $ZSH/oh-my-zsh.sh
@@ -177,8 +181,11 @@ alias grep="grep --color=always"
 # python virtual evnironment
 alias pv2="source $HOME/.venv/py2/bin/activate"
 alias pv3="source $HOME/.venv/py3/bin/activate"
-# new venv
-alias venv="source $VENV_PATH/activate"
+
+# pyenv
+eval "$(pyenv init -)"
+eval "$(pyenv virtualenv-init -)"
+export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 
 # date in ISO8601 format
 alias isodate="date +%f"
