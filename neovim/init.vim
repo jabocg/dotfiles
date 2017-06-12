@@ -182,7 +182,7 @@ set clipboard+=unnamed,unnamedplus
 
 " COLORSCHEME
 " ===========
-" let $NVIM_TUI_ENABLE_TRUE_COLOR=1
+let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set t_Co=256
 set bg=dark
