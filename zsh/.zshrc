@@ -234,3 +234,6 @@ alias nvimin="nvim $HOME/.config/nvim/init.vim"
 
 # view .ssh/config stuff
 alias ssh-config="cat $HOME/.ssh/config"
+
+# fuck
+eval $(thefuck --alias)
