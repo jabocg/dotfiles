@@ -59,16 +59,19 @@ set rtp+=~/git/fzf/
 " \-----------------------/
 " #settings
 
+" #deoplete
 let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-
-let g:neosnippet#disable_runtime_snippets = {'_': 1}
+" let g:deoplete#disable_auto_complete = 1
 
 " let g:python_host_prog 	= "$HOME/.pyenv/versions/neovim2/bin/python"
 " let g:python3_host_prog = "$HOME/.pyenv/versions/neovim3/bin/python"
 
+" #neosnippet
+let g:neosnippet#disable_runtime_snippets = {'_': 1}
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 
+" #peekaboo
 let g:peekaboo_prefix  = "<leader>"
 
 " #airline
@@ -77,16 +80,6 @@ let g:airline_detect_spell=0
 
 " let g:airline_section_z='%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z='%4l% ,%3v% '
-
-	" make these changes to solarized theme
-    " let s:N2 = [s:base2, (s:tty ? s:base01 : s:base0), '']
-    " let s:N3 = [s:base2, s:base01, '']
-let g:airline_theme_patch_func = 'AirlineThemePatch'
-function! AirlineThemePatch(palette)
-	if g:airline_theme == 'solarized'
-		let g:airline_solarized_normal_green=1
-	endif
-endfunction
 
 
 " /-----------------------\
@@ -111,10 +104,9 @@ nnoremap <LEADER>ls :Buffers<CR>
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 
-" @TODO fix c-space and c-l mappings
-imap <expr><C-SPACE> pumvisible() ? "\<C-Y>" : deoplete#mappings#manual_complete()
-imap <expr><C-L> neosnippet#expandable() ? "\<Plug>(neosnippet_expand)" : "\<Plug>(neosnippet_jump)"
-smap <expr><C-L> "\<Plug>(neosnippet_jump)"
+inoremap <expr><C-SPACE> pumvisible() ? deoplete#cancel_popup() : "\<C-N>"
+imap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+smap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 
 
 " /------------------------\
