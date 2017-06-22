@@ -191,6 +191,10 @@ set lcs=eol:¬,tab:»­,nbsp:×,trail:·
 " =============
 set nowrap
 
+" MOUSE OPTIONS
+" =============
+set mouse=a
+
 
 " /------------------------\
 " |                        |
