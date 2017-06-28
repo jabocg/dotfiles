@@ -60,29 +60,63 @@ plugins=(git brew gem httpie python web-search wd mvn)
 
 # User configuration
 
+# Path configuation
+if [[ -z "$TMUX" ]] ; then
+	PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:/bin:/sbin"
+
+	if [[ $(uname) == "Darwin" ]] ; then
+		PATH="$PATH:/usr/local/apache-maven-3.3.9/bin:/usr/local/apache-maven-3.3.9/bin:"
+	else
+		PATH="$PATH:$HOME/bin:/opt/apache-maven/bin:"
+	fi
+
+	# FZF path setup
+	if [[ -e $HOME/git/fzf/ ]] ; then
+		PATH="$PATH:$HOME/git/fzf/bin"
+	fi
+
+	# Blender path setup
+	if [[ -e /opt/blender ]] ; then
+		PATH="$PATH:/opt/blender"
+	fi
+
+	# Eclipse path setup
+	if [[ -e /opt/eclipse/eclipse ]] ; then
+		PATH="$PATH:/opt/eclipse"
+	fi
+
+	# Android Studio path setup
+	if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
+		PATH="$PATH:/opt/android-studio/bin"
+	fi
+
+	# Pyenv path setup
+	if [[ -e $HOME/.pyenv/ ]] ; then
+		PATH="$PATH:$HOME/.pyenv/bin"
+	fi
+
+	# Keychain path setup
+	if [[ -e /opt/keychain/ ]] ; then
+		export PATH="$PATH:/opt/keychain/"
+		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
+	elif [[ -e /usr/local/bin/keychain ]] ; then
+		export PATH="$PATH:/usr/local/bin/keychain/"
+		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
+	else
+		ssh-add $HOME/.ssh/id_rsa_home
+		ssh-add $HOME/.ssh/id_rsa_work
+	fi
+
+	export PATH
+fi
+
 if [[ $(uname) == "Darwin" ]] ; then
-    plugins=(git brew gem httpie python web-search wd mvn)
-    export PATH="$PATH:/usr/local/bin:/usr/bin:/bin:/usr/sbin:/sbin:$HOME/bin:/usr/local/apache-maven-3.3.9/bin:$HOME/git/fzf/bin:$HOME/bin:/usr/local/apache-maven-3.3.9/bin:$HOME/Library/Android/sdk/platform-tools"
+	plugins=(git brew gem httpie python web-search wd mvn)
 else
-  plugins=(git gem httpie python web-search wd mvn)
-  export PATH="$PATH:/usr/lib64/qt-3.3/bin:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:$HOME/git/fzf/bin:$HOME/bin:/opt/apache-maven/bin:"
+	plugins=(git gem httpie python web-search wd mvn)
 fi
 
-if [[ $(hostname) == "mako" ]] ; then
-    export PATH="$PATH:/opt/blender"
-fi
 
-if [[ -e /opt/eclipse/eclipse ]] ; then
-	export PATH="$PATH:/opt/eclipse/"
-fi
-
-if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
-	export PATH="$PATH:/opt/android-studio/bin/"
-fi
-
-if [[ -e $HOME/.pyenv/ ]] ; then
-	export PATH="$PATH:$HOME/.pyenv/bin"
-fi
 
 # export MANPATH="/usr/local/man:$MANPATH"
 
@@ -98,19 +132,6 @@ export EDITOR="nvim"
 # Preferred terminal: gnome-terminal
 
 export TERMINAL="gnome-terminal"
-
-# Compilation flags
-# export ARCHFLAGS="-arch x86_64"
-
-# ssh
-# export SSH_KEY_PATH="~/.ssh/dsa_id"
-# eval $(ssh-agent -s)
-# ssh-add ~/.ssh/id_rsa_home
-# ssh-add ~/.ssh/id_rsa_school
-if [[ -e /opt/keychain/ ]] ; then
-	export PATH="$PATH:/opt/keychain/"
-fi
-eval $(keychain --eval id_rsa id_rsa_home)
 
 # Set personal aliases, overriding those provided by oh-my-zsh libs,
 # plugins, and themes. Aliases can be placed here, though oh-my-zsh
