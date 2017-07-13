@@ -18,7 +18,7 @@
 		},
 		"shell": {
 			"colorscheme": "solarized",
-			"theme": "solarized",
+			"theme": "jabocg",
 			"local_themes": {
 				"continuation": "continuation",
 				"select": "select"
@@ -33,15 +33,9 @@
 			"theme": "solarized",
 			"local_themes": {
 				"__tabline__": "tabline",
-
 				"cmdwin": "cmdwin",
 				"help": "help",
-				"quickfix": "quickfix",
-
-				"powerline.matchers.vim.plugin.nerdtree.nerdtree": "plugin_nerdtree",
-				"powerline.matchers.vim.plugin.commandt.commandt": "plugin_commandt",
-				"powerline.matchers.vim.plugin.gundo.gundo": "plugin_gundo",
-				"powerline.matchers.vim.plugin.gundo.gundo_preview": "plugin_gundo-preview"
+				"quickfix": "quickfix"
 			}
 		},
 		"wm": {
