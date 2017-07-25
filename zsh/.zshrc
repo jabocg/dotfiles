@@ -109,9 +109,9 @@ if [[ -z "$TMUX" ]] ; then
 fi
 
 if [[ $(uname) == "Darwin" ]] ; then
-	plugins=(git brew gem httpie python web-search wd mvn)
+	plugins=(git brew gem httpie python web-search wd mvn zsh-syntax-highlighting)
 else
-	plugins=(git gem httpie python web-search wd mvn)
+	plugins=(git gem httpie python web-search wd mvn zsh-syntax-highlighting)
 fi
 
 
@@ -252,5 +252,3 @@ alias ssh-config="cat $HOME/.ssh/config"
 
 # fuck
 eval $(thefuck --alias)
-
-source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
