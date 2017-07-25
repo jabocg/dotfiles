@@ -55,8 +55,6 @@ HIST_STAMPS="yyyy-mm-dd"
 # Example format: plugins=(rails git textmate ruby lighthouse)
 # Add wisely, as too many plugins slow down shell startup.
 
-# add aws completer to path
-plugins=(git brew gem httpie python web-search wd mvn)
 
 # User configuration
 
@@ -174,11 +172,6 @@ if [[ `uname` == "Darwin" ]] ; then
     alias la="gls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
     alias ll="gls -Fhlv --color=auto --time-style=long-iso --group-directories-first"
 
-    # using macvim
-    alias vim="mvim -v"
-    alias vimdiff='mvim -v -d'
-    alias view='mvim -v -R'
-
     # prevent launchctl from running in tmux
     if [[ $TERM == "screen-256color" ]] ; then
         alias launchctl="echo 'DO NOT RUN THIS INSIDE OF SCREEN OR TMUX'"
@@ -211,9 +204,10 @@ export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 # date in ISO8601 format
 alias isodate="date +%f"
 
+# using neovim
 # vim notes with ISO date
-alias vimnote="vim notes_$(isodate)"
-alias vimnoted="vim notes_$(isodate).md"
+alias vimnote="nvim notes_$(isodate)"
+alias vimnoted="nvim notes_$(isodate).md"
 
 # nuke alias, because funtimes
 alias nuke='rm -rf'
@@ -258,3 +252,5 @@ alias ssh-config="cat $HOME/.ssh/config"
 
 # fuck
 eval $(thefuck --alias)
+
+source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
