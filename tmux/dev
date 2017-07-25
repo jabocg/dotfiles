@@ -4,7 +4,9 @@
 date=$(date "+%F")
 tmux new-session -d -s $date
 tmux rename-window -t 0 term
-tmux new-window -n devel -c ~/SAIFE/
+tmux new-window -n vagrant -c ~/SAIFE/connect-qa/aws/perf_test/servers/
+tmux split-window -h -c ~/SAIFE/connect-qa/aws/perf_test/clients/
 tmux swap-window -s 1 -t 0
 tmux select-window -t 0
+tmux select-pane -t 0
 tmux attach-session -t $date
