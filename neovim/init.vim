@@ -256,6 +256,8 @@ nnoremap zhh 10zh
 nnoremap <LEADER>co :botright copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cd :QuickFixClear<CR>
+nnoremap <LEADER>cn :cn<CR>
+nnoremap <LEADER>cp :cp<CR>
 
 " LOCATION LIST
 " =============
