@@ -256,8 +256,8 @@ nnoremap zhh 10zh
 nnoremap <LEADER>co :botright copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cd :QuickFixClear<CR>
-nnoremap <LEADER>cn :cn<CR>
-nnoremap <LEADER>cp :cp<CR>
+" DON'T NEED NEXT AND PREV MAPPINGS
+" USE THE tpope/vim-unimpaired mappings [q and ]q instead
 
 " LOCATION LIST
 " =============
