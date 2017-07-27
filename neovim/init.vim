@@ -81,6 +81,15 @@ let g:airline_detect_spell=0
 " let g:airline_section_z='%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
 let g:airline_section_z='%4l% ,%3v% '
 
+" #flake8
+let g:flake8_show_in_gutter=1
+
+highlight link Flake8_Error      Error
+highlight link Flake8_Warning    WarningMsg
+highlight link Flake8_Complexity WarningMsg
+highlight link Flake8_Naming     WarningMsg
+highlight link Flake8_PyFlake    WarningMsg
+
 
 " /-----------------------\
 " |                       |
