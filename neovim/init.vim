@@ -20,22 +20,23 @@ let mapleader="\<SPACE>"
 call plug#begin('~/.config/nvim/plugged')
 " Plug 'davidhalter/jedi-vim'
 " Plug 'zchee/deoplete-clang'
-Plug 'mkarmona/materialbox'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
-Plug 'Shougo/neoinclude.vim'
-Plug 'Shougo/neosnippet.vim'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
+Plug 'AndrewRadev/sideways.vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'Konfekt/FastFold'
+Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
+Plug 'Raimondi/delimitMate'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/neosnippet.vim'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -64,31 +65,32 @@ let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
 " let g:deoplete#disable_auto_complete = 1
 
-" let g:python_host_prog 	= "$HOME/.pyenv/versions/neovim2/bin/python"
-" let g:python3_host_prog = "$HOME/.pyenv/versions/neovim3/bin/python"
-
 " #neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_': 1}
 let g:neosnippet#snippets_directory = "$HOME/.config/nvim/snippets/"
 
 " #peekaboo
-let g:peekaboo_prefix  = "<leader>"
+let g:peekaboo_prefix  = "<LEADER>"
 
 " #airline
-let g:airline_powerline_fonts=1
-let g:airline_detect_spell=0
+let g:airline_powerline_fonts = 1
+let g:airline_detect_spell = 0
 
-" let g:airline_section_z='%3p%% %#__accent_bold#%{g:airline_symbols.linenr}%4l%#__restore__#%#__accent_bold#/%L%{g:airline_symbols.maxlinenr}%#__restore__# :%3v'
-let g:airline_section_z='%4l% ,%3v% '
+let g:airline_section_z = '%4l% ,%3v% '
 
 " #flake8
-let g:flake8_show_in_gutter=1
+let g:flake8_show_in_gutter = 1
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
 highlight link Flake8_Complexity WarningMsg
 highlight link Flake8_Naming     WarningMsg
 highlight link Flake8_PyFlake    WarningMsg
+
+" #fastfold
+let g:fastfold_savehook = 1
+let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
+let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 
 " /-----------------------\
@@ -98,24 +100,29 @@ highlight link Flake8_PyFlake    WarningMsg
 " \-----------------------/
 " #mappings
 
+" #sideways
 nnoremap <LEADER>H :SidewaysLeft<CR>
 nnoremap <LEADER>L :SidewaysRight<CR>
 nnoremap <LEADER>hh :SidewaysJumpLeft<CR>
 nnoremap <LEADER>ll :SidewaysJumpRight<CR>
 
+" #vim-commentary
 xnoremap gC ygvgcP
 
-nnoremap <LEADER>bool :Bang <C-R><C-W><CR>
-nnoremap <LEADER>bang :Bang <C-R><C-W><CR>
-
 nnoremap <LEADER>ls :Buffers<CR>
+" #vim-fzf
 
+" #deoplete?
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
 inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 
+" #neosnippet
 inoremap <expr><C-SPACE> pumvisible() ? deoplete#cancel_popup() : "\<C-N>"
 imap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 smap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+
+" #fastfold
+nnoremap zuz <Plug>(FastFoldUpdate)
 
 
 " /------------------------\
@@ -173,7 +180,6 @@ set spelllang=en_us
 
 " FOLDING
 " =======
-set foldmethod=syntax
 set foldlevel=99
 set foldcolumn=1
 
@@ -203,6 +209,11 @@ set nowrap
 " MOUSE OPTIONS
 " =============
 set mouse=a
+
+" FILE TYPES
+" ==========
+autocmd BufRead *.md setlocal ft=markdown
+autocmd BufRead *.conf setlocal ft=config
 
 
 " /------------------------\
@@ -248,8 +259,8 @@ nnoremap <LEADER>G G$
 nnoremap <LEADER>, ,
 nnoremap , ;
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
-nnoremap zll 10zl
-nnoremap zhh 10zh
+nnoremap <LEADER>zl 10zl
+nnoremap <LEADER>zh 10zh
 
 " QUICK-FIX
 " =========
