@@ -18,8 +18,6 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
-" Plug 'davidhalter/jedi-vim'
-" Plug 'zchee/deoplete-clang'
 Plug 'airblade/vim-gitgutter'
 Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/sideways.vim'
@@ -80,6 +78,7 @@ let g:airline_section_z = '%4l% ,%3v% '
 
 " #flake8
 let g:flake8_show_in_gutter = 1
+autocmd BufWritePost *.py call Flake8()
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
@@ -330,3 +329,15 @@ function! BangBool(boolean)
 	endif
 endfunction
 command! -nargs=1 Bang call BangBool(<f-args>)
+
+" QUICKFIX CLOSE
+" ==============
+function! QuickClose()
+	" if the quickfix is the last window, close vim
+	if &buftype=='quickfix'
+		if winnr('$') < 2
+			quitall!
+		endif
+	endif
+endfunction
+autocmd BufEnter * call QuickClose()

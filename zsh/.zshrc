@@ -250,5 +250,44 @@ alias nvimin="nvim $HOME/.config/nvim/init.vim"
 # view .ssh/config stuff
 alias ssh-config="cat $HOME/.ssh/config"
 
-# fuck
-eval $(thefuck --alias)
+
+###############
+#             #
+#  Pip setup  #
+#             #
+###############
+
+pip() {
+	if [[ -n $VIRTUAL_ENV ]] ; then
+		# if in a virtualenv, use vevn pip
+		command pip $@
+	else
+		# use pip 2
+		_pip 2 $@
+	fi
+}
+
+pip2() {
+	_pip 2 $@
+}
+
+pip3() {
+	_pip 3 $@
+}
+
+_pip() {
+	pipver=$1
+	shift
+
+	if [[ "$1" == "install" ]] ; then
+		# install packages as user by default
+		shift
+		command pip$pipver install --user $@
+	else if [[ "$1" == "list" ]] ; then
+		# list in column format
+			command pip$pipver list --format=columns $@
+		else
+			command pip$pipver $@
+		fi
+	fi
+}
