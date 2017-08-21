@@ -6,6 +6,10 @@ elif hash yum 2>/dev/null ; then
 	sudo yum -y install epel-release
 	sudo curl -o /etc/yum.repos.d/dperson-neovim-epel-7.repo https://copr.fedorainfracloud.org/coprs/dperson/neovim/repo/epel-7/dperson-neovim-epel-7.repo 
 	sudo yum -y install neovim
+elif hash brew 2>/dev/null ; then
+	brew install neovim
+	pip install neovim
+	pip3 install neovim
 fi
 
 # create config structure
