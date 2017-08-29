@@ -1,8 +1,19 @@
 #!/bin/bash
 # setup for ZSH
 
-# install zsh
-sudo dnf install -y zsh || sudo yum install -y zsh || sudo apt-get install zsh || brew install zsh
+# set executable
+if hash yum 2>/dev/null ; then
+	PACK_MAN="yum"
+	sudo yum install -y zsh
+else if hash brew 2>/dev/null ; then
+		PACK_MAN="brew"
+		brew install zsh
+	else if hash pacman 2>/dev/null ; then
+			PACK_MAN="pacman"
+			pacman --noconfirm -S zsh
+		fi
+	fi
+fi
 
 # install oh-my-zsh
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
