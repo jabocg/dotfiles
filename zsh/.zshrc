@@ -75,7 +75,10 @@ if [[ -z "$TMUX" ]] ; then
 	elif [[ -e /usr/local/bin/keychain ]] ; then
 		export PATH="$PATH:/usr/local/bin/keychain/"
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
+	elif hash keychain 2>/dev/null ; then
+		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	else
+		eval $(ssh-agent)
 		ssh-add $HOME/.ssh/id_rsa_home
 		ssh-add $HOME/.ssh/id_rsa_work
 	fi
