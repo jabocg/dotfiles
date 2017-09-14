@@ -70,10 +70,10 @@ if [[ -z "$TMUX" ]] ; then
 
 	# Keychain path setup
 	if [[ -e /opt/keychain/ ]] ; then
-		export PATH="$PATH:/opt/keychain/"
+		PATH="$PATH:/opt/keychain/"
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	elif [[ -e /usr/local/bin/keychain ]] ; then
-		export PATH="$PATH:/usr/local/bin/keychain/"
+		PATH="$PATH:/usr/local/bin/keychain/"
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	elif hash keychain 2>/dev/null ; then
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
