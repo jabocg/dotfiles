@@ -26,6 +26,7 @@ Plug 'easymotion/vim-easymotion'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'kassio/neoterm'
 Plug 'Konfekt/FastFold'
 Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
@@ -35,6 +36,7 @@ Plug 'Raimondi/delimitMate'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
+Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-commentary'
@@ -123,6 +125,9 @@ smap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expan
 " #fastfold
 nnoremap zuz <Plug>(FastFoldUpdate)
 
+" #neoterm
+tnoremap <C-[> <C-\><C-N>
+
 
 " /------------------------\
 " |                        |
@@ -155,6 +160,7 @@ set relativenumber
 
 " HANDLING TABS
 " =============
+set noexpandtab
 set shiftwidth=4
 set tabstop=4
 
@@ -163,6 +169,11 @@ set tabstop=4
 set ignorecase
 set smartcase
 set nohlsearch
+
+" SUBSTITUTION
+" ============
+
+set gdefault
 
 " HANDLING SPLITS
 " ===============

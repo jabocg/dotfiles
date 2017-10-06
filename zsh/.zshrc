@@ -175,14 +175,6 @@ if hash pyenv 2>/dev/null ; then
 	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
-# date in ISO8601 format
-alias isodate="date +%f"
-
-# using neovim
-# vim notes with ISO date
-alias vimnote="nvim notes_$(isodate)"
-alias vimnoted="nvim notes_$(isodate).md"
-
 # nuke alias, because funtimes
 alias nuke='rm -rf'
 
@@ -191,9 +183,6 @@ alias tree='tree -I .git -c -C'
 
 # ed alias, possibly useless but wfc
 alias ed='ed -p:'
-
-# alias to shutdown elcim
-alias qeq='vim +ShutdownEclim +qa'
 
 # git aliases
 alias grc='git rebase --continue'
