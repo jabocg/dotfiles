@@ -10,6 +10,11 @@ elif hash brew 2>/dev/null ; then
 	brew install neovim
 	pip install neovim
 	pip3 install neovim
+elif hash pacman 2>/dev/null ; then
+	yes | sudo pacman -S python python3
+	yes | sudo pacman -S neovim
+	pip install neovim
+	pip3 install neovim
 fi
 
 # create config structure
@@ -28,6 +33,12 @@ ln -s $HOME/git/dotfiles/neovim/init.vim $HOME/.config/nvim/init.vim
 # install vim-plug
 curl -fLo $HOME/.config/nvim/autoload/plug.vim --create-dirs \
     https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
+
+# setup virtual environments
+sudo pip install virtualenv
+sudo pip3 install virtualenv
+virtualenv -p python2 ~/.venv/neovim2/
+virtualenv -p python3 ~/.venv/neovim3/
 
 # install plugins
 nvim +PlugInstall

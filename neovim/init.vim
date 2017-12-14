@@ -57,6 +57,11 @@ set rtp+=~/git/fzf/
 " |                       |
 " \-----------------------/
 " #settings
+"
+" # setting python envs
+let g:python_host_prog = '/home/jabocg/.venv/neovim2/bin/python2'
+let g:python2_host_prog = '/home/jabocg/.venv/neovim2/bin/python2'
+let g:python3_host_prog = '/home/jabocg/.venv/neovim3/bin/python3'
 
 " #deoplete
 let g:deoplete#enable_at_startup = 1
