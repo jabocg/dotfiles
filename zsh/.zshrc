@@ -70,10 +70,10 @@ if [[ -z "$TMUX" ]] ; then
 
 	# Keychain path setup
 	if [[ -e /opt/keychain/ ]] ; then
-		export PATH="$PATH:/opt/keychain/"
+		PATH="$PATH:/opt/keychain/"
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	elif [[ -e /usr/local/bin/keychain ]] ; then
-		export PATH="$PATH:/usr/local/bin/keychain/"
+		PATH="$PATH:/usr/local/bin/keychain/"
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	elif hash keychain 2>/dev/null ; then
 		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
@@ -170,14 +170,6 @@ if hash pyenv 2>/dev/null ; then
 	export PYENV_VIRTUALENV_DISABLE_PROMPT=1
 fi
 
-# date in ISO8601 format
-alias isodate="date +%f"
-
-# using neovim
-# vim notes with ISO date
-alias vimnote="nvim notes_$(isodate)"
-alias vimnoted="nvim notes_$(isodate).md"
-
 # nuke alias, because funtimes
 alias nuke='rm -rf'
 
@@ -186,9 +178,6 @@ alias tree='tree -I .git -c -C'
 
 # ed alias, possibly useless but wfc
 alias ed='ed -p:'
-
-# alias to shutdown elcim
-alias qeq='vim +ShutdownEclim +qa'
 
 # git aliases
 alias grc='git rebase --continue'
