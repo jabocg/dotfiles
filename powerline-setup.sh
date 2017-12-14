@@ -1,19 +1,17 @@
 #!/bin/bash
 # install automake and autoconf
-brew install automake || sudo dnf install -y automake
-brew install autoconf || sudo dnf install -y autoconf
-# install socat
-sudo dnf install -y socat || brew install socat
-pip install --user psutil
-# req for pyuv, lib-toolize
-sudo dnf install -y libtool || brew install libtool
-# install pyuv, python
-pip install --user pyuv
-# install i3-py, python
-pip install --user i3-py
+if hash brew 2>/dev/null ; then
+	brew install automake autoconf socat libtool
+elif hash dnf 2>/dev/null ; then
+	sudo dnf install automake autoconf socat libtool
+elif hash pacman 2>/dev/null ; then
+	yes | sudo pacman -S automake autoconf socat libtool
+fi
+
+pip install --user psutil pyuv i3-py
 
 # install powerline
-pip install powerline-status
+pip install --user powerline-status
 
 # install fonts
 echo "installing powerline fonts"
@@ -24,6 +22,6 @@ git clone https://github.com/powerline/fonts $HOME/git/powerline-fonts
 mkdir -p $HOME/.config/powerline/
 cd $HOME/git/dotfiles/powerline/
 for i in * ; do
-    echo "symlinking $i"
-    ln -s $HOME/git/dotfiles/powerline/$i $HOME/.config/powerline/$i
+	echo "symlinking $i"
+	ln -s $HOME/git/dotfiles/powerline/$i $HOME/.config/powerline/$i
 done
