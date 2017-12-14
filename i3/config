@@ -220,10 +220,14 @@ mode "confirm-logout" {
 bindsym $mod+Shift+e mode shutdown-mode
 # Start i3bar to display a workspace bar (plus the system information i3status
 # finds out, if available)
-bar {
-	status_command i3status
-	position top
-}
+
+# use polybar instead
+exec_always --no-startup-id $HOME/.config/polybar/launch.sh
+
+# bar {
+# 	status_command i3status
+# 	position top
+# }
 
 # set border to only pixel
 new_window pixel 2
