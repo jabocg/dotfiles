@@ -16,7 +16,7 @@ set $mod Mod4
 font pango:monospace 10
 
 # wallpaper setup
-exec --no-startup-id feh --bg-scale /home/jabocg//Pictures/walls/wall.jpg
+exec_always --no-startup-id $HOME/bin/set-wallpaper
 
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
@@ -263,6 +263,3 @@ client.urgent           'dc322f' '900000' 'ffffff' '900000'   'dc322f'
 # client.placeholder      '000000' '0c0c0c' 'ffffff' '000000'   '0c0c0c'
 
 client.background       ffffff
-
-# wallpaper
-exec --no-startup-id feh --bg-fill --no-xinerama ~/Pictures/wall/wall.jpg
