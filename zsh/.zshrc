@@ -115,13 +115,8 @@ export TERMINAL="gnome-terminal"
 export TERM="xterm-256color"
 
 # powerline setup
-if [[ $(uname) != 'Darwin' ]] ; then
-	XDG_CONFIG_HOME=/Users/jacob.gersztyn/.config/
-	. /usr/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-else
-	XDG_CONFIG_HOME=/home/jabocg/.config/
-	. /usr/local/lib/python2.7/site-packages/powerline/bindings/zsh/powerline.zsh
-fi
+XDG_CONFIG_HOME=/home/jabocg/.config/
+. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # fzf integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
