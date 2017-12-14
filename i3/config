@@ -233,8 +233,8 @@ exec_always --no-startup-id $HOME/.config/polybar/launch.sh
 new_window pixel 2
 
 # set gaps
-# gaps inner 17
-# gaps outer -2
+gaps inner 17
+gaps outer -2
 
 # set colors
 #
