@@ -18,6 +18,10 @@ font pango:monospace 10
 # wallpaper setup
 exec_always --no-startup-id $HOME/bin/set-wallpaper
 
+# disable screensaver
+exec_always xset s off
+exec_always xset -dpms
+
 # This font is widely installed, provides lots of unicode glyphs, right-to-left
 # text rendering and scalability on retina/hidpi displays (thanks to pango).
 #font pango:DejaVu Sans Mono 8
@@ -34,6 +38,9 @@ floating_modifier $mod
 
 # start a terminal
 bindsym $mod+Return exec st
+
+# start a browser
+bindsym $mod+BackSpace exec firefox
 
 # kill focused window
 bindsym $mod+Shift+q kill
@@ -175,7 +182,7 @@ bindsym $mod+r mode "resize"
 mode "shutdown-mode" {
 	# binds for shutting down, enter mode with $mod+shift+e
 	bindsym s mode "confirm-shutdown"
-	bindsym l exec i3lock --image="/home/jabocg/Pictures/walls/lock.png" & i3 mode "default"
+	bindsym l exec i3lock --image="/home/jabocg/.lockscreen.png" & i3 mode "default"
 	bindsym r mode "confirm-restart"
 	bindsym o mode "confirm-logout"
 

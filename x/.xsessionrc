@@ -1,4 +1,0 @@
-# turn off screensaver
-xset s off
-# disable power management
-xset -dpms
