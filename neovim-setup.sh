@@ -40,5 +40,12 @@ sudo pip3 install virtualenv
 virtualenv -p python2 ~/.venv/neovim2/
 virtualenv -p python3 ~/.venv/neovim3/
 
+# install neovim package in virtual envs
+source ~/.venv/neovim2/bin/activate
+pip install neovim
+source ~/.venv/neovim3/bin/activate
+pip install neovim
+deactivate
+
 # install plugins
 nvim +PlugInstall
