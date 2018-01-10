@@ -115,7 +115,7 @@ export TERMINAL="gnome-terminal"
 export TERM="xterm-256color"
 
 # powerline setup
-XDG_CONFIG_HOME=/home/jabocg/.config/
+XDG_CONFIG_HOME="/home/$USER/.config/"
 . /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
 
 # fzf integration

@@ -16,7 +16,10 @@ pip install --user powerline-status
 # install fonts
 echo "installing powerline fonts"
 git clone https://github.com/powerline/fonts $HOME/git/powerline-fonts
-. $HOME/git/powerline-fonts/install.sh
+sh $HOME/git/powerline-fonts/install.sh
+
+# install gitstatus
+pip3 install powerline-gitstatus
 
 # install configs
 mkdir -p $HOME/.config/powerline/
