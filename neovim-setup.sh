@@ -47,5 +47,11 @@ source ~/.venv/neovim3/bin/activate
 pip install neovim
 deactivate
 
+# symlink ftplugin folder
+ln -s $HOME/git/dotfiles/neovim/ftplugin $HOME/.config/nvim/ftplugin
+
+# symlink snippets folder
+ln -s $HOME/git/dotfiles/neovim/snippets $HOME/.config/nvim/snippets
+
 # install plugins
 nvim +PlugInstall
