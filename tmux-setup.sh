@@ -1,7 +1,15 @@
 #!/bin/bash
 
 # install
-brew install tmux || sudo apt-get install tmux || sudo dnf -y install tmux
+if hash brew 2>/dev/null ; then
+	brew install tmux
+elif hash apt-get 2>/dev/null ; then
+	sudo apt-get install tmux
+elif hash dnf 2>/dev/null ; then
+	sudo dnf -y install tmux
+elif hash pacman 2>/dev/null ; then
+	sudo pacman --noconfirm -S tmux
+fi
 
 # if .tmux.conf exists, back up
 if [ -e ~/.tmux.conf ] ; then
