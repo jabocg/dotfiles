@@ -33,6 +33,7 @@ Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
