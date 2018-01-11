@@ -214,6 +214,10 @@ alias ssh-config="cat $HOME/.ssh/config"
 #  Python Misc #
 #              #
 ################
+#
+alias ipython="ipython --no-confirm-exit"
+alias ipython2="ipython2 --no-confirm-exit"
+alias ipython3="ipython3 --no-confirm-exit"
 
 pip() {
 	if [[ -n $VIRTUAL_ENV ]] ; then
