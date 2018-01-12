@@ -358,3 +358,23 @@ function! QuickClose()
 	endif
 endfunction
 autocmd BufEnter * call QuickClose()
+
+" LIST TODOS
+" =========
+function! ShowBufferTodo()
+	vimgrep /\<TODO:\?\>\C/j %
+	copen 5
+endfunction
+function! ShowWindowTodo()
+	cexpr []
+	silent! windo vimgrepadd /\<TODO:\?\>\C/j %
+	copen 5
+endfunction
+function! ShowBuffersTodo()
+	cexpr []
+	silent! bufdo vimgrepadd /\<TODO:\?\>\C/j %
+	copen 5
+endfunction
+command! Todo call ShowBufferTodo()
+command! Todos call ShowBuffersTodo()
+nnoremap <LEADER>todo :Todo<CR>
