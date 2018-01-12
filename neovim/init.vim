@@ -376,5 +376,5 @@ function! ShowBuffersTodo()
 	botright copen 5
 endfunction
 command! Todo call ShowBufferTodo()
-command! Todos call ShowBuffersTodo()
-nnoremap <LEADER>todo :Todo<CR>
+command! Todos call ShowWindowTodo()
+nnoremap <LEADER>todo :Todos<CR>
