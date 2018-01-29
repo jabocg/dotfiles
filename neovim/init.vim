@@ -19,14 +19,12 @@ let mapleader="\<SPACE>"
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
-Plug 'altercation/vim-colors-solarized'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
-Plug 'kassio/neoterm'
 Plug 'Konfekt/FastFold'
 Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
