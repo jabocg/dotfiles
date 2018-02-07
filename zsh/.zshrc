@@ -71,28 +71,20 @@ if [[ -z "$TMUX" ]] ; then
 	# Keychain path setup
 	if [[ -e /opt/keychain/ ]] ; then
 		PATH="$PATH:/opt/keychain/"
-		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
 	elif [[ -e /usr/local/bin/keychain ]] ; then
 		PATH="$PATH:/usr/local/bin/keychain/"
-		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
-	elif hash keychain 2>/dev/null ; then
-		eval $(keychain --eval id_rsa id_rsa_home id_rsa_work)
+	fi
+	if hash keychain 2>/dev/null ; then
+		eval $(keychain --eval id_rsa)
 	else
 		eval $(ssh-agent)
-		ssh-add $HOME/.ssh/id_rsa_home
-		ssh-add $HOME/.ssh/id_rsa_work
+		ssh-add $HOME/.ssh/id_rsa
 	fi
 
 	export PATH
 fi
 
-if [[ $(uname) == "Darwin" ]] ; then
-	plugins=(git brew gem httpie python web-search wd mvn zsh-syntax-highlighting)
-else
-	plugins=(git gem httpie python web-search wd mvn zsh-syntax-highlighting)
-fi
-
-
+plugins=(git gem python web-search wd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -130,36 +122,15 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # ----------------------------------------------------------------------------
 
 
-if [[ $(uname) == "Darwin" ]] ; then
-	# Mac stuff
-	#--------------------------------------------------------------------------
-	# ls all, long, readable, colored, special markers
-	# requires: coreutils
-	alias ls="gls -Fv --color=auto --group-directories-first"
-	alias la="gls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
-	alias ll="gls -Fhlv --color=auto --time-style=long-iso --group-directories-first"
-
-	# prevent launchctl from running in tmux
-	if [[ $TERM == "screen-256color" ]] ; then
-		alias launchctl="echo 'DO NOT RUN THIS INSIDE OF SCREEN OR TMUX'"
-	fi
-
-	# use coreutils echo
-	alias echo="gecho"
-
-else
-	# not Mac stuff
-
-	# ls all, long, readable, special characters, color, iso date
-	alias ls="ls -Fv --color=auto --group-directories-first"
-	alias ll="ls -hFlv --color=auto --time-style=long-iso"
-	alias la="ls -aFhlv --color=auto --time-style=long-iso"
-fi
+# ls all, long, readable, special characters, color, iso date
+alias ls="ls -Fv --color=auto --group-directories-first"
+alias ll="ls -hFlv --color=auto --time-style=long-iso"
+alias la="ls -aFhlv --color=auto --time-style=long-iso"
 
 # add color to grep and tree
 alias grep="grep --color=always"
 
-# python virtual evnironment
+# python virtual environment
 alias pv2="source $HOME/.venv/py2/bin/activate"
 alias pv3="source $HOME/.venv/py3/bin/activate"
 
