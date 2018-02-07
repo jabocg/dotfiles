@@ -206,8 +206,6 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set t_Co=256
 set bg=dark
-" colorscheme solarized
-" colorscheme default
 colorscheme materialbox
 
 " LIST CHARACTERS
@@ -271,9 +269,14 @@ nnoremap <C-Y> 3<C-Y>
 nnoremap <LEADER>G G$
 nnoremap <LEADER>, ,
 nnoremap , ;
-nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 nnoremap <LEADER>zl 10zl
 nnoremap <LEADER>zh 10zh
+
+" TEXT SEARCH/REPLACE
+" ===================
+nnoremap <LEADER>/ /\<\><LEFT><LEFT>
+nnoremap / /\v
+cnoremap %s/ %s/\v
 
 " QUICK-FIX
 " =========
