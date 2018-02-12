@@ -75,10 +75,10 @@ if [[ -z "$TMUX" ]] ; then
 		PATH="$PATH:/usr/local/bin/keychain/"
 	fi
 	if hash keychain 2>/dev/null ; then
-		eval $(keychain --eval id_rsa)
+		eval $(keychain --eval id_rsa_home)
 	else
 		eval $(ssh-agent)
-		ssh-add $HOME/.ssh/id_rsa
+		ssh-add $HOME/.ssh/id_rsa_home
 	fi
 
 	export PATH
@@ -95,15 +95,6 @@ export VISUAL="nvim"
 # Preferred terminal: gnome-terminal
 export TERMINAL="gnome-terminal"
 
-# Set personal aliases, overriding those provided by oh-my-zsh libs,
-# plugins, and themes. Aliases can be placed here, though oh-my-zsh
-# users are encouraged to define aliases within the ZSH_CUSTOM folder.
-# For a full list of active aliases, run `alias`.
-#
-# Example aliases
-# alias zshconfig="mate ~/.zshrc"
-# alias ohmyzsh="mate ~/.oh-my-zsh"
-
 export TERM="xterm-256color"
 
 # powerline setup
@@ -115,6 +106,11 @@ XDG_CONFIG_HOME="/home/$USER/.config/"
 
 export FZF_DEFAULT_COMMAND='ag -g ""'
 export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
+
+# autosuggestions
+if [ -e /usr/share/zsh/plugins/zsh-autosuggestions ] ; then
+	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
 
 
 # ----------------------------------------------------------------------------
