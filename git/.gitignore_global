@@ -47,3 +47,7 @@ Thumbs.db
 ################
 *.bak
 .*.bak
+
+# Helper Scripts #
+##################
+[a-z]
