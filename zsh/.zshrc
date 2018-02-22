@@ -37,12 +37,6 @@ HIST_STAMPS="yyyy-mm-dd"
 if [[ -z "$TMUX" ]] ; then
 	PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:/bin:/sbin"
 
-	if [[ $(uname) == "Darwin" ]] ; then
-		PATH="$PATH:/usr/local/apache-maven-3.3.9/bin:/usr/local/apache-maven-3.3.9/bin:"
-	else
-		PATH="$PATH:$HOME/bin:/opt/apache-maven/bin:"
-	fi
-
 	# FZF path setup
 	if [[ -e $HOME/git/fzf/ ]] ; then
 		PATH="$PATH:$HOME/git/fzf/bin"
