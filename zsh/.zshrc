@@ -34,48 +34,49 @@ HIST_STAMPS="yyyy-mm-dd"
 # User configuration
 
 # Path configuration
-if [[ -z "$TMUX" ]] ; then
-	PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:/bin:/sbin"
+PATH="$PATH:/usr/local/bin:/usr/local/sbin:/usr/bin:/usr/sbin:$HOME/bin:/bin:/sbin"
 
-	# FZF path setup
-	if [[ -e $HOME/git/fzf/ ]] ; then
-		PATH="$PATH:$HOME/git/fzf/bin"
-	fi
+# FZF path setup
+if [[ -e $HOME/git/fzf/ ]] ; then
+	PATH="$PATH:$HOME/git/fzf/bin"
+fi
 
-	# Blender path setup
-	if [[ -e /opt/blender ]] ; then
-		PATH="$PATH:/opt/blender"
-	fi
+# Blender path setup
+if [[ -e /opt/blender ]] ; then
+	PATH="$PATH:/opt/blender"
+fi
 
-	# Eclipse path setup
-	if [[ -e /opt/eclipse/eclipse ]] ; then
-		PATH="$PATH:/opt/eclipse"
-	fi
+# Eclipse path setup
+if [[ -e /opt/eclipse/eclipse ]] ; then
+	PATH="$PATH:/opt/eclipse"
+fi
 
-	# Android Studio path setup
-	if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
-		PATH="$PATH:/opt/android-studio/bin"
-	fi
+# Android Studio path setup
+if [[ -e /opt/android-studio/bin/studio.sh ]] ; then
+	PATH="$PATH:/opt/android-studio/bin"
+fi
 
-	# Pyenv path setup
-	if [[ -e $HOME/.pyenv/ ]] ; then
-		PATH="$PATH:$HOME/.pyenv/bin"
-	fi
+# Pyenv path setup
+if [[ -e $HOME/.pyenv/ ]] ; then
+	PATH="$PATH:$HOME/.pyenv/bin"
+fi
 
-	# Keychain path setup
-	if [[ -e /opt/keychain/ ]] ; then
-		PATH="$PATH:/opt/keychain/"
-	elif [[ -e /usr/local/bin/keychain ]] ; then
-		PATH="$PATH:/usr/local/bin/keychain/"
-	fi
+# Keychain path setup
+if [[ -e /opt/keychain/ ]] ; then
+	PATH="$PATH:/opt/keychain/"
+elif [[ -e /usr/local/bin/keychain ]] ; then
+	PATH="$PATH:/usr/local/bin/keychain/"
+fi
+
+export PATH
+
+if [ -z "$TMUX" ] ; then
 	if hash keychain 2>/dev/null ; then
 		eval $(keychain --eval id_rsa_home)
 	else
 		eval $(ssh-agent)
 		ssh-add $HOME/.ssh/id_rsa_home
 	fi
-
-	export PATH
 fi
 
 plugins=(git gem python web-search wd zsh-syntax-highlighting)
