@@ -84,6 +84,7 @@ let g:airline_section_z = '%4l% ,%3v% '
 " #flake8
 let g:flake8_show_in_gutter = 1
 autocmd BufWritePost *.py call Flake8()
+autocmd BufEnter *.py call SetFlake8()
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
@@ -378,3 +379,15 @@ endfunction
 command! Todo call ShowBufferTodo()
 command! Todos call ShowWindowTodo()
 nnoremap <LEADER>todo :Todos<CR>
+
+" FLAKE8 EXECUTABLE SWAP
+" ======================
+function! SetFlake8()
+	let shebang=getline(1)
+	if shebang[strlen(shebang)-1] ==# '3'
+		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+	elseif shebang[strlen(shebang)-1] ==# '2'
+
+		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim2/bin/flake8"
+	endif
+endfunction
