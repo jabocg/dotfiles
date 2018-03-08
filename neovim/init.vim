@@ -262,6 +262,7 @@ nnoremap <LEADER>Y :%y<CR>
 nnoremap x "_x
 nnoremap <LEADER>D :%d<CR>
 nnoremap <LEADER>x "cdl"cpqcq
+nnoremap <LEADER>J a<CR><ESC>
 
 " TEXT NAVIGATION
 " ===============
