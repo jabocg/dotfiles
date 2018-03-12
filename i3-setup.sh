@@ -4,7 +4,7 @@
 if hash dnf 2>/dev/null ; then
 	sudo dnf -y install i3 i3status
 else if hash pacman 2>/dev/null ; then
-		sudo pacman --noconfirm -S i3-wm dmenu feh
+		sudo pacman --noconfirm -S i3-gaps dmenu feh
 	fi
 fi
 
@@ -18,10 +18,20 @@ else
 	mkdir -p ~/.config/i3/
 fi
 
-# create dir if needed
-if [ ! -e ~/.config/i3/ ] ;then
-    mkdir -p ~/.config/i3
-fi
-
 # crate symlink
 ln -s ~/git/dotfiles/i3/config ~/.config/i3/config
+
+# install polybar
+if hash pacman 2>/dev/null ; then
+	sudo pacman --noconfirm -S polybar
+fi
+
+# install polybar config
+if [ -e ~/.config/polybar ] ; then
+	echo "backing up polybar config"
+	mv ~/.config/polybar/config ~/.config/polybar/config.bak
+else
+	mkdir -p ~/.config/polybar/
+fi
+
+ln -s ~/git/dotfiles/polybar/* ~/.config/polybar/
