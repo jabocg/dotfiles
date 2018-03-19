@@ -85,6 +85,8 @@ let g:airline_section_z = '%4l% ,%3v% '
 let g:flake8_show_in_gutter = 1
 autocmd BufWritePost *.py call Flake8()
 autocmd BufEnter *.py call SetFlake8()
+" default to 3
+let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
