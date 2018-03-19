@@ -11,8 +11,10 @@ elif hash brew 2>/dev/null ; then
 	pip install neovim
 	pip3 install neovim
 elif hash pacman 2>/dev/null ; then
-	yes | sudo pacman -S python python3
-	yes | sudo pacman -S neovim
+	sudo pacman --noconfirm -S python2 python
+	sudo pacman --noconfirm -S python2-pip python-pip
+	sudo pacman --noconfirm -S xclip
+	sudo pacman --noconfirm -S neovim
 	pip install neovim
 	pip3 install neovim
 fi

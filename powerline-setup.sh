@@ -5,13 +5,13 @@ if hash brew 2>/dev/null ; then
 elif hash dnf 2>/dev/null ; then
 	sudo dnf install automake autoconf socat libtool
 elif hash pacman 2>/dev/null ; then
-	yes | sudo pacman -S automake autoconf socat libtool
+	sudo pacman --noconfirm -S automake autoconf socat libtool
 fi
 
 pip install --user psutil pyuv i3-py
 
 # install powerline
-pip install --user powerline-status
+sudo pip install powerline-status
 
 # install fonts
 echo "installing powerline fonts"
@@ -19,7 +19,7 @@ git clone https://github.com/powerline/fonts $HOME/git/powerline-fonts
 sh $HOME/git/powerline-fonts/install.sh
 
 # install gitstatus
-pip3 install powerline-gitstatus
+pip3 install --user powerline-gitstatus
 
 # install configs
 mkdir -p $HOME/.config/powerline/
