@@ -72,7 +72,7 @@ export PATH
 
 if [ -z "$TMUX" ] ; then
 	if hash keychain 2>/dev/null ; then
-		eval $(keychain --eval id_rsa_home)
+		eval $(keychain --eval id_rsa id_rsa_home)
 	else
 		eval $(ssh-agent)
 		ssh-add $HOME/.ssh/id_rsa_home
