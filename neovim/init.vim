@@ -385,12 +385,17 @@ nnoremap <LEADER>todo :Todos<CR>
 
 " FLAKE8 EXECUTABLE SWAP
 " ======================
-function! SetFlake8()
-	let shebang=getline(1)
-	if shebang[strlen(shebang)-1] ==# '3'
-		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
-	elseif shebang[strlen(shebang)-1] ==# '2'
+function! SetFlake8(...)
+	if a:0 > 0
+		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim" . a:1 . "/bin/flake8"
+	else
+		let shebang=getline(1)
+		if shebang[strlen(shebang)-1] ==# '3'
+			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+		elseif shebang[strlen(shebang)-1] ==# '2'
 
-		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim2/bin/flake8"
+			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim2/bin/flake8"
+		endif
 	endif
 endfunction
+command! -nargs=1 SetFlake8 call SetFlake8(<f-args>)
