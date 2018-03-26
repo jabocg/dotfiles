@@ -51,3 +51,8 @@ Thumbs.db
 # Helper Scripts #
 ##################
 [a-z]
+
+# Python Virtual Environments
+#############################
+env/
+.env/
