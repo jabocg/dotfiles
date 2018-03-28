@@ -66,7 +66,7 @@ let g:python3_host_prog = "/home/" . $USER . "/.venv/neovim3/bin/python3"
 " #deoplete
 let g:deoplete#enable_at_startup = 1
 autocmd InsertLeave,CompleteDone * if pumvisible() == 0 | pclose | endif
-" let g:deoplete#disable_auto_complete = 1
+let g:deoplete#disable_auto_complete = 1
 
 " #neosnippet
 let g:neosnippet#disable_runtime_snippets = {'_': 1}
