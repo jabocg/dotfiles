@@ -114,7 +114,7 @@ fi
 
 
 # ls all, long, readable, special characters, color, iso date
-if hash gls>/dev/null ; then
+if hash gls 2>/dev/null ; then
 	alias ls="gls -Fv --color=auto --group-directories-first"
 	alias ll="gls -hFlv --color=auto --time-style=long-iso"
 	alias la="gls -aFhlv --color=auto --time-style=long-iso"
