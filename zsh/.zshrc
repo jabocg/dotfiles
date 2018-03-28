@@ -5,7 +5,7 @@ export ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-ZSH_THEME="alanpeabody"
+ZSH_THEME="robbyrussell"
 
 # Uncomment the following line to use hyphen-insensitive completion. Case
 # sensitive completion must be off. _ and - will be interchangeable.
@@ -114,9 +114,15 @@ fi
 
 
 # ls all, long, readable, special characters, color, iso date
-alias ls="ls -Fv --color=auto --group-directories-first"
-alias ll="ls -hFlv --color=auto --time-style=long-iso"
-alias la="ls -aFhlv --color=auto --time-style=long-iso"
+if hash gls 2>/dev/null ; then
+	alias ls="gls -Fv --color=auto --group-directories-first"
+	alias ll="gls -hFlv --color=auto --time-style=long-iso"
+	alias la="gls -aFhlv --color=auto --time-style=long-iso"
+else
+	alias ls="ls -Fv --color=auto --group-directories-first"
+	alias ll="ls -hFlv --color=auto --time-style=long-iso"
+	alias la="ls -aFhlv --color=auto --time-style=long-iso"
+fi
 
 # add color to grep and tree
 alias grep="grep --color=always"

@@ -60,8 +60,13 @@ set rtp+=~/git/fzf/
 " #settings
 "
 " # setting python envs based on user's home dir
-let g:python_host_prog = "/home/" . $USER . "/.venv/neovim2/bin/python2"
-let g:python3_host_prog = "/home/" . $USER . "/.venv/neovim3/bin/python3"
+if has('macunix')
+	let g:python_host_prog = "/Users/" . $USER . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python3"
+else
+	let g:python_host_prog = "/home/" . $USER . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = "/home/" . $USER . "/.venv/neovim3/bin/python3"
+endif
 
 " #deoplete
 let g:deoplete#enable_at_startup = 1
