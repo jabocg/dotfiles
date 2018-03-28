@@ -8,8 +8,6 @@ elif hash yum 2>/dev/null ; then
 	sudo yum -y install neovim
 elif hash brew 2>/dev/null ; then
 	brew install neovim
-	pip install neovim
-	pip3 install neovim
 elif hash pacman 2>/dev/null ; then
 	sudo pacman --noconfirm -S xclip
 	sudo pacman --noconfirm -S neovim
