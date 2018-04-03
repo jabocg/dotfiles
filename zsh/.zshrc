@@ -93,8 +93,10 @@ export TERMINAL="gnome-terminal"
 export TERM="xterm-256color"
 
 # powerline setup
-XDG_CONFIG_HOME="/home/$USER/.config/"
-. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+if uname | grep -qv Darwin ; then
+	XDG_CONFIG_HOME="/home/$USER/.config/"
+	. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+fi
 
 # fzf integration
 [ -f ~/.fzf.zsh ] && source ~/.fzf.zsh
@@ -116,12 +118,12 @@ fi
 # ls all, long, readable, special characters, color, iso date
 if hash gls 2>/dev/null ; then
 	alias ls="gls -Fv --color=auto --group-directories-first"
-	alias ll="gls -hFlv --color=auto --time-style=long-iso"
-	alias la="gls -aFhlv --color=auto --time-style=long-iso"
+	alias ll="gls -hFlv --color=auto --time-style=long-iso --group-directories-first"
+	alias la="gls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
 else
 	alias ls="ls -Fv --color=auto --group-directories-first"
-	alias ll="ls -hFlv --color=auto --time-style=long-iso"
-	alias la="ls -aFhlv --color=auto --time-style=long-iso"
+	alias ll="ls -hFlv --color=auto --time-style=long-iso --group-directories-first"
+	alias la="ls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
 fi
 
 # add color to grep and tree
