@@ -163,9 +163,6 @@ set laststatus=2
 set showtabline=2
 set colorcolumn=80
 set cursorline
-
-" HYBRID NUMBERS
-" ==============
 set number
 set relativenumber
 
@@ -174,6 +171,10 @@ set relativenumber
 set noexpandtab
 set shiftwidth=4
 set tabstop=4
+
+" BUFFERS
+" =======
+set hidden
 
 " SEARCHING
 " =========
@@ -292,8 +293,6 @@ cnoremap %s/ %s/\v
 nnoremap <LEADER>co :botright copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cd :QuickFixClear<CR>
-" DON'T NEED NEXT AND PREV MAPPINGS
-" USE THE tpope/vim-unimpaired mappings [q and ]q instead
 
 " LOCATION LIST
 " =============
@@ -311,39 +310,32 @@ nnoremap <LEADER>ld :LocationListClear<CR>
 " DIFF WITH FILE
 " ==============
 if !exists(":DiffOrig")
-	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
 " BOOLEAN FLIP-FLOP
 " =================
 " e.g. "false" -> "true"
-" works for lowercase, capitol, and ALL CAPS
+" works for lowercase, Titlecase, and ALL CAPS
 function! BangBool(boolean)
 	if a:boolean ==? "true"
 		if a:boolean[0] ==# "T"
 			if a:boolean[1] ==# "R"
-				echo "all caps"
 				let rep = "FALSE"
 			else
-				echo "capitol"
 				let rep = "False"
 			endif
 		else
-			echo "lowercase"
 			let rep = "false"
 		endif
 	elseif a:boolean ==? "false"
 		if a:boolean[0] ==# "F"
 			if a:boolean[1] ==# "A"
-				echo "all caps"
 				let rep = "TRUE"
 			else
-				echo "capitol"
 				let rep = "True"
 			endif
 		else
-			echo "lowercase"
 			let rep = "true"
 		endif
 	endif
