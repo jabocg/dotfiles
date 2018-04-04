@@ -61,11 +61,11 @@ set rtp+=~/git/fzf/
 "
 " # setting python envs based on user's home dir
 if has('macunix')
-	let g:python_host_prog = "/Users/" . $USER . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python3"
+	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 else
-	let g:python_host_prog = "/home/" . $USER . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = "/home/" . $USER . "/.venv/neovim3/bin/python3"
+	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 endif
 
 " #deoplete
@@ -91,7 +91,7 @@ let g:flake8_show_in_gutter = 1
 autocmd BufWritePost *.py call Flake8()
 autocmd BufEnter *.py call SetFlake8()
 " default to 3
-let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
@@ -392,14 +392,14 @@ nnoremap <LEADER>todo :Todos<CR>
 " ======================
 function! SetFlake8(...)
 	if a:0 > 0
-		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim" . a:1 . "/bin/flake8"
+		let g:flake8_cmd = $HOME . "/.venv/neovim" . a:1 . "/bin/flake8"
 	else
 		let shebang=getline(1)
 		if shebang[strlen(shebang)-1] ==# '3'
-			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+			let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
 		elseif shebang[strlen(shebang)-1] ==# '2'
 
-			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim2/bin/flake8"
+			let g:flake8_cmd = $HOME . "/.venv/neovim2/bin/flake8"
 		endif
 	endif
 endfunction
