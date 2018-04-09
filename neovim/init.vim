@@ -287,6 +287,7 @@ nnoremap <LEADER>zh 10zh
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 nnoremap / /\v
 cnoremap %s/ %s/\v
+nnoremap ? ?\v
 
 " QUICK-FIX
 " =========
