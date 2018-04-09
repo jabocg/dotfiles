@@ -126,6 +126,10 @@ else
 	alias la="ls -aFhlv --color=auto --time-style=long-iso --group-directories-first"
 fi
 
+if hash grm 2>/dev/null ; then
+	alias rm="grm"
+fi
+
 # add color to grep and tree
 alias grep="grep --color=always"
 
