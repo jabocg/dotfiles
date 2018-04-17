@@ -253,6 +253,10 @@ nnoremap <C-SPACE> <NOP>
 nnoremap ; :
 cnoremap w!! w !sudo tee > /dev/null %
 
+" EXITING MAPPINGS
+" ================
+nnoremap QQ :qa!<CR>
+
 " WINDOW MAPPINGS
 " ===============
 nnoremap <LEADER>w <C-W>
