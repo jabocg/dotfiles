@@ -131,7 +131,8 @@ if hash grm 2>/dev/null ; then
 fi
 
 # add color to grep and tree
-alias grep="grep --color=always"
+alias grep="grep --color=auto"
+alias grepc="grep --color=always"
 
 # python virtual environment
 alias pv2="source $HOME/.venv/py2/bin/activate"
