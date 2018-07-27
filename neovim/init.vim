@@ -62,11 +62,11 @@ set rtp+=~/git/fzf/
 "
 " # setting python envs based on user's home dir
 if has('macunix')
-	let g:python_host_prog = "/Users/" . $USER . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = "/Users/" . $USER . "/.venv/neovim3/bin/python3"
+	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 else
-	let g:python_host_prog = "/home/" . $USER . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = "/home/" . $USER . "/.venv/neovim3/bin/python3"
+	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 endif
 
 " #deoplete
@@ -92,7 +92,7 @@ let g:flake8_show_in_gutter = 1
 autocmd BufWritePost *.py call Flake8()
 autocmd BufEnter *.py call SetFlake8()
 " default to 3
-let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
@@ -170,9 +170,6 @@ set laststatus=2
 set showtabline=2
 set colorcolumn=80
 set cursorline
-
-" HYBRID NUMBERS
-" ==============
 set number
 set relativenumber
 
@@ -181,6 +178,10 @@ set relativenumber
 set noexpandtab
 set shiftwidth=4
 set tabstop=4
+
+" BUFFERS
+" =======
+set hidden
 
 " SEARCHING
 " =========
@@ -266,6 +267,10 @@ nnoremap <C-SPACE> <NOP>
 nnoremap ; :
 cnoremap w!! w !sudo tee > /dev/null %
 
+" EXITING MAPPINGS
+" ================
+nnoremap QQ :qa!<CR>
+
 " WINDOW MAPPINGS
 " ===============
 nnoremap <LEADER>w <C-W>
@@ -300,14 +305,13 @@ nnoremap <LEADER>zh 10zh
 nnoremap <LEADER>/ /\<\><LEFT><LEFT>
 nnoremap / /\v
 cnoremap %s/ %s/\v
+nnoremap ? ?\v
 
 " QUICK-FIX
 " =========
 nnoremap <LEADER>co :botright copen<CR>
 nnoremap <LEADER>cc :cclose<CR>
 nnoremap <LEADER>cd :QuickFixClear<CR>
-" DON'T NEED NEXT AND PREV MAPPINGS
-" USE THE tpope/vim-unimpaired mappings [q and ]q instead
 
 " LOCATION LIST
 " =============
@@ -325,39 +329,32 @@ nnoremap <LEADER>ld :LocationListClear<CR>
 " DIFF WITH FILE
 " ==============
 if !exists(":DiffOrig")
-	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis
-		  \ | wincmd p | diffthis
+	command DiffOrig vert new | set bt=nofile | r ++edit # | 0d_ | diffthis | wincmd p | diffthis
 endif
 
 " BOOLEAN FLIP-FLOP
 " =================
 " e.g. "false" -> "true"
-" works for lowercase, capitol, and ALL CAPS
+" works for lowercase, Titlecase, and ALL CAPS
 function! BangBool(boolean)
 	if a:boolean ==? "true"
 		if a:boolean[0] ==# "T"
 			if a:boolean[1] ==# "R"
-				echo "all caps"
 				let rep = "FALSE"
 			else
-				echo "capitol"
 				let rep = "False"
 			endif
 		else
-			echo "lowercase"
 			let rep = "false"
 		endif
 	elseif a:boolean ==? "false"
 		if a:boolean[0] ==# "F"
 			if a:boolean[1] ==# "A"
-				echo "all caps"
 				let rep = "TRUE"
 			else
-				echo "capitol"
 				let rep = "True"
 			endif
 		else
-			echo "lowercase"
 			let rep = "true"
 		endif
 	endif
@@ -406,14 +403,14 @@ nnoremap <LEADER>todo :Todos<CR>
 " ======================
 function! SetFlake8(...)
 	if a:0 > 0
-		let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim" . a:1 . "/bin/flake8"
+		let g:flake8_cmd = $HOME . "/.venv/neovim" . a:1 . "/bin/flake8"
 	else
 		let shebang=getline(1)
 		if shebang[strlen(shebang)-1] ==# '3'
-			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim3/bin/flake8"
+			let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
 		elseif shebang[strlen(shebang)-1] ==# '2'
 
-			let g:flake8_cmd = "/home/" . $USER . "/.venv/neovim2/bin/flake8"
+			let g:flake8_cmd = $HOME . "/.venv/neovim2/bin/flake8"
 		endif
 	endif
 endfunction
