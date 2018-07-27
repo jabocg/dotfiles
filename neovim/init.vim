@@ -224,7 +224,7 @@ colorscheme materialbox
 " LIST CHARACTERS
 " ===============
 set list
-set lcs=eol:¬,tab:»­,nbsp:×,trail:·
+set lcs=eol:¬,tab:>-,nbsp:×,trail:·
 
 " TEXT WRAPPING
 " =============
