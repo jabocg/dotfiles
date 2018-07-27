@@ -136,7 +136,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 " #neosnippet
 inoremap <expr><C-SPACE> pumvisible() ? deoplete#cancel_popup() : "\<C-N>"
 imap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+imap <expr><C-N> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 smap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+smap <expr><C-N> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 
 " #fastfold
 nnoremap zuz <Plug>(FastFoldUpdate)
