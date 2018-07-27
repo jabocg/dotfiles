@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'chrisbra/unicode.vim'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
@@ -57,7 +58,7 @@ set rtp+=~/git/fzf/
 " |    PLUGIN SETTINGS    |
 " |                       |
 " \-----------------------/
-" #settings
+" #plugin-settings #pluginsettings #settings
 "
 " # setting python envs based on user's home dir
 if has('macunix')
@@ -103,6 +104,10 @@ highlight link Flake8_PyFlake    WarningMsg
 let g:fastfold_savehook = 1
 let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
+
+
+" #ctrlp #ctrl-p
+let g:ctrlp_open_multiple_files = 'i'
 
 
 " /-----------------------\
