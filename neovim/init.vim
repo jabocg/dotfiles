@@ -239,6 +239,13 @@ set mouse=a
 autocmd BufRead *.md setlocal ft=markdown
 autocmd BufRead *.conf setlocal ft=config
 
+" INIT.VIM SOURCING
+" =================
+augroup myinitvim
+	au!
+	autocmd bufwritepost init.vim source %
+augroup END
+
 
 " /------------------------\
 " |                        |
