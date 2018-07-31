@@ -127,8 +127,9 @@ nnoremap <LEADER>ll :SidewaysJumpRight<CR>
 " #vim-commentary
 xnoremap gC ygvgcP
 
-nnoremap <LEADER>ls :Buffers<CR>
 " #vim-fzf
+nnoremap <LEADER>ls :Buffers<CR>
+nnoremap <C-T> :BLines<CR>
 
 " #deoplete?
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
