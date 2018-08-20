@@ -243,6 +243,7 @@ set mouse=a
 " ==========
 autocmd BufRead *.md setlocal ft=markdown
 autocmd BufRead *.conf setlocal ft=config
+autocmd BufRead *.wsgi setlocal ft=python
 
 " INIT.VIM SOURCING
 " =================
@@ -303,6 +304,7 @@ nnoremap <LEADER>, ,
 nnoremap , ;
 nnoremap <LEADER>zl 10zl
 nnoremap <LEADER>zh 10zh
+nnoremap z0 9999zh
 
 " TEXT SEARCH/REPLACE
 " ===================
