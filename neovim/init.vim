@@ -62,13 +62,8 @@ set rtp+=~/git/fzf/
 " #plugin-settings #pluginsettings #settings
 "
 " # setting python envs based on user's home dir
-if has('macunix')
-	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
-else
-	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
-endif
+let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 
 " #deoplete
 let g:deoplete#enable_at_startup = 1
