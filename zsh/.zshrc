@@ -59,6 +59,8 @@ fi
 # Pyenv path setup
 if [[ -e $HOME/.pyenv/ ]] ; then
 	PATH="$PATH:$HOME/.pyenv/bin"
+elif [[ -e /opt/pyenv/ ]] ; then
+	PATH="$PATH:/opt/pyenv/bin"
 fi
 
 # Keychain path setup
