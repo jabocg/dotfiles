@@ -74,10 +74,10 @@ export PATH
 
 if [ -z "$TMUX" ] ; then
 	if hash keychain 2>/dev/null ; then
-		eval $(keychain --eval id_rsa id_rsa_home)
+		eval $(keychain --eval id_rsa)
 	else
 		eval $(ssh-agent)
-		ssh-add $HOME/.ssh/id_rsa_home
+		ssh-add
 	fi
 fi
 
@@ -185,52 +185,7 @@ alias nvimin="nvim $HOME/.config/nvim/init.vim"
 # view .ssh/config stuff
 alias ssh-config="cat $HOME/.ssh/config"
 
-
-################
-#              #
-#  Python Misc #
-#              #
-################
-#
-alias ipython="ipython --no-confirm-exit"
-alias ipython2="ipython2 --no-confirm-exit"
-alias ipython3="ipython3 --no-confirm-exit"
-
-pip() {
-	if [[ -n $VIRTUAL_ENV ]] ; then
-		# if in a virtualenv, use vevn pip
-		command pip $@
-	else
-		# use pip 2
-		_pip 2 $@
-	fi
-}
-
-pip2() {
-	_pip 2 $@
-}
-
-pip3() {
-	_pip 3 $@
-}
-
-_pip() {
-	pipver=$1
-	shift
-
-	if [[ "$1" == "install" ]] ; then
-		# install packages as user by default
-		shift
-		command pip$pipver install --user $@
-	else if [[ "$1" == "list" ]] ; then
-		# list in column format
-			command pip$pipver list --format=columns $@
-		else if [[ "$1" == "global" ]] ; then
-				shift
-				command pip$pipver install $@
-						else
-				command pip$pipver $@
-			fi
-		fi
-	fi
-}
+# apache server aliases
+alias apastart="sudo apache2ctl start"
+alias apastop="sudo apache2ctl stop"
+alias actl="sudo apache2ctl"
