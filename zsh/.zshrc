@@ -189,3 +189,43 @@ alias ssh-config="cat $HOME/.ssh/config"
 alias apastart="sudo apache2ctl start"
 alias apastop="sudo apache2ctl stop"
 alias actl="sudo apache2ctl"
+_a2edit() {
+	# helper method for less duplicate code
+	# because I'm an enginerd
+	case $1 in
+		site)
+			title="Site"
+			prefix="sites"
+			;;
+		conf)
+			title="Config"
+			prefix="conf"
+			;;
+		mod)
+			title="Mod"
+			prefix="mods"
+			;;
+		*)
+			echo "ERROR: Unknown edit type"
+			return 1
+	esac
+	if [[ -z $2 ]] ; then
+		echo "Error: ${title} not given"
+		return 1
+	fi
+	if [[ -e "/etc/apache2/${prefix}-available/${2}" ]] ; then
+		sudoedit "/etc/apache2/${prefix}-available/${2}.conf"
+	else
+		echo "Error: ${title} ${2} does not exist"
+		return 1
+	fi
+}
+a2edsite() {
+	_a2edit site $1
+}
+a2edconf() {
+	_a2edit conf $1
+}
+a2edmod() {
+	_a2edit mod $1
+}
