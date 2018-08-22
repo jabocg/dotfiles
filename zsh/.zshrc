@@ -213,8 +213,9 @@ _a2edit() {
 		echo "Error: ${title} not given"
 		return 1
 	fi
-	if [[ -e "/etc/apache2/${prefix}-available/${2}" ]] ; then
-		sudoedit "/etc/apache2/${prefix}-available/${2}.conf"
+	f="/etc/apache2/${prefix}-available/${2}.conf"
+	if [[ -e "$f" ]] ; then
+		sudoedit "$f"
 	else
 		echo "Error: ${title} ${2} does not exist"
 		return 1
