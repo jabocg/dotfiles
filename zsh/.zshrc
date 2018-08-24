@@ -109,6 +109,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # autosuggestions
 if [ -e /usr/share/zsh/plugins/zsh-autosuggestions ] ; then
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ -e /usr/local/share/zsh-autosuggestions ]] ; then
+	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 
