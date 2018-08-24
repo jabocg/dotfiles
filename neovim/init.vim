@@ -18,36 +18,38 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'airblade/vim-gitgutter'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'chrisbra/unicode.vim'
-Plug 'easymotion/vim-easymotion'
-Plug 'jmcantrell/vim-virtualenv'
-Plug 'junegunn/fzf.vim'
-Plug 'junegunn/vim-peekaboo'
-Plug 'Konfekt/FastFold'
-Plug 'mkarmona/materialbox'
-Plug 'neomake/neomake'
-Plug 'nvie/vim-flake8'
-Plug 'qpkorr/vim-bufkill'
+Plug 'ctrlpvim/ctrlp.vim'
 Plug 'Raimondi/delimitMate'
-Plug 'roxma/vim-tmux-clipboard'
+Plug 'zchee/deoplete-jedi'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Konfekt/FastFold'
+Plug 'junegunn/fzf.vim'
+Plug 'mkarmona/materialbox'
 Plug 'Shougo/neoinclude.vim'
+Plug 'neomake/neomake'
 Plug 'Shougo/neosnippet.vim'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'AndrewRadev/sideways.vim'
 Plug 'tmhedberg/SimpylFold'
+Plug 'wellle/targets.vim'
+Plug 'chrisbra/unicode.vim'
 Plug 'tpope/vim-abolish'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'qpkorr/vim-bufkill'
 Plug 'tpope/vim-commentary'
+Plug 'easymotion/vim-easymotion'
+Plug 'nvie/vim-flake8'
 Plug 'tpope/vim-fugitive'
+Plug 'airblade/vim-gitgutter'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'junegunn/vim-peekaboo'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
+Plug 'roxma/vim-tmux-clipboard'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'zchee/deoplete-jedi'
+Plug 'jmcantrell/vim-virtualenv'
 call plug#end()
 set rtp+=~/git/fzf/
 
@@ -57,16 +59,11 @@ set rtp+=~/git/fzf/
 " |    PLUGIN SETTINGS    |
 " |                       |
 " \-----------------------/
-" #settings
+" #plugin-settings #pluginsettings #settings
 "
 " # setting python envs based on user's home dir
-if has('macunix')
-	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
-else
-	let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
-	let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
-endif
+let g:python_host_prog = $HOME . "/.venv/neovim2/bin/python2"
+let g:python3_host_prog = $HOME . "/.venv/neovim3/bin/python3"
 
 " #deoplete
 let g:deoplete#enable_at_startup = 1
@@ -105,6 +102,10 @@ let g:fastfold_fold_command_suffixes =  ['x','X','a','A','o','O','c','C']
 let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 
+" #ctrlp #ctrl-p
+let g:ctrlp_open_multiple_files = 'i'
+
+
 " /-----------------------\
 " |                       |
 " |    PLUGIN MAPPINGS    |
@@ -121,8 +122,9 @@ nnoremap <LEADER>ll :SidewaysJumpRight<CR>
 " #vim-commentary
 xnoremap gC ygvgcP
 
-nnoremap <LEADER>ls :Buffers<CR>
 " #vim-fzf
+nnoremap <LEADER>ls :Buffers<CR>
+nnoremap <C-T> :BLines<CR>
 
 " #deoplete?
 inoremap <expr><TAB> pumvisible() ? "\<C-N>" : "\<TAB>"
@@ -131,7 +133,9 @@ inoremap <expr><S-TAB> pumvisible() ? "\<C-P>" : "\<S-TAB>"
 " #neosnippet
 inoremap <expr><C-SPACE> pumvisible() ? deoplete#cancel_popup() : "\<C-N>"
 imap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+imap <expr><C-N> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 smap <expr><C-L> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
+smap <expr><C-N> neosnippet#expandable_or_jumpable() ? "\<Plug>(neosnippet_expand_or_jump)" : "\<C-N>"
 
 " #fastfold
 nnoremap zuz <Plug>(FastFoldUpdate)
@@ -220,7 +224,7 @@ colorscheme materialbox
 " LIST CHARACTERS
 " ===============
 set list
-set lcs=eol:¬,tab:»­,nbsp:×,trail:·
+set lcs=eol:¬,tab:>-,nbsp:×,trail:·
 
 " TEXT WRAPPING
 " =============
@@ -234,6 +238,14 @@ set mouse=a
 " ==========
 autocmd BufRead *.md setlocal ft=markdown
 autocmd BufRead *.conf setlocal ft=config
+autocmd BufRead *.wsgi setlocal ft=python
+
+" INIT.VIM SOURCING
+" =================
+augroup myinitvim
+	au!
+	autocmd bufwritepost init.vim source %
+augroup END
 
 
 " /------------------------\
@@ -276,6 +288,8 @@ nnoremap <LEADER>D :%d<CR>
 nnoremap <LEADER>x "cdl"cpqcq
 nnoremap <LEADER>J a<CR><ESC>
 
+nnoremap <LEADER><C-R> *Ncgn
+
 " TEXT NAVIGATION
 " ===============
 nnoremap <C-E> 3<C-E>
@@ -285,6 +299,7 @@ nnoremap <LEADER>, ,
 nnoremap , ;
 nnoremap <LEADER>zl 10zl
 nnoremap <LEADER>zh 10zh
+nnoremap z0 9999zh
 
 " TEXT SEARCH/REPLACE
 " ===================
