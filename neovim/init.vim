@@ -18,38 +18,39 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'ctrlpvim/ctrlp.vim'
-Plug 'Raimondi/delimitMate'
-Plug 'zchee/deoplete-jedi'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
-Plug 'Konfekt/FastFold'
-Plug 'junegunn/fzf.vim'
-Plug 'mkarmona/materialbox'
-Plug 'Shougo/neoinclude.vim'
-Plug 'neomake/neomake'
-Plug 'Shougo/neosnippet.vim'
-Plug 'AndrewRadev/sideways.vim'
-Plug 'tmhedberg/SimpylFold'
-Plug 'wellle/targets.vim'
-Plug 'chrisbra/unicode.vim'
-Plug 'tpope/vim-abolish'
-Plug 'vim-airline/vim-airline'
-Plug 'vim-airline/vim-airline-themes'
-Plug 'qpkorr/vim-bufkill'
-Plug 'tpope/vim-commentary'
-Plug 'easymotion/vim-easymotion'
-Plug 'nvie/vim-flake8'
-Plug 'tpope/vim-fugitive'
 Plug 'airblade/vim-gitgutter'
-Plug 'terryma/vim-multiple-cursors'
+Plug 'AndrewRadev/sideways.vim'
+Plug 'chrisbra/unicode.vim'
+Plug 'ctrlpvim/ctrlp.vim'
+Plug 'easymotion/vim-easymotion'
+Plug 'jmcantrell/vim-virtualenv'
+Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
+Plug 'Konfekt/FastFold'
+Plug 'mkarmona/materialbox'
+Plug 'nathanaelkane/vim-indent-guides'
+Plug 'neomake/neomake'
+Plug 'nvie/vim-flake8'
+Plug 'qpkorr/vim-bufkill'
+Plug 'Raimondi/delimitMate'
+Plug 'roxma/vim-tmux-clipboard'
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/neoinclude.vim'
+Plug 'Shougo/neosnippet.vim'
+Plug 'terryma/vim-multiple-cursors'
+Plug 'tmhedberg/SimpylFold'
+Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-commentary'
+Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
 Plug 'tpope/vim-speeddating'
 Plug 'tpope/vim-surround'
-Plug 'roxma/vim-tmux-clipboard'
 Plug 'tpope/vim-unimpaired'
 Plug 'tpope/vim-vinegar'
-Plug 'jmcantrell/vim-virtualenv'
+Plug 'vim-airline/vim-airline'
+Plug 'vim-airline/vim-airline-themes'
+Plug 'wellle/targets.vim'
+Plug 'zchee/deoplete-jedi'
 call plug#end()
 set rtp+=~/git/fzf/
 
@@ -105,6 +106,10 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 " #ctrlp #ctrl-p
 let g:ctrlp_open_multiple_files = 'i'
 
+" #indent-guides
+let g:indent_guides_guide_size = 1
+let g:indent_guides_start_level = 2
+
 
 " /-----------------------\
 " |                       |
@@ -142,6 +147,11 @@ nnoremap zuz <Plug>(FastFoldUpdate)
 
 " #neoterm
 tnoremap <C-[> <C-\><C-N>
+
+" #indent-guides
+nnoremap =ot :IndentGuidesToggle<CR>
+nnoremap [ot :IndentGuidesEnable<CR>
+nnoremap ]ot :IndentGuidesDisable<CR>
 
 
 " /------------------------\
