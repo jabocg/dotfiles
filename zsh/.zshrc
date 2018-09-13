@@ -109,6 +109,8 @@ export FZF_CTRL_T_COMMAND="$FZF_DEFAULT_COMMAND"
 # autosuggestions
 if [ -e /usr/share/zsh/plugins/zsh-autosuggestions ] ; then
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
+elif [[ -e /usr/local/share/zsh-autosuggestions ]] ; then
+	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
 
@@ -163,6 +165,7 @@ alias gpl='git pull '
 alias gplv='git pull --verbose'
 alias gl='git log'
 alias glv='git log -u'
+alias gl10='git --no-pager log --oneline -n 10'
 alias gpsu='git push --set-upstream origin'
 alias gc='git commit'
 alias gcv='git commit --verbose'
