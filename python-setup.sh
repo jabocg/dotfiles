@@ -13,8 +13,8 @@ fi
 sudo pip install virtualenv
 sudo pip3 install virtualenv
 
-virtualenv -p python2.7 ~/.venv/py2/
-virtualenv -p python3.6 ~/.venv/py3/
+virtualenv -p python2 ~/.venv/py2/
+virtualenv -p python3 ~/.venv/py3/
 
 sudo pip install ipython
 sudo pip3 install ipython
