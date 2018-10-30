@@ -3,8 +3,10 @@
 # install
 if hash brew 2>/dev/null ; then
 	brew install tmux
+elif hash apt 2>/dev/null ; then
+	sudo apt install -y tmux
 elif hash apt-get 2>/dev/null ; then
-	sudo apt-get install tmux
+	sudo apt-get install -y tmux
 elif hash dnf 2>/dev/null ; then
 	sudo dnf -y install tmux
 elif hash pacman 2>/dev/null ; then
