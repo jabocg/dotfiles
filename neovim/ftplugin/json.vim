@@ -1,5 +1,5 @@
-set expandtab
-set shiftwidth=2
-set tabstop=2
-set colorcolumn=0
-set nowrap
+setlocal expandtab
+setlocal shiftwidth=2
+setlocal tabstop=2
+setlocal colorcolumn=0
+setlocal nowrap

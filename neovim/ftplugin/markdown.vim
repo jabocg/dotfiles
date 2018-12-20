@@ -1,2 +1,2 @@
-set textwidth=79
-set expandtab
+setlocal textwidth=79
+setlocal expandtab
