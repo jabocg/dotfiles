@@ -254,6 +254,7 @@ set mouse=a
 autocmd BufRead *.md setlocal ft=markdown
 autocmd BufRead *.conf setlocal ft=config
 autocmd BufRead *.wsgi setlocal ft=python
+autocmd BufRead *.tsv setlocal ft=tsv
 
 " INIT.VIM SOURCING
 " =================
