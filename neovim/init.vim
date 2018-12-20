@@ -40,6 +40,7 @@ Plug 'Shougo/neosnippet.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -82,7 +83,7 @@ let g:peekaboo_prefix  = "<LEADER>"
 let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
 
-let g:airline_section_z = '%4l% ,%3v% '
+let g:airline_section_z = '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}%l%\/%L% (%p%%):%v% '
 
 " #flake8
 let g:flake8_show_in_gutter = 1
@@ -109,6 +110,9 @@ let g:ctrlp_open_multiple_files = 'i'
 " #indent-guides
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+
+" #capslock
+imap <C-G><C-U> <Plug>CapsLockToggle
 
 
 " /-----------------------\
