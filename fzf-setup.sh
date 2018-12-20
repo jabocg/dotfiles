@@ -10,6 +10,10 @@ elif hash brew 2>/dev/null ; then
 	brew install the_silver_searcher
 elif hash pacman 2>/dev/null ; then
 	sudo pacman -S the_silver_searcher
+elif hash apt 2>/dev/null ; then
+	sudo apt install silversearcher-ag
+elif hash apt-get 2>/dev/null ; then
+	sudo apt-get install silversearcher-ag
 fi
 
 # download
