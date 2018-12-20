@@ -234,5 +234,7 @@ a2edmod() {
 	_a2edit mod $1
 }
 
-# notify tmux after command finished
-alias notify="tmux display-message \"Command finished\""
+notify() {
+	$* && tmux display-message "Command \"$*\" done"
+}
+alias n=notify
