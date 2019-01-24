@@ -3,3 +3,4 @@ setlocal shiftwidth=2
 setlocal tabstop=2
 setlocal colorcolumn=0
 setlocal nowrap
+setlocal foldmethod=syntax
