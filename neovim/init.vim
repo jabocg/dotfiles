@@ -18,7 +18,6 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'ctrlpvim/ctrlp.vim'
@@ -35,7 +34,7 @@ Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
 Plug 'roxma/vim-tmux-clipboard'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'terryma/vim-multiple-cursors'
