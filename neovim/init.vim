@@ -274,6 +274,7 @@ augroup END
 " ==============
 inoremap <CR> <C-G>u<CR>
 nnoremap <C-SPACE> <NOP>
+nnoremap <LEADER>q @q
 
 " COMMAND MAPPINGS
 " ================
