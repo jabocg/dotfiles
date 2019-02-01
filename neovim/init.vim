@@ -106,6 +106,7 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " #ctrlp #ctrl-p
 let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_working_path_mode = 'a'
 
 " #indent-guides
 let g:indent_guides_guide_size = 1
