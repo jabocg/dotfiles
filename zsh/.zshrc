@@ -233,3 +233,6 @@ a2edconf() {
 a2edmod() {
 	_a2edit mod $1
 }
+
+# pacman
+alias pmi="sudo pacman -S --noconfirm"
