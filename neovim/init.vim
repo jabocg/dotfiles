@@ -32,6 +32,7 @@ Plug 'nathanaelkane/vim-indent-guides'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
+Plug 'qualiabyte/vim-colorstepper'
 Plug 'Raimondi/delimitMate'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
@@ -153,6 +154,10 @@ nnoremap =ot :IndentGuidesToggle<CR>
 nnoremap [ot :IndentGuidesEnable<CR>
 nnoremap ]ot :IndentGuidesDisable<CR>
 
+" #colorstepper
+nmap <F5> <Plug>ColorstepPrev
+nmap <F6> <Plug>ColorstepNext
+
 
 " /------------------------\
 " |                        |
@@ -228,7 +233,7 @@ set clipboard+=unnamed,unnamedplus
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set t_Co=256
-set bg=dark
+set bg=light
 colorscheme materialbox
 
 " LIST CHARACTERS
