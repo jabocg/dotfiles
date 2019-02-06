@@ -11,6 +11,12 @@ elif hash brew 2>/dev/null ; then
 elif hash pacman 2>/dev/null ; then
 	sudo pacman --noconfirm -S xclip
 	sudo pacman --noconfirm -S neovim
+elif hash apt 2>/dev/null ; then
+	sudo apt install -y xclip 
+	sudo apt install -y neovim
+elif hash apt-get 2>/dev/null ; then
+	sudo apt-get install -y xclip 
+	sudo apt-get install -y neovim
 fi
 
 # create config structure

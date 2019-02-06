@@ -10,7 +10,12 @@
 				"priority": 50
 			},
 			{
-				"function": "powerline.segments.common.time.date"
+				"function": "powerline.segments.common.time.date",
+				"name": "date",
+				"args": {
+					"format": "%Y-%m-%s",
+					"istime": false
+				}
 			},
 			{
 				"function": "powerline.segments.common.time.date",

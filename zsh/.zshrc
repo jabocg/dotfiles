@@ -97,7 +97,7 @@ export TERM="xterm-256color"
 # powerline setup
 if uname | grep -qv Darwin ; then
 	XDG_CONFIG_HOME="/home/$USER/.config/"
-	. /usr/lib/python3.6/site-packages/powerline/bindings/zsh/powerline.zsh
+	. /usr/local/lib/python3.6/dist-packages/powerline/bindings/zsh/powerline.zsh
 fi
 
 # fzf integration
@@ -236,3 +236,8 @@ a2edmod() {
 
 # pacman
 alias pmi="sudo pacman -S --noconfirm"
+
+notify() {
+	$* && tmux display-message "Command \"$*\" done"
+}
+alias n=notify

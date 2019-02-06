@@ -18,11 +18,11 @@ let mapleader="\<SPACE>"
 " #plugins
 
 call plug#begin('~/.config/nvim/plugged')
-Plug 'airblade/vim-gitgutter'
 Plug 'AndrewRadev/sideways.vim'
 Plug 'chrisbra/unicode.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'elzr/vim-json'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -35,12 +35,13 @@ Plug 'qpkorr/vim-bufkill'
 Plug 'qualiabyte/vim-colorstepper'
 Plug 'Raimondi/delimitMate'
 Plug 'roxma/vim-tmux-clipboard'
-Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemovePlugins' }
+Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
 Plug 'terryma/vim-multiple-cursors'
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
+Plug 'tpope/vim-capslock'
 Plug 'tpope/vim-commentary'
 Plug 'tpope/vim-fugitive'
 Plug 'tpope/vim-repeat'
@@ -83,7 +84,7 @@ let g:peekaboo_prefix  = "<LEADER>"
 let g:airline_powerline_fonts = 1
 let g:airline_detect_spell = 0
 
-let g:airline_section_z = '%4l% ,%3v% '
+let g:airline_section_z = '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}%l%\/%L% (%p%%):%v% '
 
 " #flake8
 let g:flake8_show_in_gutter = 1
@@ -106,10 +107,14 @@ let g:fastfold_fold_movement_commands = [']z', '[z', 'zj', 'zk']
 
 " #ctrlp #ctrl-p
 let g:ctrlp_open_multiple_files = 'i'
+let g:ctrlp_working_path_mode = 'a'
 
 " #indent-guides
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
+
+" #capslock
+imap <C-G><C-U> <Plug>CapsLockToggle
 
 
 " /-----------------------\
@@ -254,6 +259,7 @@ set mouse=a
 autocmd BufRead *.md setlocal ft=markdown
 autocmd BufRead *.conf setlocal ft=config
 autocmd BufRead *.wsgi setlocal ft=python
+autocmd BufRead *.tsv setlocal ft=tsv
 
 " INIT.VIM SOURCING
 " =================
@@ -274,6 +280,7 @@ augroup END
 " ==============
 inoremap <CR> <C-G>u<CR>
 nnoremap <C-SPACE> <NOP>
+nnoremap <LEADER>q @q
 
 " COMMAND MAPPINGS
 " ================

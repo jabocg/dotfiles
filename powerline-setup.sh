@@ -6,12 +6,16 @@ elif hash dnf 2>/dev/null ; then
 	sudo dnf install automake autoconf socat libtool
 elif hash pacman 2>/dev/null ; then
 	sudo pacman --noconfirm -S automake autoconf socat libtool
+elif hash apt 2>/dev/null ; then
+	sudo apt install -y automake autoconf socat libtool
+elif hash apt-get 2>/dev/null ; then
+	sudo apt-get install -y automake autoconf socat libtool
 fi
 
 pip install --user psutil pyuv i3-py
 
 # install powerline
-sudo pip install powerline-status
+sudo pip3 install powerline-status
 
 # install fonts
 echo "installing powerline fonts"
