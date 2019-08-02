@@ -19,6 +19,7 @@ let mapleader="\<SPACE>"
 
 call plug#begin('~/.config/nvim/plugged')
 Plug 'AndrewRadev/sideways.vim'
+Plug 'carlitux/deoplete-ternjs'
 Plug 'chrisbra/unicode.vim'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
@@ -27,6 +28,7 @@ Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'Konfekt/FastFold'
+Plug 'ludovicchabant/vim-gutentags'
 Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
@@ -36,6 +38,7 @@ Plug 'roxma/vim-tmux-clipboard'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
 Plug 'Shougo/neoinclude.vim'
 Plug 'Shougo/neosnippet.vim'
+Plug 'ternjs/tern_for_vim', { 'do': 'npm install && npm install -g tern' }
 Plug 'tmhedberg/SimpylFold'
 Plug 'tpope/vim-abolish'
 Plug 'tpope/vim-capslock'
@@ -110,6 +113,13 @@ let g:ctrlp_working_path_mode = 'a'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
+" #tern #nodejs
+let g:term_request_timeout = 6000
+let g:tern#command = ['tern']
+let g:tern#arguments = [' - persistent']
+
+" neomake
+let g:neomake_javascript_enabled_makers = ['eslint']
 
 
 " /-----------------------\

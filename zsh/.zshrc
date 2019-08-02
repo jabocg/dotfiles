@@ -70,6 +70,11 @@ elif [[ -e /usr/local/bin/keychain ]] ; then
 	PATH="$PATH:/usr/local/bin/keychain/"
 fi
 
+# nodejs
+if [[ -e /opt/nodejs ]] ; then
+	PATH="$PATH:/opt/nodejs/bin/"
+fi
+
 export PATH
 
 if [ -z "$TMUX" ] ; then
