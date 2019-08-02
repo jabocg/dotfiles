@@ -231,7 +231,7 @@ set clipboard+=unnamed,unnamedplus
 let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set t_Co=256
-set bg=light
+set bg=dark
 colorscheme materialbox
 
 " LIST CHARACTERS
