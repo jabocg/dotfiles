@@ -31,7 +31,6 @@ Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'qpkorr/vim-bufkill'
-Plug 'qualiabyte/vim-colorstepper'
 Plug 'Raimondi/delimitMate'
 Plug 'roxma/vim-tmux-clipboard'
 Plug 'Shougo/deoplete.nvim', { 'do': ':UpdateRemotePlugins' }
@@ -156,10 +155,6 @@ tnoremap <C-[> <C-\><C-N>
 nnoremap =ot :IndentGuidesToggle<CR>
 nnoremap [ot :IndentGuidesEnable<CR>
 nnoremap ]ot :IndentGuidesDisable<CR>
-
-" #colorstepper
-nmap <F5> <Plug>ColorstepPrev
-nmap <F6> <Plug>ColorstepNext
 
 
 " /------------------------\
