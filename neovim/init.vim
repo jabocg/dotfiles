@@ -110,8 +110,6 @@ let g:ctrlp_working_path_mode = 'a'
 let g:indent_guides_guide_size = 1
 let g:indent_guides_start_level = 2
 
-" #capslock
-imap <C-G><C-U> <Plug>CapsLockToggle
 
 
 " /-----------------------\
@@ -155,6 +153,9 @@ tnoremap <C-[> <C-\><C-N>
 nnoremap =ot :IndentGuidesToggle<CR>
 nnoremap [ot :IndentGuidesEnable<CR>
 nnoremap ]ot :IndentGuidesDisable<CR>
+
+" #capslock
+imap <C-G><C-U> <Plug>CapsLockToggle
 
 
 " /------------------------\
