@@ -3,6 +3,9 @@
 # setup git stuff
 . git-setup.sh
 
+# python
+. python-setup.sh
+
 # setup neovim stuff
 . neovim-setup.sh
 
