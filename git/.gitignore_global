@@ -56,3 +56,6 @@ Thumbs.db
 #############################
 env/
 .env/
+
+# (Exuberant) C-tags
+tags
