@@ -21,6 +21,7 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'AndrewRadev/sideways.vim'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'chrisbra/unicode.vim'
+Plug 'coddingtonbear/neomake-platformio'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'

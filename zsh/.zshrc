@@ -246,3 +246,6 @@ notify() {
 	$* && tmux display-message "Command \"$*\" done"
 }
 alias n=notify
+
+# platformio based aliases
+alias pfio='platformio'
