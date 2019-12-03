@@ -11,11 +11,11 @@ elif hash brew 2>/dev/null ; then
 elif hash pacman 2>/dev/null ; then
 	PACK_MAN="pacman"
 	INST="--noconfirm -S"
-elif hash apt-get 2>/dev/null ; then
-	PACK_MAN="apt-get"
-	INST="install -y"
 elif hash apt 2>/dev/null ; then
 	PACK_MAN="apt"
+	INST="install -y"
+elif hash apt-get 2>/dev/null ; then
+	PACK_MAN="apt-get"
 	INST="install -y"
 fi
 

@@ -77,15 +77,6 @@ fi
 
 export PATH
 
-if [ -z "$TMUX" ] ; then
-	if hash keychain 2>/dev/null ; then
-		eval $(keychain --eval id_rsa)
-	else
-		eval $(ssh-agent)
-		ssh-add
-	fi
-fi
-
 plugins=(git gem python web-search wd zsh-syntax-highlighting)
 
 source $ZSH/oh-my-zsh.sh
@@ -116,6 +107,15 @@ if [ -e /usr/share/zsh/plugins/zsh-autosuggestions ] ; then
 	source /usr/share/zsh/plugins/zsh-autosuggestions/zsh-autosuggestions.zsh
 elif [[ -e /usr/local/share/zsh-autosuggestions ]] ; then
 	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
+fi
+
+if [ -z "$TMUX" ] ; then
+	if hash keychain 2>/dev/null ; then
+		eval $(keychain --eval)
+	else
+		eval $(ssh-agent)
+		ssh-add
+	fi
 fi
 
 
