@@ -291,10 +291,6 @@ nnoremap <LEADER>q @q
 nnoremap ; :
 cnoremap w!! w !sudo tee > /dev/null %
 
-" EXITING MAPPINGS
-" ================
-nnoremap QQ :qa!<CR>
-
 " WINDOW MAPPINGS
 " ===============
 nnoremap <LEADER>w <C-W>
@@ -313,8 +309,9 @@ nnoremap x "_x
 nnoremap <LEADER>D :%d<CR>
 nnoremap <LEADER>x "cdl"cpqcq
 nnoremap <LEADER>J a<CR><ESC>
-
 nnoremap <LEADER><C-R> *Ncgn
+nnoremap Q gq
+nnoremap QQ gqq
 
 " TEXT NAVIGATION
 " ===============
