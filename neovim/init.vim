@@ -21,9 +21,11 @@ call plug#begin('~/.config/nvim/plugged')
 Plug 'AndrewRadev/sideways.vim'
 Plug 'carlitux/deoplete-ternjs'
 Plug 'chrisbra/unicode.vim'
+Plug 'coddingtonbear/neomake-platformio'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
 Plug 'elzr/vim-json'
+Plug 'fatih/vim-go'
 Plug 'jmcantrell/vim-virtualenv'
 Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
@@ -32,6 +34,7 @@ Plug 'ludovicchabant/vim-gutentags'
 Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
+Plug 'psf/black'
 Plug 'qpkorr/vim-bufkill'
 Plug 'Raimondi/delimitMate'
 Plug 'roxma/vim-tmux-clipboard'
@@ -87,11 +90,15 @@ let g:airline_detect_spell = 0
 let g:airline_section_z = '%{exists("*CapsLockStatusline")?CapsLockStatusline():""}%l%\/%L% (%p%%):%v% '
 
 " #flake8
-let g:flake8_show_in_gutter = 1
-autocmd BufWritePost *.py call Flake8()
-autocmd BufEnter *.py call SetFlake8()
+" let g:flake8_show_in_gutter = 1
+" autocmd BufWritePost *.py call Flake8()
+" autocmd BufEnter *.py call SetFlake8()
 " default to 3
-let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
+" let g:flake8_cmd = $HOME . "/.venv/neovim3/bin/flake8"
+" swapping flake8 for python black
+
+" #pythonblack #python-black
+autocmd BufWritePre *.py Black
 
 highlight link Flake8_Error      Error
 highlight link Flake8_Warning    WarningMsg
