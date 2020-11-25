@@ -446,3 +446,7 @@ function! SetFlake8(...)
 	endif
 endfunction
 command! -nargs=1 SetFlake8 call SetFlake8(<f-args>)
+
+" EXECUTE FILE VIA BASH, VIEW RESULTS ON RIGHT
+" ============================================
+command! ExecFile vnew | setlocal ft=sh buftype=nofile bufhidden=hide noswapfile nobuflisted | read !bash #
