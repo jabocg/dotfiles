@@ -79,7 +79,7 @@ PATH="$PATH:$HOME/.local/bin/"
 
 export PATH
 
-plugins=(git gem python web-search wd zsh-syntax-highlighting)
+plugins=(git gem python web-search wd)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -111,6 +111,14 @@ elif [[ -e /usr/local/share/zsh-autosuggestions ]] ; then
 	source /usr/local/share/zsh-autosuggestions/zsh-autosuggestions.zsh
 fi
 
+# syntax-highlighting
+if [ -e /usr/share/zsh/plugins/zsh-syntax-highlighting ] ; then
+	source /usr/share/zsh/plugins/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+elif [[ -e /usr/local/share/zsh-syntax-highlighting ]] ; then
+	source /usr/local/share/zsh-syntax-highlighting/zsh-syntax-highlighting.zsh
+fi
+
+# keychain ssh-keys
 if [ -z "$TMUX" ] ; then
 	if hash keychain 2>/dev/null ; then
 		eval $(keychain --eval)
