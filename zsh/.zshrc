@@ -75,6 +75,8 @@ if [[ -e /opt/nodejs ]] ; then
 	PATH="$PATH:/opt/nodejs/bin/"
 fi
 
+PATH="$PATH:$HOME/.local/bin/"
+
 export PATH
 
 plugins=(git gem python web-search wd zsh-syntax-highlighting)
