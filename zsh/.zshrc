@@ -114,10 +114,8 @@ fi
 if [ -z "$TMUX" ] ; then
 	if hash keychain 2>/dev/null ; then
 		eval $(keychain --eval)
-		ssh-add
 	else
 		eval $(ssh-agent)
-		ssh-add
 	fi
 fi
 
