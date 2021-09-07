@@ -24,6 +24,7 @@ Plug 'chrisbra/unicode.vim'
 Plug 'coddingtonbear/neomake-platformio'
 Plug 'ctrlpvim/ctrlp.vim'
 Plug 'easymotion/vim-easymotion'
+Plug 'EdenEast/nightfox.nvim'
 Plug 'elzr/vim-json'
 Plug 'fatih/vim-go'
 Plug 'jmcantrell/vim-virtualenv'
@@ -31,7 +32,6 @@ Plug 'junegunn/fzf.vim'
 Plug 'junegunn/vim-peekaboo'
 Plug 'Konfekt/FastFold'
 Plug 'ludovicchabant/vim-gutentags'
-Plug 'mkarmona/materialbox'
 Plug 'neomake/neomake'
 Plug 'nvie/vim-flake8'
 Plug 'psf/black'
@@ -250,7 +250,7 @@ let $NVIM_TUI_ENABLE_TRUE_COLOR=1
 set termguicolors
 set t_Co=256
 set bg=dark
-colorscheme materialbox
+colorscheme nightfox
 
 " LIST CHARACTERS
 " ===============
